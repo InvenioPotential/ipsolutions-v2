@@ -15,7 +15,7 @@ const Topnav = () => {
 };
 
   return (
-        <nav className='max-w-auto mx-auto px-4 sm:px-6 lg:px-8 border border-b-1'>
+        <nav className='max-w-auto mx-auto px-4 sm:px-4 lg:px-4 border border-b-1'>
                 <div className='flex items-center justify-between h-16'>
                     <div className='flex items-center'>
                         <div className='flex-shrink-0'>

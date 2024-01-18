@@ -11,7 +11,7 @@ const SideNavBar = () => {
     <aside className="bg-sky-950 text-white h-screen float-left text-left">
       <div className="pt-4">
         {/* <h2 className="text-2xl font-bold mb-4">Dashboard</h2> */}
-        <nav>
+        <nav className=''>
           <ul className='text-sm font-semibold '>
             <li className="m-3">
               <Link href="/" className="items-center m-2 flex hover:text-gray-300">
