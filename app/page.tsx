@@ -5,7 +5,7 @@ import { FaUser , FaLock} from "react-icons/fa";
 
 export default function Home() {
   return (
-    <main className=" bg-green-500 flex min-h-screen min-w-screen flex-col items-center justify-between p-24">
+    <main className="bg-green-500 bg-[url('/images/bg.png')] flex min-h-screen min-w-screen flex-col items-center justify-between p-24">
       <div className=" bg-white border rounded-sm p-10 w-50 h-622">
         <div className="block p-5 h-auto text-gray-600 text-sm items-center justify-center">
           <div className="flex justify-center items-center font-bold">

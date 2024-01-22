@@ -4,22 +4,34 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import { CgBell, CgProfile } from 'react-icons/cg';
 import { HiUserGroup } from 'react-icons/hi2';
-import { IoReorderThreeOutline } from 'react-icons/io5';
-import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { IoMenuOutline, IoReorderThreeOutline } from 'react-icons/io5';
+import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight} from 'react-icons/md';
 import { TbLogout } from 'react-icons/tb';
+import SideNavBar from './sidenavbar';
 
 const Topnav = () => {
+    // open top right nav in small screen
     const [isMenuOpen, setMenuOpen] = useState(false);
     const toggleMenu =() => {
         setMenuOpen(!isMenuOpen);
-};
+
+    };
+
+    // open sidebar
+    const [isModuleOpen, setModuleOpen] = useState(false);
+    const toggleModule =() => {
+        setModuleOpen(!isModuleOpen);
+    };
 
   return (
-        <nav className='max-w-auto mx-auto px-4 sm:px-4 lg:px-4 border border-b-1'>
-                <div className='flex items-center justify-between h-16'>
-                    <div className='flex items-center'>
-                        <div className='flex-shrink-0'>
-                            <IoReorderThreeOutline style={{color:'green'}} className='m-1 h-7 w-7'/>
+        <nav className='max-w-auto mx-auto'>
+                <div className='flex items-center justify-between h-16 border-b-2'>
+                    <div className='flex items-center justify-center m-1'>
+                        <div className='flex-shrink-0 flex'>
+                            <button
+                                onClick={toggleModule}>
+                            {isMenuOpen ? <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7'/> : <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7' />}
+                            </button>
                         </div>
                         <div className='p-2 text-left'>
                             <img 
@@ -49,15 +61,15 @@ const Topnav = () => {
                         <div className='md:hidden flex '>
                             <button 
                                 onClick={toggleMenu}>
-                            {isMenuOpen ? <MdKeyboardDoubleArrowRight style={{color:'green'}} className='h-6 w-6'/> : <MdKeyboardDoubleArrowLeft style={{color:'green'}} className='h-6 w-6' />}
+                            {isMenuOpen ? <MdKeyboardDoubleArrowRight style={{color:'green'}} className='m-2 h-6 w-6'/> : <MdKeyboardDoubleArrowLeft style={{color:'green'}} className='m-2 h-6 w-6' />}
                             </button>
                         </div>
-
                     </div>
-                
-
-
             </div>
+            <div className={` ${isModuleOpen ? 'justify-between' : 'hidden lg:hidden md:hidden'}`} >
+                <SideNavBar />
+            </div>
+            
         </nav>
   )
 }
