@@ -24,7 +24,7 @@ const Topnav = () => {
     };
 
   return (
-        <nav className='max-w-auto mx-auto'>
+        <nav className='sticky bg-white top-0 max-w-auto mx-auto'>
                 <div className='flex items-center justify-between h-16 border-b-2'>
                     <div className='flex items-center justify-center m-1'>
                         <div className='flex-shrink-0 flex'>

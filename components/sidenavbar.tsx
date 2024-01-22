@@ -14,10 +14,16 @@ const SideNavBar = () => {
   
       };
 
+      const [isEnergyOpen, setEnergyOpen] = useState(false);
+      const toggleEnergy =() => {
+          setEnergyOpen(!isEnergyOpen);
+  
+      };
+
 
   return (
-    <aside className="bg-sky-950 text-white h-screen float-left text-left">
-      <div className="pt-4">
+    <aside className="overflow-y-auto h-screen bg-sky-950 text-white float-left text-left">
+      <div className="pt-4 ">
         {/* <h2 className="text-2xl font-bold mb-4">Dashboard</h2> */}
         <nav>
           <ul className='text-sm font-semibold '>
@@ -120,7 +126,7 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" onClick={toggleEnergy} className="items-center flex hover:text-gray-300">
                   <img className='w-5 h-5 m2'
                     src="/images/energy.png"
                     alt="IP solutions logo" 
@@ -131,6 +137,40 @@ const SideNavBar = () => {
                   ENERGY
                 </div>
                 </Link>
+                <ul className={` ${isEnergyOpen ? 'justify-between' : 'ml-5 hidden'}`} >
+                    <li className='text-xs m-3 mt-5' >
+                      <Link href="/" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          SPADE
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          ELECTRICITY
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          VOLTAGE
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          LOADS
+                        </div>
+                      </Link>
+                    </li>
+                </ul>
             </li>
 
           </ul>
