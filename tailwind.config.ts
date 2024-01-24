@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 
+
 const config = {
   darkMode: ["class"],
   content: [
@@ -18,6 +19,12 @@ const config = {
       },
     },
     extend: {
+      screens: {
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -76,5 +83,6 @@ const config = {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config
+
 
 export default config

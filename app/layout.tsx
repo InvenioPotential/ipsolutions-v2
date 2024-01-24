@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <Head>
+        <title>IP Solutions</title>
+      </Head>
+      <body className="{inter.className} bg-gray-50 font-sans">
+        {children}
+      <div className='text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
+        POWERED BY INVENIO POTENTIAL SDN BHD 2024
+      </div>  
+      </body>
+      
     </html>
   )
 }
