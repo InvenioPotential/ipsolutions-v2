@@ -16,17 +16,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en font-mono">
+    <html lang="en">
       <Head>
         <title>IP Solutions</title>
       </Head>
-      <body className="{inter.className} bg-gray-50">
-        
+      <body className="{inter.className} bg-gray-50 font-sans">
         {children}
-      </body>
-      <footer className='text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
+      <div className='text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
         POWERED BY INVENIO POTENTIAL SDN BHD 2024
-      </footer>
+      </div>  
+      </body>
+      
     </html>
   )
 }
