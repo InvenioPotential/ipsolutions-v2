@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Topnav from '@/components/topnav'
 import Head from 'next/head'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -17,14 +16,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en font-mono">
       <Head>
         <title>IP Solutions</title>
       </Head>
-      <body className={inter.className}>
+      <body className="{inter.className} bg-gray-50">
         
         {children}
       </body>
+      <footer className='text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
+        POWERED BY INVENIO POTENTIAL SDN BHD 2024
+      </footer>
     </html>
   )
 }
