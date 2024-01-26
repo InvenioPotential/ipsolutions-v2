@@ -20,14 +20,14 @@ const Topnav = () => {
     };
 
     // open sidebar
-    const [isModuleOpen, setModuleOpen] = useState(false);
-    const toggleModule =() => {
-        setModuleOpen(!isModuleOpen);
-    };
+    // const [isModuleOpen, setModuleOpen] = useState(false);
+    // const toggleModule =() => {
+    //     setModuleOpen(!isModuleOpen);
+    // };
 
   return (
         <nav className='sticky bg-white top-0 max-w-auto mx-auto'>
-                <div className='flex items-center justify-between h-16'>
+                <div className='flex items-center p-5 justify-between h-16'>
                     <div className='flex items-center justify-center m-1'>
                         <div className='flex-shrink-0 flex'>
                             <>
@@ -46,12 +46,12 @@ const Topnav = () => {
                                             <div className='bg-sky-950 text-white items-center justify-center'>
                                                 <ul>
                                                     <li>
-                                                        <div className='p-1 flex-shrink-0 flex'>
+                                                        <div className='pl-5 flex-shrink-0 flex'>
                                                             <button
                                                                 onClick={() => setShowModal(false)}>
                                                             {isMenuOpen ? <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7'/> : <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7' />}
                                                             </button>
-                                                            <div className='p-2 text-left'>
+                                                            <div className='m-1 p-2 text-left'>
                                                                 <img 
                                                                     src="/images/ipsolutionslogo.png"
                                                                     alt="IP solutions logo" 
@@ -109,9 +109,9 @@ const Topnav = () => {
                         </div>
                     </div>
             </div>
-            <div className={` ${isModuleOpen ? 'justify-start items sticky left-0' : 'hidden lg:hidden md:hidden'}`} >
+            {/* <div className={` ${isModuleOpen ? 'justify-start items sticky left-0' : 'hidden lg:hidden md:hidden'}`} >
                 <SideNavBar />
-            </div>
+            </div> */}
             
         </nav>
   )

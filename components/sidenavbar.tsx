@@ -10,13 +10,13 @@ import { IoIosArrowDown } from 'react-icons/io';
 const SideNavBar = () => {
       // open mini task list
       const [isTaskOpen, setTaskOpen] = useState(false);
-      const toggleTask =() => {
+      const toggleTask=() => {
           setTaskOpen(!isTaskOpen);
   
       };
 
       const [isEnergyOpen, setEnergyOpen] = useState(false);
-      const toggleEnergy =() => {
+      const toggleEnergy=() => {
           setEnergyOpen(!isEnergyOpen);
   
       };
@@ -24,9 +24,9 @@ const SideNavBar = () => {
 
   return (
     <aside className="h-screen bg-sky-950 text-white text-left float-left sticky left-0">
-      <div className="pt-2">
+      <div className="">
         {/* <h2 className="text-2xl font-bold mb-4">Dashboard</h2> */}
-        <nav className='flex'>
+        <nav className='p-5 flex'>
           <div className=''>
             <ul className='text-sm font-semibold h-screen overflow-auto'>
             <li className="m-3">
@@ -38,16 +38,21 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/modules/task/taskDashboard" onClick={toggleTask} className="items-center flex hover:text-gray-300">
+              <div className='justify-between flex'>
+               <Link href="/modules/task/taskDashboard" className="items-center flex hover:text-gray-300">
                 <FaTasks className='w-4 h-4 m2'/>
                 <div className='ml-2 flex text-center'>
                   TASK MANAGEMENT
-                  <IoIosArrowDown className='m-1'/>
                 </div>
                 </Link>
+                <button type='button' onClick={toggleTask} className='hover:text-gray-300'>
+                  <IoIosArrowDown  className='m-1'  /> 
+                </button>
+              </div>
+              
                 <ul className={` ${isTaskOpen ? 'justify-between' : 'ml-5 hidden'}`} >
                     <li className='text-xs m-3 mt-5' >
-                      <Link href="/" className="items-center flex hover:text-gray-300">
+                      <Link href="/modules/task/taskRecurring" className="items-center flex hover:text-gray-300">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           RECURRING
@@ -129,7 +134,8 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="" onClick={toggleEnergy} className="items-center flex hover:text-gray-300">
+              <div className='justify-between flex'>
+               <Link href="" onClick={toggleEnergy} className="items-center flex hover:text-gray-300">
                   <img className='w-4 h-4 m2'
                     src="/images/energy.png"
                     alt="IP solutions logo" 
@@ -138,9 +144,13 @@ const SideNavBar = () => {
                   /> 
                 <div className='ml-2 flex text-center'>
                   ENERGY
-                  <IoIosArrowDown className='m-1'/>
                 </div>
-                </Link>
+                </Link> 
+                <button type='button' onClick={toggleEnergy} className='hover:text-gray-300'>
+                  <IoIosArrowDown className='m-1'/>
+                  </button>
+              </div>
+              
                 <ul className={` ${isEnergyOpen ? 'justify-between' : 'ml-5 hidden'}`} >
                     <li className='text-xs m-3 mt-5' >
                       <Link href="/" className="items-center flex hover:text-gray-300">

@@ -38,7 +38,7 @@ const Dashboard = () => {
                   <div className='grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
                     <div className="overflow-auto grid lg:grid-rows-4 lg:grid-cols-2 gap-2 sm:grid-rows-4 sm:grid-cols-2">
                       <div className='border rounded-md p-1 bg-white '>
-                        <Link href="/modules/task/taskDashboard" className='flex w-56 h-24 items-center'>
+                        <Link href="/modules/task/taskDashboard" className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'><FaTasks className='flex w-7 h-7'/></div>
                             <div className='block m-2 p-1 hover:text-green-500 '>
                               <div className='text-gray-700 text-sm font-bold '>TASK MANAGEMENT</div>
@@ -47,7 +47,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24  items-center'>
+                        <Link href='' className='flex w-auto h-24  items-center'>
                           <div className='justify-center items-center m-2 p-1'><GrHostMaintenance className='flex w-7 h-7'/></div>
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>MAINTENANCE</div>
@@ -56,7 +56,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24  items-center'>
+                        <Link href='' className='flex w-auto h-24  items-center'>
                           <div className='justify-center items-center m-2 p-1'><RiCommunityFill className='flex w-7 h-7'/></div>
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>COMMUNITY</div>
@@ -65,7 +65,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex  w-56 h-24 items-center'>
+                        <Link href='' className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'><FaTools className='flex w-7 h-7'/></div>
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>OPERATIONS</div>
@@ -74,7 +74,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
+                        <Link href='' className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'><RiMoneyDollarBoxFill className='flex w-7 h-7'/></div>
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>FINANCE</div>
@@ -83,7 +83,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
+                        <Link href='' className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'><SiGoogleforms className='flex w-7 h-7'/></div>
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>DIGITAL FORMS</div>
@@ -92,7 +92,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
+                        <Link href='' className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'><MdDisabledByDefault className='flex w-7 h-7'/></div>
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>DEFECT</div>
@@ -101,7 +101,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
+                        <Link href='' className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'><FaCartPlus className='flex w-7 h-7'/></div>
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>PROCUREMENT</div>
@@ -110,7 +110,7 @@ const Dashboard = () => {
                         </Link>
                       </div>
                       <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
+                        <Link href='' className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'>
                             <img className='flex w-7 h-7'
                             src="/images/energyblk.png"

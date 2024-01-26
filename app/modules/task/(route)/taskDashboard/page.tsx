@@ -1,11 +1,24 @@
 "use client"
 import Topnav from '@/components/topnav'
-import React from 'react'
+import React, { useState } from 'react'
 import { FiActivity } from 'react-icons/fi'
 import { IoCheckmarkCircle } from 'react-icons/io5'
 import { MdAssignmentLate, MdUpcoming } from 'react-icons/md'
+import UpcomingTask from './(route)/upcoming/page'
+import Calendar from 'react-calendar'
+import ActiveTask from './(route)/active/page'
 
 const TaskManagement = () => {
+  const [isUpcomingOpen, setUpcomingOpen] = useState(false);
+  const toggleUpcoming =() => {
+      setUpcomingOpen(!isUpcomingOpen);
+  };
+
+  const [isActiveOpen, setActiveOpen] = useState(false);
+  const toggleActive =() => {
+      setActiveOpen(!isActiveOpen);
+  };
+
 return (
 <div className=''>
         <Topnav />
@@ -20,8 +33,8 @@ return (
               </div>
             </div> 
             <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-2 sm:grid-rows-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4'>
-              <div className='items-center  justify-center text-center'>
-                <div className='bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
+                <div onClick={toggleUpcoming} className='bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <MdUpcoming className='m-1 h-5 w-5' />
@@ -32,9 +45,12 @@ return (
                     3
                   </div>
                 </div>
+                <div className={` ${isUpcomingOpen ? 'justify-between overflow-auto' : 'ml-5 hidden'}`}>
+                  <UpcomingTask />
+                </div>
               </div>
-              <div className='items-center  justify-center text-center'>
-                <div className='bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div  className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
+                <div onClick={toggleActive} className='bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <FiActivity className='m-1 h-5 w-5' />
@@ -45,8 +61,11 @@ return (
                     3
                   </div>
                 </div>
+                <div className={` ${isActiveOpen ? 'justify-between overflow-auto' : 'ml-5 hidden'}`}>
+                  <ActiveTask />
+                </div>
               </div>
-              <div className='items-center  justify-center text-center'>
+              <div className='items-center  justify-center text-center '>
                 <div className='bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
@@ -73,22 +92,20 @@ return (
                 </div>
               </div>
             </div>
-            <div className='text-gray-600 m-3 p-3 gap-2 rounded-md bg-white grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 grid-rows-2'>
-              <div className='col-span-4 text-sm font-semibold'>
+            {/* <div className='flex text-sm font-semibold m-3 h-auto overflow-auto p-3 rounded-md bg-white'>
+              <div className=''>
                 TASK MANAGEMENT
-              </div>
-            </div>
-
-
-              
-            <div className='mt-4 grid grid-cols-4 grid-rows-2 gap-4'>
-                <div className='grid border-2 rounded-md lg:row-span-2 md:row-span-1 sm:row-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2'>
+              </div>     
+            </div> */}
+            
+            <div className='m-3 mt-4 sm:flex md:grid lg:grid grid-cols-4 grid-rows-2 gap-4'>
+                <div className='m-1 grid border-2 rounded-md lg:row-span-2 md:row-span-2 sm:row-span-2 lg:col-span-3 md:col-span-1 sm:col-span-1'>
                   <div className='p-2 m-1'>
-                    <div className='text-md text-gray-600 border-b-2 font-bold items-center justify-between flex'>
+                    <div className='m-2 text-md text-gray-600 font-bold items-center justify-between flex'>
                       OVERVIEW
                     </div>
-                    <div className='pt-5 '>
-                      <ul className='mt-1 md:h-64 lg:h-96 sm:h-64 overflow-y-auto'>
+                    <div className='pt-5 h-64 overflow-auto'>
+                      <ul className='grid grid-cols-4 grid-rows-2 mt-1 overflow-auto'>
                         <li className='m-2 p-2 border-2 rounded-md'>
                           <div className='font-semibold text-md'>Category</div>
                           <div className='text-xs font-semibold'>Title</div>
@@ -123,10 +140,11 @@ return (
                     </div>
                   </div>
                 </div>
-                <div className='grid border-2 rounded-md lg:row-span-2 md:row-span-1 sm:row-span-1 lg:col-span-1 md:col-span-2 sm:col-span-2'>
+                <div className='m-1 grid border-2 rounded-md lg:row-span-2 md:row-span-1 sm:row-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1'>
                   <div className='p-2 m-1'>
-                    <div className='text-md text-gray-600 border-b-2 font-bold items-center justify-between flex'>
-                      CALENDAR
+                    <div className='block text-md text-gray-600 font-bold items-center justify-between'>
+                      <div>CALENDAR</div>
+                      <Calendar />
                     </div>
                   </div>
                 </div>
