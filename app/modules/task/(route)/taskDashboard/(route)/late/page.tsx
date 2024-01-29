@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UpcomingTask= () => {
+const LateTask= () => {
   return (
     <div className='m-3 h-44 text-gray-600 text-sm'>
         {/* <div>
@@ -10,35 +10,35 @@ const UpcomingTask= () => {
             <div className='col-span-2 bg-gray-100 rounded-md hover:shadow-sm'>
             <div className='p-2'>
                 <div className='font-bold text-md'>TITLE</div>
-                <div>Due</div>
+                <div className='text-red-500'>Due</div>
                 <div className='mt-2 hover:underline text-blue-300'>View Details</div>
             </div>
             </div>
             <div className='col-span-2 bg-gray-100 rounded-md hover:shadow-sm'>
             <div className='p-2'>
                 <div className='font-bold text-md'>TITLE</div>
-                <div>Due</div>
+                <div className='text-red-500'>Due</div>
                 <div className='mt-2 hover:underline text-blue-300'>View Details</div>
             </div>
             </div>
             <div className='col-span-2 bg-gray-100 rounded-md hover:shadow-sm'>
             <div className='p-2'>
                 <div className='font-bold text-md'>TITLE</div>
-                <div>Due</div>
+                <div className='text-red-500'>Due</div>
                 <div className='mt-2 hover:underline text-blue-300'>View Details</div>
             </div>
             </div>
             <div className='col-span-2 bg-gray-100 rounded-md hover:shadow-sm'>
             <div className='p-2'>
                 <div className='font-bold text-md'>TITLE</div>
-                <div>Due</div>
+                <div className='text-red-500'>Due</div>
                 <div className='mt-2 hover:underline text-blue-300'>View Details</div>
             </div>
             </div>
             <div className='col-span-2 bg-gray-100 rounded-md hover:shadow-sm'>
             <div className='p-2'>
                 <div className='font-bold text-md'>TITLE</div>
-                <div>Due</div>
+                <div className='text-red-500'>Due</div>
                 <div className='mt-2 hover:underline text-blue-300'>View Details</div>
             </div>
             </div>
@@ -49,4 +49,4 @@ const UpcomingTask= () => {
   )
 }
 
-export default UpcomingTask
+export default LateTask

@@ -11,8 +11,6 @@ import { RiCommunityFill, RiMoneyDollarBoxFill } from 'react-icons/ri';
 import { SiGoogleforms } from 'react-icons/si';
 // import 'react-calendar/dist/Calendar.css';
 
-
-
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 

@@ -4,10 +4,11 @@ import Link from 'next/link';
 import React, { useState } from 'react'
 import { CgBell, CgProfile } from 'react-icons/cg';
 import { HiUserGroup } from 'react-icons/hi2';
-import { IoMenuOutline, IoReorderThreeOutline } from 'react-icons/io5';
+import { IoReorderThreeOutline } from 'react-icons/io5';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight} from 'react-icons/md';
 import { TbLogout } from 'react-icons/tb';
 import SideNavBar from './sidenavbar';
+import Noti from './noti';
 
 const Topnav = () => {
     const [showModal, setShowModal] = React.useState(false);
@@ -18,12 +19,6 @@ const Topnav = () => {
         setMenuOpen(!isMenuOpen);
 
     };
-
-    // open sidebar
-    // const [isModuleOpen, setModuleOpen] = useState(false);
-    // const toggleModule =() => {
-    //     setModuleOpen(!isModuleOpen);
-    // };
 
   return (
         <nav className='sticky bg-white top-0 max-w-auto mx-auto'>
@@ -37,7 +32,7 @@ const Topnav = () => {
                                 </button>
                                 {showModal ? (
                                     <>
-                                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div> 
+                                    {/* <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>  */}
                                        <div
                                         className="fixed justify-center left-0 top-0 items-left flex z-50 outline-none focus:outline-none">
                                         <div className="relative w-auto max-w-3xl">
@@ -65,12 +60,9 @@ const Topnav = () => {
                                                         <SideNavBar />
                                                     </li>
                                                 </ul>
-                                                
-                                                
                                             </div>
                                         </div>
                                     </div>
-                                    
                                     </>
                                 ) : null }
                                 
@@ -90,9 +82,7 @@ const Topnav = () => {
                             <Link href="">
                                 <CgProfile className='m-2 h-6 w-6'/>
                             </Link>                           
-                            <Link href="">
-                                <CgBell className='m-2 h-6 w-6'/>
-                            </Link>                            
+                            <Noti/>      
                             <Link href="">
                                 <HiUserGroup className='m-2 h-6 w-6'/>
                             </Link>
@@ -109,10 +99,6 @@ const Topnav = () => {
                         </div>
                     </div>
             </div>
-            {/* <div className={` ${isModuleOpen ? 'justify-start items sticky left-0' : 'hidden lg:hidden md:hidden'}`} >
-                <SideNavBar />
-            </div> */}
-            
         </nav>
   )
 }

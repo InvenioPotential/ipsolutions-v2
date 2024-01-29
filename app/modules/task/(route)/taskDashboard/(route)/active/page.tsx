@@ -2,7 +2,7 @@ import React from 'react'
 
 const ActiveTask= () => {
   return (
-    <div className='m-3 h-44 text-gray-600'>
+    <div className='m-3 h-44 text-gray-600 text-sm'>
         {/* <div>
             <div className='justify-center flex m-2 bg-gradient-to-r text-center from-yellow-100  to-gray-200 w-44 rounded-md'>UPCOMING</div>
         </div> */}

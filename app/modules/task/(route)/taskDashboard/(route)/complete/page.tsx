@@ -1,6 +1,6 @@
 import React from 'react'
 
-const UpcomingTask= () => {
+const CompleteTask= () => {
   return (
     <div className='m-3 h-44 text-gray-600 text-sm'>
         {/* <div>
@@ -49,4 +49,4 @@ const UpcomingTask= () => {
   )
 }
 
-export default UpcomingTask
+export default CompleteTask

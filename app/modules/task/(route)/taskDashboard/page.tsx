@@ -7,6 +7,8 @@ import { MdAssignmentLate, MdUpcoming } from 'react-icons/md'
 import UpcomingTask from './(route)/upcoming/page'
 import Calendar from 'react-calendar'
 import ActiveTask from './(route)/active/page'
+import LateTask from './(route)/late/page'
+import CompleteTask from './(route)/complete/page'
 
 const TaskManagement = () => {
   const [isUpcomingOpen, setUpcomingOpen] = useState(false);
@@ -17,6 +19,16 @@ const TaskManagement = () => {
   const [isActiveOpen, setActiveOpen] = useState(false);
   const toggleActive =() => {
       setActiveOpen(!isActiveOpen);
+  };
+
+  const [isLateOpen, setLateOpen] = useState(false);
+  const toggleLate =() => {
+      setLateOpen(!isLateOpen);
+  };
+
+  const [isCompleteOpen, setCompleteOpen] = useState(false);
+  const toggleComplete =() => {
+      setCompleteOpen(!isCompleteOpen);
   };
 
 return (
@@ -65,8 +77,8 @@ return (
                   <ActiveTask />
                 </div>
               </div>
-              <div className='items-center  justify-center text-center '>
-                <div className='bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
+                <div  onClick={toggleLate} className='bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <MdAssignmentLate className='m-1 h-5 w-5' />
@@ -77,9 +89,12 @@ return (
                     3
                   </div>
                 </div>
+                <div className={` ${isLateOpen ? 'justify-between overflow-auto' : 'ml-5 hidden'}`}>
+                  <LateTask />
+                </div>
               </div>
-              <div className='items-center  justify-center text-center'>
-                <div className='bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
+                <div onClick={toggleComplete} className='bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <IoCheckmarkCircle className='m-1 h-5 w-5' />
@@ -89,6 +104,9 @@ return (
                   <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
                     3
                   </div>
+                </div>
+                <div className={` ${isCompleteOpen ? 'justify-between overflow-auto' : 'ml-5 hidden'}`}>
+                  <CompleteTask />
                 </div>
               </div>
             </div>
