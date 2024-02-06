@@ -29,7 +29,7 @@ const Dashboard = () => {
                 WELCOME, "Username" !
               </div>
               <div className='text-xs text-gray-500 font-semibold'>
-                WELCOME TO MAIN DASHBOARD OF THE IP SOLUTIONS
+                WELCOME TO MAIN DASHBOARD OF ENERGY MANAGEMENT FUNCTION 
               </div>
             </div>
             <div className=' min-h-screen rounded-md p-3  bg-gradient-to-r from-sky-200  to-gray-200 text-gray-500'>
@@ -38,93 +38,70 @@ const Dashboard = () => {
                   <div className='grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
                     <div className="overflow-auto grid lg:grid-rows-4 lg:grid-cols-2 gap-2 sm:grid-rows-4 sm:grid-cols-2">
                       <div className='border rounded-md p-1 bg-white '>
-                        <Link href="/modules/task/taskDashboard" className='flex w-56 h-24 items-center'>
-                          <div className='justify-center items-center m-2 p-1'><FaTasks className='flex w-7 h-7'/></div>
-                            <div className='block m-2 p-1 hover:text-green-500 '>
-                              <div className='text-gray-700 text-sm font-bold '>TASK MANAGEMENT</div>
-                              <div className='text-xs'>Recurring, Non-recurring, Report and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24  items-center'>
-                          <div className='justify-center items-center m-2 p-1'><GrHostMaintenance className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>MAINTENANCE</div>
-                            <div className='text-xs sm:flex-shrink-0'>Maintenance reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24  items-center'>
-                          <div className='justify-center items-center m-2 p-1'><RiCommunityFill className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>COMMUNITY</div>
-                            <div className='text-xs sm:flex-shrink-0'>Community reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex  w-56 h-24 items-center'>
-                          <div className='justify-center items-center m-2 p-1'><FaTools className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>OPERATIONS</div>
-                            <div className='text-xs sm:flex-shrink-0'>Operations reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
-                          <div className='justify-center items-center m-2 p-1'><RiMoneyDollarBoxFill className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>FINANCE</div>
-                            <div className='text-xs sm:flex-shrink-0'>Finance reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
-                          <div className='justify-center items-center m-2 p-1'><SiGoogleforms className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>DIGITAL FORMS</div>
-                            <div className='text-xs sm:flex-shrink-0'>Digital Forms reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
-                          <div className='justify-center items-center m-2 p-1'><MdDisabledByDefault className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>DEFECT</div>
-                            <div className='text-xs sm:flex-shrink-0'>Defect reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-56 h-24 items-center'>
-                          <div className='justify-center items-center m-2 p-1'><FaCartPlus className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>PROCUREMENT</div>
-                            <div className='text-xs sm:flex-shrink-0'>Procurement reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </div>
-                      <div className='border rounded-md p-1 bg-white'>
-                        <Link href='/modules/energy/dashboard' className='flex w-56 h-24 items-center'>
+                      <Link href='/modules/energy/dashboard/spade' className='flex w-56 h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'>
                             <img className='flex w-7 h-7'
-                            src="/images/energyblk.png"
+                            src="/images/spade.png"
                             alt="IP solutions logo" 
                             width={130}
                             height={30}
                             /> </div>
                             {/* <FaTasks className='flex w-7 h-7'/></div> */}
                           <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>ENERGY</div>
-                            <div className='text-xs sm:flex-shrink-0'>Energy reports and etc.</div>  
+                            <div className='text-gray-700 text-sm font-bold'>SPADE</div>
+                            <div className='text-xs sm:flex-shrink-0'>Dashboard Of EACG</div>  
                           </div>
                         </Link>
                       </div>
+                      <div className='border rounded-md p-1 bg-white'>
+                      <Link href='/modules/energy/dashboard/electricity' className='flex w-56 h-24 items-center'>
+                          <div className='justify-center items-center m-2 p-1'>
+                            <img className='flex w-7 h-7'
+                            src="/images/electricitybill.png"
+                            alt="IP solutions logo" 
+                            width={130}
+                            height={30}
+                            /> </div>
+                            {/* <FaTasks className='flex w-7 h-7'/></div> */}
+                          <div className='block m-2 p-1'>
+                            <div className='text-gray-700 text-sm font-bold'>ELECTRICITY BILL</div>
+                            <div className='text-xs sm:flex-shrink-0'>Analysis Of Electricity Bill</div>  
+                          </div>
+                        </Link>
+                      </div>
+                      <div className='border rounded-md p-1 bg-white'>
+                        <Link href='/modules/energy/dashboard/voltage' className='flex w-56 h-24 items-center'>
+                          <div className='justify-center items-center m-2 p-1'>
+                            <img className='flex w-7 h-7'
+                            src="/images/voltage.png"
+                            alt="IP solutions logo" 
+                            width={130}
+                            height={30}
+                            /> </div>
+                            {/* <FaTasks className='flex w-7 h-7'/></div> */}
+                          <div className='block m-2 p-1'>
+                            <div className='text-gray-700 text-sm font-bold'>VOLTAGE</div>
+                            <div className='text-xs sm:flex-shrink-0'>Analysis Of Low Or High Voltage</div>  
+                          </div>
+                        </Link>
+                      </div>
+                      <div className='border rounded-md p-1 bg-white'>
+                        <Link href='/modules/energy/dashboard/loads' className='flex w-56 h-24 items-center'>
+                          <div className='justify-center items-center m-2 p-1'>
+                            <img className='flex w-7 h-7'
+                            src="/images/loads.png"
+                            alt="IP solutions logo" 
+                            width={130}
+                            height={30}
+                            /> </div>
+                            {/* <FaTasks className='flex w-7 h-7'/></div> */}
+                          <div className='block m-2 p-1'>
+                            <div className='text-gray-700 text-sm font-bold'>LOADS</div>
+                            <div className='text-xs sm:flex-shrink-0'>Analysis Of Loads Such As Lighting and Pump</div>  
+                          </div>
+                        </Link>
+                      </div>
+                      
                     
                     </div>
                   </div>
