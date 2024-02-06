@@ -4,24 +4,25 @@ import { FaUser , FaLock} from "react-icons/fa";
 
 
 export default function Home() {
-  return (
-    <main className="bg-green-500 bg-[url('/images/bg.png')] flex min-h-screen min-w-screen flex-col items-center justify-between p-24">
-      <div className=" bg-white border rounded-sm p-10 w-50 h-622">
-        <div className="block p-5 h-auto text-gray-600 text-sm items-center justify-center">
+  return (//bg-[url('/images/bg.png')]
+    <main className="bg-green-500 bg-gradient-to-r from-gray-300 via-green-500 to-green-700 flex min-h-screen min-w-screen flex-col items-center justify-between p-24">
+      <div className=" bg-white bg-opacity-50 rounded-sm p-10 w-50 h-622">
+        <div className="block  p-5 h-auto text-gray-600 text-sm items-center justify-center">
           <div className="flex justify-center items-center font-bold">
             WELCOME TO
           </div>
-          <img
-            src="images/ipsolutionslogo.png"
+          <Image
+            src="/images/ipsolutionslogo.png"
             alt="IP Solutions Logo"
             width={266}  // Set the width as a placeholder
             height={78}  // Set the height as a placeholder
+            className="animate-pulse"
 
           />
         </div>
         <div className="pt-5">
           {/* <label className="flex text-sm font-medium text-gray-600"></label> */}
-          <div className="pl-3 mt-3 mb-5 p-1 flex border rounded-sm">
+          <div className="pl-3 mt-3 mb-5 p-1 flex rounded-sm">
             <FaUser size={30} style={{color:'gray', padding:'3px'}} />
             <input
               type="text"
@@ -29,7 +30,7 @@ export default function Home() {
               className="ml-2 text-sm selection:mt-1 p-2 rounded-md w-full"
             />
           </div>
-          <div className="pl-3 mt-3 mb-9 p-1 flex border rounded-sm">
+          <div className="pl-3 mt-3 mb-9 p-1 flex rounded-sm">
             {/* <label className="flex mt-4 text-sm font-medium text-gray-600"></label> */}
             <FaLock size={30} style={{color:'gray', padding:'3px'}} />
             <input

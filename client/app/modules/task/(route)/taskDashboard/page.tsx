@@ -116,49 +116,57 @@ return (
               </div>     
             </div> */}
             
-            <div className='m-3 mt-4 sm:flex md:grid lg:grid grid-cols-4 grid-rows-2 gap-4'>
-                <div className='m-1 grid border-2 rounded-md lg:row-span-2 md:row-span-2 sm:row-span-2 lg:col-span-3 md:col-span-1 sm:col-span-1'>
+            <div className='m-3 mt-4 lg:grid md:grid sm:flex grid-cols-4 grid-rows-1 gap-4'>
+                <div className='m-1 grid border-2 rounded-md lg:col-span-3 md:col-span-2 sm:col-span-2'>
                   <div className='p-2 m-1'>
                     <div className='m-2 text-md text-gray-600 font-bold items-center justify-between flex'>
                       OVERVIEW
                     </div>
                     <div className='pt-5 h-64 overflow-auto'>
-                      <ul className='grid grid-cols-4 grid-rows-2 mt-1 overflow-auto'>
-                        <li className='m-2 p-2 border-2 rounded-md'>
+                      <ul className='grid lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1  mt-1 overflow-auto'>
+                        <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
                           <div className='font-semibold text-md'>Category</div>
                           <div className='text-xs font-semibold'>Title</div>
                           <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
                         </li>
-                        <li className='m-2 p-2 border-2 rounded-md'>
+                        <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
                           <div className='font-semibold text-md'>Category</div>
                           <div className='text-xs font-semibold'>Title</div>
                           <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
                         </li>
-                        <li className='m-2 p-2 border-2 rounded-md'>
+                        <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
                           <div className='font-semibold text-md'>Category</div>
                           <div className='text-xs font-semibold'>Title</div>
                           <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
                         </li>
-                        <li className='m-2 p-2 border-2 rounded-md'>
+                        <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
                           <div className='font-semibold text-md'>Category</div>
                           <div className='text-xs font-semibold'>Title</div>
                           <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                        </li> 
-                        <li className='m-2 p-2 border-2 rounded-md'>
+                        </li>
+                        <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
                           <div className='font-semibold text-md'>Category</div>
                           <div className='text-xs font-semibold'>Title</div>
                           <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                        </li> 
-                        <li className='m-2 p-2 border-2 rounded-md'>
+                        </li>
+                        <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
                           <div className='font-semibold text-md'>Category</div>
                           <div className='text-xs font-semibold'>Title</div>
                           <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                        </li> 
+                        </li>
+                        <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
+                          <div className='font-semibold text-md'>Category</div>
+                          <div className='text-xs font-semibold'>Title</div>
+                          <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
+                        </li>
+                        
+                        
+                        
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div className='m-1 grid border-2 rounded-md lg:row-span-2 md:row-span-1 sm:row-span-1 lg:col-span-1 md:col-span-1 sm:col-span-1'>
+                <div className='overflow-auto m-1 grid border-2 rounded-md lg:row-span-1 md:row-span-2 sm:row-span-2 lg:col-span-1 md:col-span-2 sm:col-span-2'>
                   <div className='p-2 m-1'>
                     <div className='block text-md text-gray-600 font-bold items-center justify-between'>
                       <div>CALENDAR</div>

@@ -14,18 +14,18 @@ const Noti = () => {
           <button onClick={toggleNoti} type="button" className='relative'>
             {showNoti ? <CgBell onClick={() => setShowNoti(true)}  style={{color:'green'}}  className='m-2 h-6 w-6'/> : <CgBell className='m-2 h-6 w-6' />}
             {/* <CgBell className='m-2 h-6 w-6'/>  */}
-            <div className='-top-0.5 start-1.5 absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full dark:border-gray-900'></div>
+            <div className='animate-pulse -top-0.5 start-1.5 absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full dark:border-gray-900'></div>
         </button>  
         {showNoti ? (
             <>
             {/* <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>  */}
               <div className="end-3.5 absolute justify-center items-left flex z-50 outline-none focus:outline-none">
-                <div className="relative w-auto max-w-3xl rounded-md bg-sky-950">
-                    <div className="text-white first-letter:block px-4 py-2 font-md text-center  rounded-t-lg  dark:bg-gray-800 dark:text-white">
+                <div className="relative w-auto max-w-3xl rounded-md bg-gray-100">
+                    <div className="font-bold text-gray-500 first-letter:block px-4 py-2 font-md text-center  rounded-t-lg  dark:bg-gray-800 dark:text-white">
                         NOTIFICATIONS
                     </div>
                     <div className="divide-y divide-gray-100 dark:divide-gray-700">
-                      <a href="#" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <a href="#" className="p-2 flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <div className="flex-shrink-0">
                           <img className="rounded-full w-11 h-11" src="/images/defaultPic.png" alt="Jese image"></img>
                           <div className="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-blue-600 border border-white rounded-full dark:border-gray-800">
@@ -40,7 +40,7 @@ const Noti = () => {
                             <div className="text-xs text-blue-600 dark:text-blue-500">a few moments ago</div>
                         </div>
                       </a>
-                      <a href="#" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <a href="#" className="p-2 flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <div className="flex-shrink-0">
                           <img className="rounded-full w-11 h-11" src="/images/defaultPic.png" alt="Joseph image"></img>
                           <div className="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-gray-900 border border-white rounded-full dark:border-gray-800">
@@ -54,7 +54,7 @@ const Noti = () => {
                             <div className="text-xs text-blue-600 dark:text-blue-500">10 minutes ago</div>
                         </div>
                       </a>
-                      <a href="#" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <a href="#" className="p-2 flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <div className="flex-shrink-0">
                           <img className="rounded-full w-11 h-11" src="/images/defaultPic.png" alt="Bonnie image"></img>
                           <div className="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-red-600 border border-white rounded-full dark:border-gray-800">
@@ -68,7 +68,7 @@ const Noti = () => {
                             <div className="text-xs text-blue-600 dark:text-blue-500">44 minutes ago</div>
                         </div>
                       </a>
-                      <a href="#" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <a href="#" className="p-2 flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <div className="flex-shrink-0">
                           <img className="rounded-full w-11 h-11" src="/images/defaultPic.png" alt="Leslie image"></img>
                           <div className="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-green-400 border border-white rounded-full dark:border-gray-800">
@@ -82,7 +82,7 @@ const Noti = () => {
                             <div className="text-xs text-blue-600 dark:text-blue-500">1 hour ago</div>
                         </div>
                       </a>
-                      <a href="#" className="flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <a href="#" className="p-2 flex px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <div className="flex-shrink-0">
                           <img className="rounded-full w-11 h-11" src="/images/defaultPic.png" alt="Robert image"></img>
                           <div className="absolute flex items-center justify-center w-5 h-5 ms-6 -mt-5 bg-purple-500 border border-white rounded-full dark:border-gray-800">
@@ -97,9 +97,9 @@ const Noti = () => {
                         </div>
                       </a>
                     </div>
-                    <a href="#" className=" text-white block py-2 text-sm font-medium text-center  rounded-b-lg bg-sky-950 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
+                    <a href="#" className="p-2 bg-gradient-to-r from-gray-500 to-green-500 text-white block py-2 text-sm font-medium text-center  rounded-b-lg bg-sky-950 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-white">
                       <div className="inline-flex items-center ">
-                        <svg className="w-4 h-4 me-2 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
+                        <svg className="w-4 h-4 me-2 text-white-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 14">
                           <path d="M10 0C4.612 0 0 5.336 0 7c0 1.742 3.546 7 10 7 6.454 0 10-5.258 10-7 0-1.664-4.612-7-10-7Zm0 10a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/>
                         </svg>
                           View all

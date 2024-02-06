@@ -22,7 +22,7 @@ export default function RootLayout({
       </Head>
       <body className="{inter.className} bg-gray-50 font-sans">
         {children}
-      <div className='text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
+      <div className='pt-5 text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
         POWERED BY INVENIO POTENTIAL SDN BHD 2024
       </div>  
       </body>

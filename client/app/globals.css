@@ -293,3 +293,12 @@
   background: #555;
 } */
 
+/* full calendar recurring override components */
+
+.fc-today-button{
+  text-transform: uppercase !important; 
+}
+
+.fc {
+
+}
