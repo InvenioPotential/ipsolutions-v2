@@ -61,7 +61,7 @@ const SideNavBar = () => {
                       </Link>
                     </li>
                     <li className='text-xs m-3 mt-3' >
-                      <Link href="/" className="items-center flex hover:text-gray-300">
+                      <Link href="/modules/task/taskNonRecur" className="items-center flex hover:text-gray-300">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           NON-RECURRING

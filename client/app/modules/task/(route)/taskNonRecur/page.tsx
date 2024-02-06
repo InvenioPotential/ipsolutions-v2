@@ -1,16 +1,16 @@
 "use client"
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
 import Topnav from '@/components/topnav'
 import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
-import AddRecur from '@/components/taskManagement/addRecur'
+import AddNonRecur from '@/components/taskManagement/addNonRecur'
+import Calendar from 'react-calendar'
 
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const TaskRecur = () => {
+  const [value, onChange] = useState<Value>(new Date());
   return (
     <div className=''>
         <Topnav />
@@ -19,7 +19,7 @@ const TaskRecur = () => {
             <div className='border-b-1 mb-5 flex justify-between'>
               <div className=''>
                 <div className='text-2xl text-black font-bold'>
-                  RECURRING
+                  NON-RECURRING
                 </div>
                 <div className='text-xs text-gray-500 font-semibold'>
                   TASK MANAGEMENT
@@ -30,7 +30,7 @@ const TaskRecur = () => {
             </div>
             <div className=' min-h-screen rounded-md p-3 text-gray-500'>
               <div className='mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
-                <div className='overflow-auto grid grid-rows-2 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
+                <div className='overflow-auto grid grid-rows-1 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
                   <div className='overflow-auto bg-white rounded-md m-3 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
                   <div className=' w-auto rounded-md text-md font-semibold p-3 m-2 text-center justify-between flex'>
                   <div className=''>
@@ -56,18 +56,37 @@ const TaskRecur = () => {
                       </select>
                     </div>
                   </div>
-                  {/* <div>
-                   <button className='bg-green-200 p-2 rounded-md'>FILTER</button> 
-                  </div> */}
-                  <AddRecur/>
-                  
+                  <AddNonRecur/>
                   </div>
-                    <FullCalendar
-                      plugins={[dayGridPlugin]}
-                      initialView='dayGridMonth'
-                    />
+                    <div>
+                        <table className="table-auto">
+                            <thead>
+                                <tr>
+                                    <th>TASK</th>
+                                    <th>CATEGORY</th>
+                                    <th>SUB-CATEGORY</th>
+                                    <th>TYPE</th>
+                                    <th>DUE</th>
+                                    <th>STAGE</th>
+                                    <th>EDIT</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                    <td>test</td>
+                                </tr>
+                            </tbody>
+                        
+                        </table>
+                    </div>
                   </div>
-                  <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-2 bg-white'>
+                  <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <div className='p-2 m-1'>
                       <div className='p-1 text-sm border-b-2 font-bold items-center justify-between flex'>
                         TASK ASSIGNED
@@ -125,11 +144,11 @@ const TaskRecur = () => {
                       </div>
                     </div>
                   </div>
-                  {/* <div className='p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
+                  <div className='p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <div className=''>
-                      {/* <Calendar onChange={onChange} value={value} />
+                     <Calendar onChange={onChange} value={value} />
                     </div>
-                  </div> */}
+                  </div>
                 </div> 
               </div>
             </div>      
