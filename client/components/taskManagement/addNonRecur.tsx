@@ -26,7 +26,7 @@ const AddNonRecur = () => {
                     <div className="flex justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                         <div>
                             <p className="text-2xl text-black font-bold">
-                                ADD NEW TASK
+                                ADD TASK
                             </p>
                             <p className='text-sm flex'>NON-RECURRING TASK</p>
                         </div>
@@ -144,7 +144,7 @@ const AddNonRecur = () => {
                             <div className='col-span-2 w-full items-center flex justify-between'>
                                 <p>TASK:</p>
                                 <div className='w-auto'>
-                                   <input  className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                                   <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                                 </div>
                             </div>
                             <div className='col-span-2 w-full items-center flex justify-between'>

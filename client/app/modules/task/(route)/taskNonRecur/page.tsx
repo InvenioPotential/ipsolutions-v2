@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import AddNonRecur from '@/components/taskManagement/addNonRecur'
 import Calendar from 'react-calendar'
+import { MdEdit } from 'react-icons/md'
 
 
 type ValuePiece = Date | null;
@@ -50,18 +51,30 @@ const TaskRecur = () => {
                     <div>
                       <select className='rounded-md'>
                         <option>All</option>
+                        <option>Recurring</option>
+                        <option>Non-Recurring</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div className=''>
+                    <h6 className='text-gray-900 '>STAGE: </h6>
+                    <div>
+                      <select className='rounded-md'>
+                        <option>All</option>
                         <option>On-going</option>
                         <option>Completed</option>
                         <option>Late</option>
                       </select>
                     </div>
                   </div>
+                  
                   <AddNonRecur/>
                   </div>
-                    <div>
-                        <table className="table-auto">
-                            <thead>
-                                <tr>
+
+                  <div className='overflow-auto rounded-md text-md font-semibold p-3 m-2 text-center '>
+                  <table className='container mx-auto table-fixed max-w-screen bg-green-300 rounded-md p-4 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
+                            <thead className='text-black '>
+                                <tr className='*:p-4 justify-between'>
                                     <th>TASK</th>
                                     <th>CATEGORY</th>
                                     <th>SUB-CATEGORY</th>
@@ -71,21 +84,22 @@ const TaskRecur = () => {
                                     <th>EDIT</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
-                                    <td>test</td>
+                            <tbody className='bg-gray-100'>
+                                <tr className='*:p-4 justify-between'>
+                                    <td>Analysis and Requirements</td>
+                                    <td>Web-based solutions</td>
+                                    <td>IP Solutions</td>
+                                    <td>Planning/Design</td>
+                                    <td>10/01/2024</td>
+                                    <td>Completed</td>
+                                    <td><button className='rounded-full hover:bg-gray-200 p-2'><MdEdit/></button></td>
                                 </tr>
                             </tbody>
-                        
                         </table>
-                    </div>
                   </div>
+                  </div>
+
+                  
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <div className='p-2 m-1'>
                       <div className='p-1 text-sm border-b-2 font-bold items-center justify-between flex'>

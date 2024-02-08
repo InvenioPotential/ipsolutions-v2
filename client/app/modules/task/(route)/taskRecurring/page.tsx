@@ -1,14 +1,10 @@
 "use client"
-import FullCalendar from '@fullcalendar/react'
-import dayGridPlugin from '@fullcalendar/daygrid'
 import Topnav from '@/components/topnav'
 import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import AddRecur from '@/components/taskManagement/addRecur'
+import Fullcalendar from '@/components/fullcalendar'
 
-
-type ValuePiece = Date | null;
-type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const TaskRecur = () => {
   return (
@@ -62,10 +58,7 @@ const TaskRecur = () => {
                   <AddRecur/>
                   
                   </div>
-                    <FullCalendar
-                      plugins={[dayGridPlugin]}
-                      initialView='dayGridMonth'
-                    />
+                    <Fullcalendar/>
                   </div>
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-2 bg-white'>
                     <div className='p-2 m-1'>
