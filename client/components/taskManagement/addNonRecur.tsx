@@ -2,6 +2,7 @@ import Category from '@/components/listing/category';
 import React from 'react'
 import { IoMdAddCircle } from 'react-icons/io';
 import { MdDelete, MdEdit } from 'react-icons/md';
+import DatePicker from '../datepicker';
 
 const AddNonRecur = () => {
     const [showModal, setShowModal] = React.useState(false);
@@ -110,7 +111,12 @@ const AddNonRecur = () => {
                             <div>
                                 <p>SITE:</p>
                                 <Category />
-                            </div><div>
+                            </div>
+                            <div>
+                                <p>TASK TYPE:</p>
+                                <Category />
+                            </div>
+                            <div>
                                 <p>DUE:</p>
                                 <Category />
                             </div><div>
@@ -121,30 +127,16 @@ const AddNonRecur = () => {
                                 <p>PRIORITY:</p>
                                 <Category />
                             </div>
-                            <div className='col-span-2'>
-                                <p>RECURRING:</p>
-                                <div className='*:p-2 *:m-2 *:bg-gray-200 *:rounded-lg  flex justify-between overflow-auto'>
-                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200' >
-                                        ONCE
-                                    </button >
-                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200'>
-                                        DAILY
-                                    </button>
-                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200'>
-                                        WEEKLY
-                                    </button>
-                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200' >
-                                        MONTHLY
-                                    </button>
-                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200' >
-                                        YEARLY
-                                    </button>
+                            <div className='col-span-2 w-full items-center flex justify-between'>
+                                <p>DATE:</p>
+                                <div className='w-auto'>
+                                    <DatePicker />
                                 </div>
                             </div>
                             <div className='col-span-2 w-full items-center flex justify-between'>
                                 <p>TASK:</p>
                                 <div className='w-auto'>
-                                   <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                                   <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'/> 
                                 </div>
                             </div>
                             <div className='col-span-2 w-full items-center flex justify-between'>
@@ -177,7 +169,7 @@ const AddNonRecur = () => {
                         type="button"
                         onClick={() => setShowModal(false)}
                     >
-                        UPDATE AND SAVE
+                        ADD TASK
                     </button>
                     </div>
                 </div>

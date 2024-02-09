@@ -5,6 +5,7 @@ import { FaPlus } from 'react-icons/fa'
 import AddNonRecur from '@/components/taskManagement/addNonRecur'
 import Calendar from 'react-calendar'
 import { MdEdit } from 'react-icons/md'
+import EditNonRecur from '@/components/taskManagement/editNonrecur'
 
 
 type ValuePiece = Date | null;
@@ -71,8 +72,15 @@ const TaskRecur = () => {
                   <AddNonRecur/>
                   </div>
 
-                  <div className='overflow-auto rounded-md text-md font-semibold p-3 m-2 text-center '>
-                  <table className='container mx-auto table-fixed max-w-screen bg-green-300 rounded-md p-4 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
+                  <div className='overflow-auto mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
+                    {/* <div className='col-span-3 flex justify-between'>
+                      <div className='col-span-1 row-span-1'>
+                        <h1></h1>
+                      </div>
+                      <div className='col-span-1 row-span-1'>test 2</div>
+                      <div className='col-span-1 row-span-1'>test 3</div>
+                    </div> */}
+                  <table className='container table-auto max-w-screen bg-green-300 rounded-md p-4'>
                             <thead className='text-black '>
                                 <tr className='*:p-4 justify-between'>
                                     <th>TASK</th>
@@ -84,7 +92,7 @@ const TaskRecur = () => {
                                     <th>EDIT</th>
                                 </tr>
                             </thead>
-                            <tbody className='bg-gray-100'>
+                            <tbody className='bg-gray-100 overflow-auto'>
                                 <tr className='*:p-4 justify-between'>
                                     <td>Analysis and Requirements</td>
                                     <td>Web-based solutions</td>
@@ -92,7 +100,7 @@ const TaskRecur = () => {
                                     <td>Planning/Design</td>
                                     <td>10/01/2024</td>
                                     <td>Completed</td>
-                                    <td><button className='rounded-full hover:bg-gray-200 p-2'><MdEdit/></button></td>
+                                    <td><EditNonRecur/></td>
                                 </tr>
                             </tbody>
                         </table>
