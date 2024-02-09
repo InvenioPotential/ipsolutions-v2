@@ -67,8 +67,12 @@ const TaskReport = () => {
                       </select>
                     </div>
                   </div>
+                  <div className='m-2 '>
+                    <button
+                    className='p-2 rounded-lg hover:bg-green-400 bg-green-300 text-black'>GENERATE REPORT</button>
+                    
+                  </div>
                   
-                  <AddNonRecur/>
                   </div>
 
                   <div className='overflow-auto mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>

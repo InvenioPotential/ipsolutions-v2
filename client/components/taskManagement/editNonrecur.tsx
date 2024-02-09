@@ -25,7 +25,7 @@ const EditNonRecur = () => {
             <div className="flex justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                 <div>
                     <p className="text-2xl text-black font-bold">
-                        ADD TASK
+                        EDIT TASK
                     </p>
                     <p className='text-sm flex'>NON-RECURRING TASK</p>
                 </div>
@@ -124,6 +124,12 @@ const EditNonRecur = () => {
                     <div>
                         <p>PRIORITY:</p>
                         <Category />
+                    </div>
+                    <div className='col-span-2 w-full items-center flex justify-between'>
+                        <p>DATE:</p>
+                        <div className='w-auto'>
+                           <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Choose Date...'/> 
+                        </div>
                     </div>
                     <div className='col-span-2 w-full items-center flex justify-between'>
                         <p>TASK:</p>
