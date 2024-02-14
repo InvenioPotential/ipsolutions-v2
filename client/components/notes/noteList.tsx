@@ -3,7 +3,7 @@ import DatePickers from '../dateCalendar/datepickers';
 import Priority from '../listing/priority';
 import { IoMdAddCircle } from 'react-icons/io';
 import { MdDelete } from 'react-icons/md';
-import { removeElement } from '@fullcalendar/core/internal.js';
+import { todo } from 'node:test';
 
 interface item {
     id: number;
@@ -31,7 +31,6 @@ export const NoteList: React.FC = () => {
             })
         );
     };
-
 
     const handleClick = () => {
         const newTodo: item = {id: Date.now(), text_title: input1, text_note: input2, completed: false};
@@ -152,7 +151,7 @@ export const NoteList: React.FC = () => {
                         {todo.text_title}
                         <>
                         <button type="button"
-                                // onClick={removeElement}  
+                                // onClick={()=>deleteByValue(todo.id)}  
                                 className='m-1 p-1 hover:bg-red-200 rounded-full'>
                                     <MdDelete/></button>
                             {showDel ? (
