@@ -11,15 +11,25 @@ datasource db {
 
 model User {
   id       Int    @id @default(autoincrement())
-  name     VARCHAR(255)
-  email    VARCHAR(255)
-  password VARCHAR(255)
+  name     String
+  email    String
+  password String
 }
 
 model nonReccurTask {
 
-  id        Int @id @default(autoincrement())
-  category  VARCHAR(255)
-  
+  id          Int @id @default(autoincrement())
+  category    String
+  subcategory String
+  type        String
+  site        String
+  tasktype    String
+  due         String
+  stage       String
+  priority    String
+  date        DateTime
+  task        String
+  remark      String
+  assignTaskTo String
 
 } 
