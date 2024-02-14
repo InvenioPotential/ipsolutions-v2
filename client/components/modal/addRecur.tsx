@@ -2,6 +2,8 @@ import Category from '@/components/listing/category';
 import React from 'react'
 import { IoMdAddCircle } from 'react-icons/io';
 import { MdDelete, MdEdit } from 'react-icons/md';
+import Priority from '../listing/priority';
+import DateRangePickers from '../dateCalendar/dateRangePickers';
 
 const AddRecur = () => {
     const [showModal, setShowModal] = React.useState(false);
@@ -110,16 +112,14 @@ const AddRecur = () => {
                             <div>
                                 <p>SITE:</p>
                                 <Category />
-                            </div><div>
-                                <p>DUE:</p>
-                                <Category />
-                            </div><div>
+                            </div>
+                            <div>
                                 <p>STAGE:</p>
                                 <Category />
                             </div>
                             <div>
                                 <p>PRIORITY:</p>
-                                <Category />
+                                <Priority />
                             </div>
                             <div className='col-span-2'>
                                 <p>RECURRING:</p>
@@ -140,6 +140,9 @@ const AddRecur = () => {
                                         YEARLY
                                     </button>
                                 </div>
+                            </div>
+                            <div className='col-span-2 w-full items-center flex justify-between'>
+                                <DateRangePickers/>
                             </div>
                             <div className='col-span-2 w-full items-center flex justify-between'>
                                 <p>TASK:</p>

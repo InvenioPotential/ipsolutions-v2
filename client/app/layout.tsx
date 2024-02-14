@@ -21,7 +21,7 @@ export default function RootLayout({
         <title>IP Solutions</title>
       </Head>
       <body className="{inter.className} bg-gray-50 font-sans">
-        {children}
+      {children}
       <div className='pt-5 text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
         POWERED BY INVENIO POTENTIAL SDN BHD 2024
       </div>  

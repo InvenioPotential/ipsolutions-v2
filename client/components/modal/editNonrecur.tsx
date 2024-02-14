@@ -1,6 +1,7 @@
 import React from 'react'
 import { MdDelete, MdEdit } from 'react-icons/md';
 import Category from '../listing/category';
+import DatePickers from '../dateCalendar/datepickers';
 
 const EditNonRecur = () => {
     const [showModal, setShowModal] = React.useState(false);
@@ -81,14 +82,6 @@ const EditNonRecur = () => {
                     
                     
                 </div>
-            {/* <button
-                className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                onClick={() => setShowModal(false)}
-            >
-                <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                x
-                </span>
-            </button> */}
             </div>
             {/*body*/}
             <div className="relative p-6  flex-auto">
@@ -128,8 +121,7 @@ const EditNonRecur = () => {
                     <div className='col-span-2 w-full items-center flex justify-between'>
                         <p>DATE:</p>
                         <div className='w-auto'>
-                           <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Choose Date...'/> 
-                        </div>
+                           <DatePickers/></div>
                     </div>
                     <div className='col-span-2 w-full items-center flex justify-between'>
                         <p>TASK:</p>

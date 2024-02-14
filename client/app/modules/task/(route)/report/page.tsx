@@ -1,10 +1,10 @@
 "use client"
-import Topnav from '@/components/topnav'
+import Topnav from '@/components/nav/topnav'
 import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
-import AddNonRecur from '@/components/taskManagement/addNonRecur'
+import AddNonRecur from '@/components/modal/addNonRecur'
 import Calendar from 'react-calendar'
-import EditNonRecur from '@/components/taskManagement/editNonrecur'
+import EditNonRecur from '@/components/modal/editNonrecur'
 
 
 type ValuePiece = Date | null;
@@ -47,10 +47,10 @@ const TaskReport = () => {
                     </div>
                   </div>
                   <div className=''>
-                    <h6 className='text-gray-900 '>TASK TYPE: </h6>
+                    <h6 className='text-gray-900'>TASK TYPE:</h6>
                     <div>
                       <select className='rounded-md'>
-                        <option>All</option>
+                        <option value='all'>All</option>
                         <option>Recurring</option>
                         <option>Non-Recurring</option>
                       </select>
@@ -70,7 +70,6 @@ const TaskReport = () => {
                   <div className='m-2 '>
                     <button
                     className='p-2 rounded-lg hover:bg-green-400 bg-green-300 text-black'>GENERATE REPORT</button>
-                    
                   </div>
                   
                   </div>

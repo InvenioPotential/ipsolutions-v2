@@ -1,11 +1,11 @@
 "use client"
-import Topnav from '@/components/topnav'
+import Topnav from '@/components/nav/topnav'
 import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
-import AddNonRecur from '@/components/taskManagement/addNonRecur'
+import AddNonRecur from '@/components/modal/addNonRecur'
 import Calendar from 'react-calendar'
 import { MdEdit } from 'react-icons/md'
-import EditNonRecur from '@/components/taskManagement/editNonrecur'
+import EditNonRecur from '@/components/modal/editNonrecur'
 
 
 type ValuePiece = Date | null;

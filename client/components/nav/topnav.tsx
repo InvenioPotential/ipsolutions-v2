@@ -8,7 +8,7 @@ import { IoReorderThreeOutline } from 'react-icons/io5';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight} from 'react-icons/md';
 import { TbLogout } from 'react-icons/tb';
 import SideNavBar from './sidenavbar';
-import Noti from './noti';
+import Noti from '../modal/noti';
 
 const Topnav = () => {
     const [showModal, setShowModal] = React.useState(false);

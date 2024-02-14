@@ -1,5 +1,5 @@
 "use client"
-import Topnav from '@/components/topnav'
+import Topnav from '@/components/nav/topnav'
 import React, { useState } from 'react'
 import { FiActivity } from 'react-icons/fi'
 import { IoCheckmarkCircle } from 'react-icons/io5'

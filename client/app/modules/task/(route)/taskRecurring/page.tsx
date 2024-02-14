@@ -1,9 +1,9 @@
 "use client"
-import Topnav from '@/components/topnav'
+import Topnav from '@/components/nav/topnav'
 import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
-import AddRecur from '@/components/taskManagement/addRecur'
-import Fullcalendar from '@/components/fullcalendar'
+import AddRecur from '@/components/modal/addRecur'
+import Fullcalendar from '@/components/dateCalendar/fullcalendar'
 
 
 const TaskRecur = () => {
