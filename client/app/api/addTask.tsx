@@ -1,14 +1,15 @@
 // pages/api/addTask.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Prisma } from '@prisma/client'; // Adjust the import path as needed
 import { NonRecurTask } from './nonRecurTask'; // Adjust the import path as needed
+import { db } from '@/lib/db';
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method === 'POST') {
         const taskData: NonRecurTask = req.body;
 
         try {
-            const savedTask = await Prisma.NonRecur.create({
+            const savedTask = await db.NonRecur.create({
                 data: {
                     ...taskData,
                     date: new Date(taskData.date),

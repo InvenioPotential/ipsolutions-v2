@@ -80,7 +80,7 @@ const TaskRecur = () => {
                       <div className='col-span-1 row-span-1'>test 2</div>
                       <div className='col-span-1 row-span-1'>test 3</div>
                     </div> */}
-                  <table className='container table-auto max-w-screen bg-green-300 rounded-md p-4'>
+                  <table   className='container table-auto max-w-screen bg-green-300 rounded-md p-4'>
                             <thead className='text-black '>
                                 <tr className='*:p-4 justify-between'>
                                     <th>TASK</th>
