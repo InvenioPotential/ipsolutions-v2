@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  name     VARCHAR(255)
+  email    VARCHAR(255)
+  password VARCHAR(255)
+}
+
+model nonReccurTask {
+
+  id        Int @id @default(autoincrement())
+  category  VARCHAR(255)
+  
+
+} 

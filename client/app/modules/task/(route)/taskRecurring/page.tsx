@@ -27,7 +27,7 @@ const TaskRecur = () => {
             <div className=' min-h-screen rounded-md p-3 text-gray-500'>
               <div className='mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
                 <div className='overflow-auto grid grid-rows-2 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
-                  <div className='overflow-auto bg-white rounded-md m-3 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
+                  <div  className='overflow-auto  bg-white rounded-md m-3 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
                   <div className=' w-auto rounded-md text-md font-semibold p-3 m-2 text-center justify-between flex'>
                   <div className=''>
                     <h6 className='text-gray-900'>SITE:</h6>
@@ -57,7 +57,7 @@ const TaskRecur = () => {
                   </div> */}
                   <AddRecur/>
                   
-                  </div>
+                  </div > 
                     <Fullcalendar/>
                   </div>
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-2 bg-white'>

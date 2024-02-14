@@ -7,11 +7,11 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const Fullcalendar = () => {
   return (
-    <div>
+    <div >
       <FullCalendar
         plugins={[dayGridPlugin]}
         initialView='dayGridMonth'
-       />
+        />
     </div>
   )
 }
