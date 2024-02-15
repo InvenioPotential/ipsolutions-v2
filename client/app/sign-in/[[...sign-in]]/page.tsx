@@ -3,7 +3,7 @@ import React from 'react'
 
 const SignInPage = () => {
   return (
-    <div>
+    <div className='flex mt-20 text-center  items-center justify-center'>
       <SignIn/>
     </div>
   )

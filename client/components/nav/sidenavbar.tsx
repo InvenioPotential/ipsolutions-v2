@@ -7,6 +7,7 @@ import { GrHostMaintenance, GrSchedulePlay } from 'react-icons/gr';
 import { RiCommunityFill, RiMoneyDollarBoxFill } from 'react-icons/ri';
 import { SiGoogleforms } from 'react-icons/si';
 import { IoIosArrowDown } from 'react-icons/io';
+import Image from 'next/image';
 
 const SideNavBar = () => {
       // open mini task list
@@ -137,7 +138,7 @@ const SideNavBar = () => {
             <li className="m-3 mt-5">
               <div className='justify-between flex'>
                <Link href="" onClick={toggleEnergy} className="items-center flex hover:text-gray-300">
-                  <img className='w-4 h-4 m2'
+                  <Image className='w-4 h-4 m2'
                     src="/images/energy.png"
                     alt="IP solutions logo" 
                     width={130}

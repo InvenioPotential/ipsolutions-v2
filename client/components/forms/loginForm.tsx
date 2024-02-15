@@ -10,7 +10,7 @@ const LoginForm = () => {
           <div className="flex justify-center items-center font-bold">
             WELCOME TO
           </div>
-          <img
+          <Image
             src={"/images/ipsolutionslogo.png"}
             alt="IP Solutions Logo"
             width={266}  // Set the width as a placeholder

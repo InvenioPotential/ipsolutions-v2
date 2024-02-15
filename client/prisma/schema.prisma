@@ -5,31 +5,44 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
-  url  	    = env("DATABASE_URL")
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
 model User {
-  id       Int    @id @default(autoincrement())
+  id       String @id @default(uuid())
   name     String
   email    String
   password String
 }
 
 model nonReccurTask {
+  id String @id @default(uuid())
+  //using uuid in string instead of auto increment , uuid generate random and unique id  , its more secure
 
-  id          Int @id @default(autoincrement())
-  category    String
-  subcategory String
-  type        String
-  site        String
-  tasktype    String
-  due         String
-  stage       String
-  priority    String
-  date        DateTime
-  task        String
-  remark      String
-  assignTaskTo String
+  duedate      DateTime?
+  task         String?         @db.VarChar(255)
+  remark       String?         @db.VarChar(255)
+  assignTaskTo String?         @db.VarChar(255)
+  option       customization[]
+  //user User[] -> this is for join table 
+  //kalau one to one , buang [] . thats mean one user with that id will have one nonreccurtask
+  //@@uniqe([type,site]) , this mean type and site cant have same two times , only can same type different site only  or sebaliknya (sama macam pakai disticnt)
+}
 
-} 
+model customization {
+  id       Int      @id @default(autoincrement())
+  variable String
+  option   String[]
+
+  nonReccurTask   nonReccurTask? @relation(fields: [nonReccurTaskId], references: [id])
+  nonReccurTaskId String?
+}
+
+model notes {
+  id       Int    @id @default(autoincrement())
+  title    String
+  notes    String
+  duedate  DateTime
+  priority String
+}

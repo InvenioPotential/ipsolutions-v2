@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react'
 import DatePickers from '../dateCalendar/datepickers';
 import Priority from '../listing/priority';
@@ -139,10 +140,10 @@ export const NoteList: React.FC = () => {
 
         </div>
         <div className='p-1 m-1 h-56 overflow-auto'>
-        <ul className='mt-1 text-sm'>
+        <ul className='text-sm'>
             {todos.map((todo)=>(
             <li 
-                className='m-1 p-3 border rounded-md'
+                className='m-1 p-2 border rounded-md'
                 key={todo.id} 
                 onClick={()=> handleToggle(todo.id)}
                 style={{textDecoration: todo.completed ? "line-through" : "none"}}
@@ -152,7 +153,7 @@ export const NoteList: React.FC = () => {
                         <>
                         <button type="button"
                                 // onClick={()=>deleteByValue(todo.id)}  
-                                className='m-1 p-1 hover:bg-red-200 rounded-full'>
+                                className=' p-1 hover:bg-red-200 rounded-full'>
                                     <MdDelete/></button>
                             {showDel ? (
                                 <>
@@ -169,7 +170,7 @@ export const NoteList: React.FC = () => {
                                                 DELETE TASK?
                                             </p>
                                             <div className="my-2 text-sm text-blueGray-500 leading-relaxed">
-                                                YOU WON'T BE ABLE TO UNDO THIS ACTION.
+                                                YOU WON&apos;T BE ABLE TO UNDO THIS ACTION.
                                             </div>
                                             </div>
                                             {/*footer*/}
@@ -197,7 +198,7 @@ export const NoteList: React.FC = () => {
                             ): null}
                         </>
                     </div>
-                    <div className='text-sm font-semibold'>{todo.text_note}</div>
+                    <div className='text-sm'>{todo.text_note}</div>
             </li>
             ))}
             

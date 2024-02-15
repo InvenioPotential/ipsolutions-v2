@@ -158,16 +158,13 @@ return (
                           <div className='text-xs font-semibold'>Title</div>
                           <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
                         </li>
-                        
-                        
-                        
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div className=' m-1 grid border-2 rounded-md lg:row-span-1 md:row-span-2 sm:row-span-2 lg:col-span-1 md:col-span-2 sm:col-span-2'>
+                <div className='bg-white m-1 grid rounded-md lg:row-span-1 md:row-span-2 sm:row-span-2 lg:col-span-1 md:col-span-2 sm:col-span-2'>
                   <div className='p-2 m-1 overflow-auto'>
-                    <div className='block text-md text-gray-600 items-center justify-between'>
+                    <div className='flex text-md text-gray-600 items-center justify-between'>
                       <MiniCalendar />
                     </div>
                   </div>

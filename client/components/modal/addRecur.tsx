@@ -52,7 +52,7 @@ const AddRecur = () => {
                                                     DELETE TASK?
                                                 </p>
                                                 <div className="my-2 text-sm text-blueGray-500 leading-relaxed">
-                                                    YOU WON'T BE ABLE TO UNDO THIS ACTION.
+                                                    YOU WON&apos;T BE ABLE TO UNDO THIS ACTION.
                                                 </div>
                                                 </div>
                                                 {/*footer*/}

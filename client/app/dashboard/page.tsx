@@ -1,8 +1,8 @@
-"use client"
 
 import MiniCalendar from '@/components/dateCalendar/miniCalendar';
-import Topnav from '@/components/nav/topnav';
 import NoteList from '@/components/notes/noteList';
+import { auth, clerkClient, currentUser } from '@clerk/nextjs';
+import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react'
 import { FaCartPlus, FaTasks, FaTools } from 'react-icons/fa';
@@ -11,11 +11,8 @@ import { MdDisabledByDefault } from 'react-icons/md';
 import { RiCommunityFill, RiMoneyDollarBoxFill } from 'react-icons/ri';
 import { SiGoogleforms } from 'react-icons/si';
 
-type ValuePiece = Date | null;
-type Value = ValuePiece | [ValuePiece, ValuePiece];
-
-const Dashboard = () => {
-  const [value, onChange] = useState<Value>(new Date());
+const Dashboard = async () => {
+  const user = await currentUser();
   return (
     <div className=''>    
         <div className='m-3'>
@@ -23,7 +20,7 @@ const Dashboard = () => {
             <div className='border-b-1 mb-5 flex justify-between'>
               <div className=''>
                 <div className='text-2xl text-black font-bold'>
-                  DASHBOARD
+                  WELCOME, {user?.username}!
                 </div>
                 <div className='text-xs text-gray-500 font-semibold'>
                   WELCOME TO THE MAIN DASHBOARD OF IP SOLUTIONS
@@ -34,7 +31,7 @@ const Dashboard = () => {
               <div className='mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
                 <div className='overflow-auto grid grid-rows-2 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
                   <div className='grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
-                    <div className="overflow-auto grid grid-rows-4 lg:grid-cols-2 gap-2 md:grid-cols-2 sm:grid-cols-1">
+                    <div className="overflow-auto grid grid-rows-4 lg:grid-cols-2 gap-2 md:grid-cols-1 sm:grid-cols-1">
                       <div className='border rounded-md p-1 bg-white '>
                         <Link href="/modules/task/taskDashboard" className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'><FaTasks className='flex w-7 h-7'/></div>
@@ -111,7 +108,7 @@ const Dashboard = () => {
                       <div className='border rounded-md p-1 bg-white'>
                         <Link href='' className='flex w-auto h-24 items-center'>
                           <div className='justify-center items-center m-2 p-1'>
-                            <img className='flex w-7 h-7'
+                            <Image className='flex w-7 h-7'
                             src="/images/energyblk.png"
                             alt="IP solutions logo" 
                             width={130}
@@ -127,10 +124,10 @@ const Dashboard = () => {
                     
                     </div>
                   </div>
-                  <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
+                  <div className='p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <NoteList/>
                   </div>
-                  <div className='text-center justify-center flex overflow-auto p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
+                  <div className='flex overflow-auto p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                       <MiniCalendar />
                   </div>
                 </div>

@@ -1,7 +1,7 @@
 // pages/api/addTask.ts
 import { NextApiRequest, NextApiResponse } from 'next';
 import { NonRecurTask } from './nonRecurTask'; // Adjust the import path as needed
-import { db } from '@/lib/db';
+import { prisma } from '@/lib/prisma';
 
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -9,11 +9,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const taskData: NonRecurTask = req.body;
 
         try {
-            const savedTask = await db.NonRecur.create({
+            const savedTask = await prisma.nonReccurTask.create({
                 data: {
                     ...taskData,
-                    date: new Date(taskData.date),
-                    due: new Date(taskData.due),
+                    // date: new Date(taskData.date),
+                    // due: new Date(taskData.due),
                 },
             });
             res.status(200).json(savedTask);

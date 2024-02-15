@@ -1,14 +1,13 @@
 "use client"
 import Link from 'next/link';
 import React, { useState } from 'react'
-import { CgProfile } from 'react-icons/cg';
 import { HiUserGroup } from 'react-icons/hi2';
 import { IoReorderThreeOutline } from 'react-icons/io5';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight} from 'react-icons/md';
-import { TbLogout } from 'react-icons/tb';
 import SideNavBar from './sidenavbar';
 import Noti from '../modal/noti';
 import { UserButton } from '@clerk/nextjs';
+import Image from 'next/image';
 
 
 const Topnav = () => {
@@ -41,7 +40,7 @@ const Topnav = () => {
                         </div>
                         
                         <div className='p-2 text-left'>
-                            <img 
+                            <Image 
                                 src="/images/ipsolutionslogo.png"
                                 alt="IP solutions logo" 
                                 width={130}
