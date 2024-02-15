@@ -3,8 +3,8 @@ import Topnav from '@/components/nav/topnav'
 import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import AddNonRecur from '@/components/modal/addNonRecur'
-import Calendar from 'react-calendar'
 import EditNonRecur from '@/components/modal/editNonrecur'
+import MiniCalendar from '@/components/dateCalendar/miniCalendar'
 
 
 type ValuePiece = Date | null;
@@ -14,7 +14,7 @@ const TaskReport = () => {
   const [value, onChange] = useState<Value>(new Date());
   return (
     <div className=''>
-        <Topnav />
+        {/* <Topnav /> */}
         <div className='m-3'>
           <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
             <div className='border-b-1 mb-5 flex justify-between'>
@@ -26,14 +26,12 @@ const TaskReport = () => {
                   TASK MANAGEMENT
                 </div>
               </div>
-              
-              
             </div>
             <div className=' min-h-screen rounded-md p-3 text-gray-500'>
               <div className='mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
                 <div className='overflow-auto grid grid-rows-1 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
-                  <div className='overflow-auto bg-white rounded-md m-3 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
-                  <div className=' w-auto rounded-md text-md font-semibold p-3 m-2 text-center justify-between flex'>
+                  <div className=' bg-white rounded-md grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
+                  <div className='*:m-5 w-auto overflow-auto rounded-md text-md font-semibold p-3 m-2 text-center justify-between flex'>
                   <div className=''>
                     <h6 className='text-gray-900'>SITE:</h6>
                     <div>
@@ -137,8 +135,8 @@ const TaskReport = () => {
                     </div>
                   </div>
                   <div className='p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
-                    <div className=''>
-                     <Calendar onChange={onChange} value={value} />
+                    <div className='overflow-auto'>
+                     <MiniCalendar />
                     </div>
                   </div>
                 </div> 

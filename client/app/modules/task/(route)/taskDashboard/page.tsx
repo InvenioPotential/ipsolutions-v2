@@ -167,8 +167,7 @@ return (
                 </div>
                 <div className=' m-1 grid border-2 rounded-md lg:row-span-1 md:row-span-2 sm:row-span-2 lg:col-span-1 md:col-span-2 sm:col-span-2'>
                   <div className='p-2 m-1 overflow-auto'>
-                    <div className='block text-md text-gray-600 font-bold items-center justify-between'>
-                      <div>CALENDAR</div>
+                    <div className='block text-md text-gray-600 items-center justify-between'>
                       <MiniCalendar />
                     </div>
                   </div>

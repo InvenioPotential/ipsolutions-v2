@@ -17,17 +17,17 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 const Dashboard = () => {
   const [value, onChange] = useState<Value>(new Date());
   return (
-    
-    <div className=''>
-        {/* <Topnav /> */}
+    <div className=''>    
         <div className='m-3'>
           <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
-            <div className='border-b-1 mb-5'>
-              <div className='text-2xl text-black font-bold'>
-                WELCOME, "Username" !
-              </div>
-              <div className='text-xs text-gray-500 font-semibold'>
-                WELCOME TO MAIN DASHBOARD OF THE IP SOLUTIONS
+            <div className='border-b-1 mb-5 flex justify-between'>
+              <div className=''>
+                <div className='text-2xl text-black font-bold'>
+                  DASHBOARD
+                </div>
+                <div className='text-xs text-gray-500 font-semibold'>
+                  WELCOME TO THE MAIN DASHBOARD OF IP SOLUTIONS
+                </div>
               </div>
             </div>
             <div className=' min-h-screen rounded-md p-3  bg-gradient-to-r from-sky-200  to-gray-200 text-gray-500'>
@@ -130,7 +130,7 @@ const Dashboard = () => {
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <NoteList/>
                   </div>
-                  <div className='overflow-auto p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
+                  <div className='text-center justify-center flex overflow-auto p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                       <MiniCalendar />
                   </div>
                 </div>
