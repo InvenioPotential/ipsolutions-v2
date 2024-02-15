@@ -1,14 +1,13 @@
 "use client"
-import Topnav from '@/components/nav/topnav'
 import React, { useState } from 'react'
 import { FiActivity } from 'react-icons/fi'
 import { IoCheckmarkCircle } from 'react-icons/io5'
 import { MdAssignmentLate, MdUpcoming } from 'react-icons/md'
 import UpcomingTask from './(route)/upcoming/page'
-import Calendar from 'react-calendar'
 import ActiveTask from './(route)/active/page'
 import LateTask from './(route)/late/page'
 import CompleteTask from './(route)/complete/page'
+import MiniCalendar from '@/components/dateCalendar/miniCalendar'
 
 const TaskManagement = () => {
   const [isUpcomingOpen, setUpcomingOpen] = useState(false);
@@ -33,7 +32,7 @@ const TaskManagement = () => {
 
 return (
 <div className=''>
-        <Topnav />
+        {/* <Topnav /> */}
         <div className='m-5'>
           <div className='lg:pl-10 lg:pr-10'>
             <div className=' mb-5'>
@@ -117,7 +116,7 @@ return (
             </div> */}
             
             <div className='m-3 mt-4 lg:grid md:grid sm:flex grid-cols-4 grid-rows-1 gap-4'>
-                <div className='m-1 grid border-2 rounded-md lg:col-span-3 md:col-span-2 sm:col-span-2'>
+                <div className='m-1 grid  rounded-md lg:col-span-3 md:col-span-2 sm:col-span-2'>
                   <div className='p-2 m-1'>
                     <div className='m-2 text-md text-gray-600 font-bold items-center justify-between flex'>
                       OVERVIEW
@@ -166,11 +165,11 @@ return (
                     </div>
                   </div>
                 </div>
-                <div className='overflow-auto m-1 grid border-2 rounded-md lg:row-span-1 md:row-span-2 sm:row-span-2 lg:col-span-1 md:col-span-2 sm:col-span-2'>
-                  <div className='p-2 m-1'>
+                <div className=' m-1 grid border-2 rounded-md lg:row-span-1 md:row-span-2 sm:row-span-2 lg:col-span-1 md:col-span-2 sm:col-span-2'>
+                  <div className='p-2 m-1 overflow-auto'>
                     <div className='block text-md text-gray-600 font-bold items-center justify-between'>
                       <div>CALENDAR</div>
-                      <Calendar />
+                      <MiniCalendar />
                     </div>
                   </div>
                 </div>

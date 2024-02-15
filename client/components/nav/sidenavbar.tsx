@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react'
 import Link from "next/link";
 import { MdDashboard, MdDisabledByDefault } from 'react-icons/md';
@@ -23,13 +24,12 @@ const SideNavBar = () => {
 
 
   return (
-    <aside className="h-screen bg-sky-950 text-white text-left float-left sticky left-0">
-      
-      <div className="">
+    <aside className="sticky my-auto bg-sky-950 text-white text-left float-left left-0">
+      <div className="h-screen">
         {/* <h2 className="text-2xl font-bold mb-4">Dashboard</h2> */}
-        <nav className='p-5 flex'>
+        <nav className='flex'>
           <div className=''>
-            <ul className='text-sm font-semibold h-screen overflow-auto'>
+            <ul className='text-sm font-semibold p-5 overflow-auto'>
             <li className="m-3">
               <Link href="/dashboard" className="items-center flex hover:text-gray-300">
                 <MdDashboard className='w-4 h-4 m2'/>
@@ -191,8 +191,9 @@ const SideNavBar = () => {
           </ul>
           </div>
           
-        </nav>
+        </nav> 
       </div>
+      
     </aside>
   )
 }

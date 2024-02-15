@@ -3,16 +3,14 @@ import Topnav from '@/components/nav/topnav'
 import React, { useState } from 'react'
 import { FaPlus } from 'react-icons/fa'
 import AddNonRecur from '@/components/modal/addNonRecur'
-import Calendar from 'react-calendar'
-import { MdEdit } from 'react-icons/md'
 import EditNonRecur from '@/components/modal/editNonrecur'
+import MiniCalendar from '@/components/dateCalendar/miniCalendar'
 
 
 type ValuePiece = Date | null;
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
 const TaskRecur = () => {
-  const [value, onChange] = useState<Value>(new Date());
   return (
     <div className=''>
         <Topnav />
@@ -168,7 +166,7 @@ const TaskRecur = () => {
                   </div>
                   <div className='p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <div className=''>
-                     <Calendar onChange={onChange} value={value} />
+                     <MiniCalendar />
                     </div>
                   </div>
                 </div> 

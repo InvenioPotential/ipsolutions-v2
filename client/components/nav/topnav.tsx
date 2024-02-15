@@ -1,4 +1,3 @@
-import Image from 'next/image';
 "use client"
 import Link from 'next/link';
 import React, { useState } from 'react'
@@ -11,8 +10,6 @@ import SideNavBar from './sidenavbar';
 import Noti from '../modal/noti';
 
 const Topnav = () => {
-    const [showModal, setShowModal] = React.useState(false);
-
     // open top right nav in small screen
     const [isMenuOpen, setMenuOpen] = useState(false);
     const toggleMenu =() => {
@@ -20,54 +17,24 @@ const Topnav = () => {
 
     };
 
+    const [isSideOpen, setSideOpen] = useState(false);
+    const toggleSide =() => {
+        setSideOpen(!isSideOpen);
+
+    };
+
   return (
-        <nav className='sticky bg-white top-0 max-w-auto mx-auto'>
-                <div className='flex items-center p-5 justify-between h-16'>
+        <nav className='sticky bg-white top-0 outline-none max-w-auto mx-auto'>
+                <div className=' flex z-50 inset-0 items-center p-5 justify-between h-16'>
                     <div className='flex items-center justify-center m-1'>
-                        <div className='flex-shrink-0 flex'>
-                            <>
-                                <button
-                                    onClick={() => setShowModal(true)}>
-                                {isMenuOpen ? <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7'/> : <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7' />}
-                                </button>
-                                {showModal ? (
-                                    <>
-                                    {/* <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>  */}
-                                       <div
-                                        className="fixed justify-center left-0 top-0 items-left flex z-50 outline-none focus:outline-none">
-                                        <div className="relative w-auto max-w-3xl">
-                                        {/*content*/}
-                                            {/*top*/}
-                                            <div className='bg-sky-950 text-white items-center justify-center'>
-                                                <ul>
-                                                    <li>
-                                                        <div className='pl-5 flex-shrink-0 flex'>
-                                                            <button
-                                                                onClick={() => setShowModal(false)}>
-                                                            {isMenuOpen ? <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7'/> : <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7' />}
-                                                            </button>
-                                                            <div className='m-1 p-2 text-left'>
-                                                                <img 
-                                                                    src="/images/ipsolutionslogo.png"
-                                                                    alt="IP solutions logo" 
-                                                                    width={130}
-                                                                    height={30}
-                                                                />  
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <SideNavBar />
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    </>
-                                ) : null }
-                                
-                            </>
+                        <div className=' items-center justify-between'>
+                        <div className='md:hidden flex '>
+                            <button 
+                                onClick={toggleSide}>
+                                {isSideOpen ? <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-5 w-5'/> : <IoReorderThreeOutline style={{color:'green'}} className='m-2 h-7 w-7' />}
+                            </button>
                         </div>
+                    </div>
                         <div className='p-2 text-left'>
                             <img 
                                 src="/images/ipsolutionslogo.png"
@@ -94,11 +61,17 @@ const Topnav = () => {
                         <div className='md:hidden flex '>
                             <button 
                                 onClick={toggleMenu}>
-                            {isMenuOpen ? <MdKeyboardDoubleArrowRight style={{color:'green'}} className='m-2 h-6 w-6'/> : <MdKeyboardDoubleArrowLeft style={{color:'green'}} className='m-2 h-6 w-6' />}
+                                {isMenuOpen ? <MdKeyboardDoubleArrowRight style={{color:'green'}} className='m-2 h-6 w-6'/> : <MdKeyboardDoubleArrowLeft style={{color:'green'}} className='m-2 h-6 w-6' />}
                             </button>
                         </div>
                     </div>
             </div>
+            
+            
+            <div className={`md:block ${isSideOpen ? 'block' : 'hidden'}`}>
+                <SideNavBar/>
+            </div>
+            
         </nav>
   )
 }

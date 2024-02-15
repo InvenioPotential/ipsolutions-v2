@@ -9,7 +9,7 @@ import Fullcalendar from '@/components/dateCalendar/fullcalendar'
 const TaskRecur = () => {
   return (
     <div className=''>
-        <Topnav />
+        
         <div className='m-3'>
           <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
             <div className='border-b-1 mb-5 flex justify-between'>
@@ -52,13 +52,14 @@ const TaskRecur = () => {
                       </select>
                     </div>
                   </div>
-                  {/* <div>
-                   <button className='bg-green-200 p-2 rounded-md'>FILTER</button> 
-                  </div> */}
                   <AddRecur/>
-                  
                   </div > 
                     <Fullcalendar/>
+                    <div>
+
+                      
+                    </div>
+
                   </div>
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-2 bg-white'>
                     <div className='p-2 m-1'>
