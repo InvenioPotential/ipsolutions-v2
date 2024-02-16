@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 //import DatePickers from '../dateCalendar/datepickers';
 //import Priority from '../listing/priority';
 import { IoMdAddCircle } from 'react-icons/io';
@@ -10,21 +10,54 @@ interface item {
     id: number;
     title: string;
     notes: string;
-    duedate: Date;
+    duedate: string;
     priority: string;
 
 }
 
 export const NoteList: React.FC = () => {
-
-    const [todos, setTodos] = useState<item[]>([
-        { id: 1, title: "TITLE", notes: "Your Note Here", duedate: new Date, priority: "" },
-    ]);
-
-    const [title, setInput1] = useState<string>("");
+    const [setTitle, setInput1] = useState<string>("");
     const [setNotes, setInput2] = useState<string>("");
     const [setDuedate, setInput3] = useState<string>("");
     const [setPriority, setInput4] = useState<string>("");
+
+    const [todos, setTodos] = useState<item[]>([
+    ]);
+
+    useEffect(() => {
+        fetchTodos();
+    }, []);
+
+    const fetchTodos = async () => {
+        try {
+            const response = await fetch('/api/todos'); // Fetch data from the API endpoint
+            if (!response.ok) {
+                throw new Error('Failed to fetch todos');
+            }
+            const data = await response.json(); // Parse response body as JSON
+            setTodos(data); // Update todos state with fetched data
+        } catch (error) {
+            console.error('Error fetching todos:', error);
+        }
+    };
+
+    const handleDelete = async (id: number) => {
+        try {
+            const data = { ids: id }
+            const response = await fetch('/api/todos',  // Change it to something similar
+                {
+                    method: 'DELETE',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+            fetchTodos();
+
+
+        } catch (error) {
+            console.error('Error deleting todo:', error);
+        }
+    };
+
     const handleToggle = (id: number) => {
         setTodos(
             todos.map((todo) => {
@@ -40,12 +73,15 @@ export const NoteList: React.FC = () => {
     const handleClick = async (e: React.SyntheticEvent) => {
         e.preventDefault();
         try {
-            const body = { title: title, notes: setNotes, duedate: setDuedate, priority: setPriority };
-            await fetch('http://localhost:3000/api/addTodo', {
+            const body = { title: setTitle, notes: setNotes, duedate: setDuedate, priority: setPriority };
+            await fetch('/api/todos', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             });
+
+            fetchTodos();
+
         } catch (error) {
             console.error(error);
         }
@@ -113,7 +149,7 @@ export const NoteList: React.FC = () => {
                                                     <div className='*:m-2 row-span-1'>
                                                         <p>DUE:</p>
                                                         <input
-                                                            type='date'
+                                                            type="date"
                                                             onChange={(e) => setInput3(e.currentTarget.value)}
                                                             className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
                                                         />
@@ -174,11 +210,11 @@ export const NoteList: React.FC = () => {
                             onClick={() => handleToggle(todo.id)}
                         //style={{ textDecoration: todo.completed ? "line-through" : "none" }}
                         >
-                            <div className='font-semibold flex justify-between'>
+                            <div className='font-bold flex justify-between'>
                                 {todo.title}
                                 <>
                                     <button type="button"
-                                        // onClick={()=>deleteByValue(todo.id)}  
+                                        onClick={() => setShowDel(true)}
                                         className='m-1 p-1 hover:bg-red-200 rounded-full'>
                                         <MdDelete /></button>
                                     {showDel ? (
@@ -211,7 +247,7 @@ export const NoteList: React.FC = () => {
                                                             <button
                                                                 className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                                                 type="button"
-                                                                onClick={() => setShowDel(false)}
+                                                                onClick={() => handleDelete(todo.id)}
                                                             >
                                                                 DELETE
                                                             </button>
@@ -224,14 +260,16 @@ export const NoteList: React.FC = () => {
                                     ) : null}
                                 </>
                             </div>
-                            <div className='text-sm font-semibold'>{todo.notes}</div>
+                            <div className='text-sm font-semibold'>Notes - {todo.notes}</div>
+                            <div className='text-sm font-semibold'>Due Date - {todo.duedate}</div>
+                            <div className='text-sm font-semibold'>Priority - {todo.priority}</div>
                         </li>
                     ))}
 
                 </ul>
 
             </div>
-        </div>
+        </div >
     )
 }
 
