@@ -10,10 +10,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
         try {
             const savedTask = await prisma.nonReccurTask.create({
+<<<<<<< HEAD
                 data: {
                     ...taskData,
                     // date: new Date(taskData.date),
                     // due: new Date(taskData.due),
+=======
+                data: {  
+                    ...taskData,
+                    type: taskData.type,
+                    due: taskData.due,
+>>>>>>> origin/addNonReccur_BE
                 },
             });
             res.status(200).json(savedTask);

@@ -5,7 +5,7 @@ export interface NonRecurTask {
     type: string;
     site: string;
     taskType: string;
-    due: Date | string;
+    due:  string;
     stage: string;
     priority: string;
     date: Date | string;

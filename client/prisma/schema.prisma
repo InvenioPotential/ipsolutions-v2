@@ -43,6 +43,12 @@ model notes {
   id       Int    @id @default(autoincrement())
   title    String
   notes    String
+<<<<<<< HEAD
   duedate  DateTime
   priority String
 }
+=======
+  duedate  String
+  priority String
+}
+>>>>>>> origin/addNonReccur_BE
