@@ -1,10 +1,10 @@
 
 import MiniCalendar from '@/components/dateCalendar/miniCalendar';
 import NoteList from '@/components/notes/noteList';
-import { auth, clerkClient, currentUser } from '@clerk/nextjs';
+import { currentUser } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react'
+import React from 'react'
 import { FaCartPlus, FaTasks, FaTools } from 'react-icons/fa';
 import { GrHostMaintenance } from 'react-icons/gr';
 import { MdDisabledByDefault } from 'react-icons/md';

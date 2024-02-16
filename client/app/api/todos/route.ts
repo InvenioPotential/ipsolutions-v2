@@ -2,10 +2,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
 
-
-
-
-
 export async function POST(req: Request, res: NextApiResponse) {
     try {
         const body = await req.json();
@@ -33,7 +29,7 @@ export async function POST(req: Request, res: NextApiResponse) {
 export async function GET(req: Request, res: NextApiResponse) {
     try {
         const todos = await prisma.notes.findMany();// Send a success response with the todos
-        console.log(todos);
+        // console.log(todos);
         return new Response(JSON.stringify(todos), { status: 200 })
     } catch (error) {
         console.error("Error fetching todos:", error);
