@@ -25,8 +25,8 @@ const SideNavBar = () => {
 
 
   return (
-    <aside className="sticky my-auto bg-sky-950 text-white text-left float-left left-0">
-      <div className="h-screen">
+    <aside className="sticky my-auto bg-sky-950 h-screen text-white text-left float-left left-0">
+      <div className="">
         {/* <h2 className="text-2xl font-bold mb-4">Dashboard</h2> */}
         <nav className='flex'>
           <div className=''>

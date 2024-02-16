@@ -4,7 +4,6 @@ import DatePickers from '../dateCalendar/datepickers';
 import Priority from '../listing/priority';
 import { IoMdAddCircle } from 'react-icons/io';
 import { MdDelete } from 'react-icons/md';
-import { todo } from 'node:test';
 
 interface item {
     id: number;
@@ -143,7 +142,7 @@ export const NoteList: React.FC = () => {
         <ul className='text-sm'>
             {todos.map((todo)=>(
             <li 
-                className='m-1 p-2 border rounded-md'
+                className='m-1 overflow-auto p-2 border rounded-md'
                 key={todo.id} 
                 onClick={()=> handleToggle(todo.id)}
                 style={{textDecoration: todo.completed ? "line-through" : "none"}}
@@ -152,7 +151,7 @@ export const NoteList: React.FC = () => {
                         {todo.text_title}
                         <>
                         <button type="button"
-                                // onClick={()=>deleteByValue(todo.id)}  
+                                onClick={() => setShowDel(true)}   
                                 className=' p-1 hover:bg-red-200 rounded-full'>
                                     <MdDelete/></button>
                             {showDel ? (
@@ -186,6 +185,7 @@ export const NoteList: React.FC = () => {
                                                 className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                                 type="button"
                                                 onClick={() => setShowDel(false)}
+                                                
                                             >
                                                 DELETE
                                             </button>

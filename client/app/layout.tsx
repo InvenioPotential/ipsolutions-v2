@@ -35,14 +35,15 @@ export default function RootLayout({
         <footer className='pt-5 text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
           POWERED BY INVENIO POTENTIAL SDN BHD 2024</footer> 
         </body> */}
+        
         <body className="{inter.className} bg-gray-100 font-sans">
+          <main>
           {userId && (
           <>
             <Topnav/>
           </>
           )}
-          <main>
-            <div className='flex items-start justify-center min-h-screen'>
+            <div className='lg:flex md:block sm:block items-start justify-center h-screen'>
               <div>{children}</div>
             </div>
           </main>

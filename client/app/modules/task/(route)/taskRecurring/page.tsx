@@ -1,8 +1,9 @@
 "use client"
-import React, { useState } from 'react'
-import { FaPlus } from 'react-icons/fa'
+import React from 'react'
 import AddRecur from '@/components/modal/addRecur'
 import MiniCalendar from '@/components/dateCalendar/miniCalendar'
+import Recurs from '@/components/tasks/recurs'
+import AssignTask from '@/components/tasks/assignTask'
 
 const TaskRecur = () => {
   return (
@@ -19,7 +20,7 @@ const TaskRecur = () => {
                 </div>
               </div>
             </div>
-            <div className=' min-h-screen rounded-md p-3 text-gray-500'>
+            <div className='min-h-screen rounded-md p-3 text-gray-500'>
               <div className='mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
                 <div className='grid grid-rows-1 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
                   <div className='overflow-auto p-2 bg-white rounded-md grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
@@ -49,72 +50,13 @@ const TaskRecur = () => {
                   </div>         
                   <AddRecur/>
                   </div>
-                  <div className='overflow-auto mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
-                    <div>test</div>
-                  </div>
+                  <Recurs/>
                   </div>               
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
-                    <div className='p-2 m-1'>
-                      <div className='p-1 text-sm border-b-2 font-bold items-center justify-between flex'>
-                        TASK ASSIGNED
-                        <FaPlus />
-                      </div>
-                      <div className='p-1 m-2 overflow-auto'>
-                        <ul className='mt-1 text-sm'>
-                          <li className='m-2 p-3 border-2 rounded-md'>
-                            <div className="inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full dark:border-gray-900"></div>
-                            <div className='justify-center'>
-                              <div className='text-sm font-semibold '>You have been assigned to a new task from 
-                              <span className=' font-bold'>&quot;username&quot;</span></div>
-                              <div className='text-xs font-semibold'>Type: <span className=''>Recurring</span></div>
-                            </div>
-                            <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                          </li>
-                          <li className='m-2 p-3 border-2 rounded-md'>
-                            <div className="inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full dark:border-gray-900"></div>
-                            <div className='justify-center'>
-                              <div className='text-sm font-semibold '>You have been assigned to a new task from 
-                              <span className=' font-bold'>&quot;username&quot;</span></div>
-                              <div className='text-xs font-semibold'>Type: <span className=''>Recurring</span></div>
-                            </div>
-                            <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                          </li>
-                          <li className='m-2 p-3 border-2 rounded-md'>
-                            <div className="inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full dark:border-gray-900"></div>
-                            <div className='justify-center'>
-                              <div className='text-sm font-semibold '>You have been assigned to a new task from 
-                              <span className=' font-bold'>&quot;username&quot;</span></div>
-                              <div className='text-xs font-semibold'>Type: <span className=''>Recurring</span></div>
-                            </div>
-                            <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                          </li>
-                          <li className='m-2 p-3 border-2 rounded-md'>
-                            <div className="inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full dark:border-gray-900"></div>
-                            <div className='justify-center'>
-                              <div className='text-sm font-semibold '>You have been assigned to a new task from 
-                              <span className=' font-bold'>&quot;username&quot;</span></div>
-                              <div className='text-xs font-semibold'>Type: <span className=''>Recurring</span></div>
-                            </div>
-                            <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                          </li>
-                          <li className='m-2 p-3 border-2 rounded-md'>
-                            <div className="inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full dark:border-gray-900"></div>
-                            <div className='justify-center'>
-                              <div className='text-sm font-semibold '>You have been assigned to a new task from 
-                              <span className=' font-bold'>&quot;username&quot;</span></div>
-                              <div className='text-xs font-semibold'>Type: <span className=''>Recurring</span></div>
-                            </div>
-                            <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                          </li>
-                        </ul>
-                        
-                      </div>
-                    </div>
+                    <AssignTask/>
                   </div>
                   <div className='p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
-                    <div className=''>
                      <MiniCalendar />
-                    </div>
                   </div>
                 </div> 
               </div>
