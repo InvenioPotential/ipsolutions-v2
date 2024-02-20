@@ -1,7 +1,7 @@
 import React from 'react'
 import { MdDelete, MdEdit } from 'react-icons/md';
 import Category from '../listing/category';
-import DatePickers from '../dateCalendar/datepickers';
+import DatePickers from '../../dateCalendar/datepickers';
 
 const EditNonRecur = () => {
     const [showModal, setShowModal] = React.useState(false);

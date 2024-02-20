@@ -1,20 +1,15 @@
-"use client"
 import * as React from 'react';
-import { useState } from 'react';
-import Calendar from 'react-calendar';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
-type ValuePiece = Date | null;
-
-type Value = ValuePiece | [ValuePiece, ValuePiece];
-
-const MiniCalendar = ()=> {
-  const [value, onChange] = useState<Value>(new Date());
-
+export default function MiniCalendar() {
   return (
-    <div className='overflow-auto'>
-      <Calendar onChange={onChange} value={value} />
+    <div className='overflow-auto flex'>
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DateCalendar />
+      </LocalizationProvider>  
     </div>
+    
   );
 }
-
-export default MiniCalendar

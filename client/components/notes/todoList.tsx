@@ -85,8 +85,6 @@ export const NoteList: React.FC = () => {
                                                 </p>
                                                 <p className='text-sm flex'>TO-DO LIST</p>
                                             </div>
-                                            <div>
-                                            </div>
                                         </div>
                                         {/*body*/}
                                         <div className="relative p-6  flex-auto">
@@ -96,13 +94,11 @@ export const NoteList: React.FC = () => {
                                                         <p>TITLE:</p>
                                                         <div className='mx-auto flex'>
                                                             <input
-
                                                                 required
                                                                 type='title'
                                                                 onChange={(e) => setInput1(e.currentTarget.value)}
                                                                 className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
-                                                                placeholder='Insert title...'>
-                                                            </input>
+                                                                placeholder='Insert title...'/>  
                                                         </div>
                                                     </div>
                                                     <div className='col-span-2 row-span-2 w-full items-center'>
@@ -112,12 +108,13 @@ export const NoteList: React.FC = () => {
                                                                 required
                                                                 onChange={(e) => setInput2(e.currentTarget.value)}
                                                                 className='p-2 m-1 mx-auto flex-auto row-span-2  col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
-                                                                placeholder='Add notes...'></input>
+                                                                placeholder='Add notes...'/>
                                                         </div>
                                                     </div>
                                                     <div className='*:m-2 row-span-1'>
                                                         <p>DUE:</p>
                                                         <input
+                                                            required
                                                             type="date"
                                                             onChange={(e) => setInput3(e.currentTarget.value)}
                                                             className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
@@ -128,6 +125,7 @@ export const NoteList: React.FC = () => {
                                                         <p>PRIORITY:</p>
                                                         <div className='mx-auto flex'>
                                                             <select
+                                                                required
                                                                 onChange={(e) => setInput4(e.currentTarget.value)}
                                                                 className='p-2 m-2 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
                                                             >
@@ -147,7 +145,7 @@ export const NoteList: React.FC = () => {
                                                     >
                                                         Close
                                                     </button>
-                                                    <div onClick={() => setShowModal(false)}>
+                                                    <div>
                                                         <button
                                                             className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                                                             type="button"
@@ -181,7 +179,7 @@ export const NoteList: React.FC = () => {
                             <div className='font-bold uppercase flex justify-between'>
                                 <div>{todo.title}</div>
                                 <div className='flex'>
-                                 <EditTodo/> 
+                                 {/* <EditTodo/>  */}
                                 </div>
                                 
                             </div>

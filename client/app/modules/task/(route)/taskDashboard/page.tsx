@@ -3,10 +3,10 @@ import React, { useState } from 'react'
 import { FiActivity } from 'react-icons/fi'
 import { IoCheckmarkCircle } from 'react-icons/io5'
 import { MdAssignmentLate, MdUpcoming } from 'react-icons/md'
-import UpcomingTask from './(route)/upcoming/page'
-import ActiveTask from './(route)/active/page'
-import LateTask from './(route)/late/page'
-import CompleteTask from './(route)/complete/page'
+import UpcomingTask from '@/components/tasks/status/upcoming/page'
+import ActiveTask from '@/components/tasks/status/active/page'
+import LateTask from '@/components/tasks/status/late/page'
+import CompleteTask from '@/components/tasks/status/complete/page'
 import MiniCalendar from '@/components/dateCalendar/miniCalendar'
 
 const TaskManagement = () => {
@@ -31,7 +31,7 @@ const TaskManagement = () => {
   };
 
 return (
-<div className=''>
+    <div className=''>
         {/* <Topnav /> */}
         <div className='m-5'>
           <div className='lg:pl-10 lg:pr-10'>
@@ -44,8 +44,8 @@ return (
               </div>
             </div> 
             <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-2 sm:grid-rows-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4'>
-              <div className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
-                <div onClick={toggleUpcoming} className='bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div className=' cursor-pointer items-center  justify-center text-center'>
+                <div onClick={toggleUpcoming} className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <MdUpcoming className='m-1 h-5 w-5' />
@@ -60,8 +60,8 @@ return (
                   <UpcomingTask />
                 </div>
               </div>
-              <div  className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
-                <div onClick={toggleActive} className='bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div  className=' cursor-pointer items-center  justify-center text-center'>
+                <div onClick={toggleActive} className='shadow hover:shadow-xl bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <FiActivity className='m-1 h-5 w-5' />
@@ -76,8 +76,8 @@ return (
                   <ActiveTask />
                 </div>
               </div>
-              <div className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
-                <div  onClick={toggleLate} className='bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div className=' cursor-pointer items-center  justify-center text-center'>
+                <div  onClick={toggleLate} className='shadow hover:shadow-xl bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <MdAssignmentLate className='m-1 h-5 w-5' />
@@ -92,8 +92,8 @@ return (
                   <LateTask />
                 </div>
               </div>
-              <div className='shadow hover:shadow-xl cursor-pointer items-center  justify-center text-center'>
-                <div onClick={toggleComplete} className='bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
+              <div className=' cursor-pointer items-center  justify-center text-center'>
+                <div onClick={toggleComplete} className='shadow hover:shadow-xl bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                       <IoCheckmarkCircle className='m-1 h-5 w-5' />
@@ -109,12 +109,6 @@ return (
                 </div>
               </div>
             </div>
-            {/* <div className='flex text-sm font-semibold m-3 h-auto overflow-auto p-3 rounded-md bg-white'>
-              <div className=''>
-                TASK MANAGEMENT
-              </div>     
-            </div> */}
-            
             <div className='m-3 mt-4 lg:grid md:grid sm:flex grid-cols-4 grid-rows-1 gap-4'>
                 <div className='m-1 grid  rounded-md lg:col-span-3 md:col-span-2 sm:col-span-2'>
                   <div className='p-2 m-1'>
@@ -165,7 +159,7 @@ return (
                 <div className='bg-white m-1 grid rounded-md lg:row-span-1 md:row-span-2 sm:row-span-2 lg:col-span-1 md:col-span-2 sm:col-span-2'>
                   <div className='p-2 m-1 overflow-auto'>
                     <div className='flex text-md text-gray-600 items-center justify-between'>
-                      <MiniCalendar />
+                      <MiniCalendar/>
                     </div>
                   </div>
                 </div>

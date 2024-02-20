@@ -1,20 +1,23 @@
-import Category from '@/components/listing/category';
+import Category from '@/components/tasks/listing/category';
 import React from 'react'
-import { MdDelete, MdEdit } from 'react-icons/md';
+import { IoMdAdd } from 'react-icons/io';
 import Priority from '../listing/priority';
-import DateRangePickers from '../dateCalendar/dateRangePickers';
+import DateRangePickers from '../../dateCalendar/dateRangePickers';
 
-const EditRecur = () => {
+
+const AddRecur = () => {
     const [showModal, setShowModal] = React.useState(false);
-    const [showDel, setShowDel] = React.useState(false);
 
   return (
             <>
-            <button type="button"
-                    onClick={() => setShowModal(true)} 
-                    className='p-2 rounded-full hover:bg-gray-200'>
-                <MdEdit className=''/>
-            </button>
+            <div >
+                <button type="button"
+                        onClick={() => setShowModal(true)} 
+                        className='flex p-2 rounded-md border hover:bg-green-200 justify-center text-center '>
+                    <div className='p-1 text-black'>ADD</div>
+                    <div className='p-2'><IoMdAdd/></div>
+                </button>
+            </div>
             {showModal ? (
             <>
             <div className="justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -25,69 +28,10 @@ const EditRecur = () => {
                     <div className="flex justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                         <div>
                             <p className="text-2xl text-black font-bold">
-                                EDIT TASK
+                                ADD TASK
                             </p>
                             <p className='text-sm flex'>RECURRING TASK</p>
                         </div>
-                        <div>
-                            <>
-                            <button type="button"
-                                    onClick={() => setShowDel(true)}  
-                                    className='m-1 p-2 hover:bg-red-200 rounded-full'>
-                                    <MdDelete/></button>
-                                {showDel ? (
-                                    <>
-                                        <div
-                                            className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
-                                        >
-                                            <div className="relative w-auto my-6 mx-auto max-w-sm">
-                                            {/*content*/}
-                                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
-                                           
-                                                {/*body*/}
-                                                <div className="relative p-6 flex-auto">
-                                                <p className="my-2 font-bold text-blueGray-500 text-lg leading-relaxed">
-                                                    DELETE TASK?
-                                                </p>
-                                                <div className="my-2 text-sm text-blueGray-500 leading-relaxed">
-                                                    YOU WON&apos;T BE ABLE TO UNDO THIS ACTION.
-                                                </div>
-                                                </div>
-                                                {/*footer*/}
-                                                <div className="flex items-center justify-between p-6 border-t border-solid border-blueGray-200 rounded-b">
-                                                <button
-                                                    className="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                    type="button"
-                                                    onClick={() => setShowDel(false)}
-                                                >
-                                                    CANCEL
-                                                </button>
-                                                <button
-                                                    className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-                                                    type="button"
-                                                    onClick={() => setShowDel(false)}
-                                                >
-                                                    DELETE
-                                                </button>
-                                                </div>
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
-                                    </>
-                                ): null}
-                            </>
-                            
-                            
-                        </div>
-                    {/* <button
-                        className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
-                        onClick={() => setShowModal(false)}
-                    >
-                        <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                        x
-                        </span>
-                    </button> */}
                     </div>
                     {/*body*/}
                     <div className="relative p-6  flex-auto">
@@ -176,7 +120,7 @@ const EditRecur = () => {
                         type="button"
                         onClick={() => setShowModal(false)}
                     >
-                        UPDATE AND SAVE
+                        ADD TASK
                     </button>
                     </div>
                 </div>
@@ -190,4 +134,4 @@ const EditRecur = () => {
   )
 }
 
-export default EditRecur
+export default AddRecur

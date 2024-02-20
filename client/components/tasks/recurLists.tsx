@@ -1,7 +1,7 @@
 import React from 'react'
-import EditRecur from '../modal/editRecur'
+import EditRecur from './modal/editRecur'
 
-const Recurs = () => {
+const RecurLists = () => {
   return (
     <div className='overflow-auto h-screen'>
     <ul className=' text-left mx-auto rounded-md text-md font-semibold p-3 m-2 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
@@ -35,4 +35,4 @@ const Recurs = () => {
   )
 }
 
-export default Recurs
+export default RecurLists

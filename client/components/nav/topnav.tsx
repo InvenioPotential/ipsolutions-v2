@@ -5,7 +5,7 @@ import { HiUserGroup } from 'react-icons/hi2';
 import { IoReorderThreeOutline } from 'react-icons/io5';
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight} from 'react-icons/md';
 import SideNavBar from './sidenavbar';
-import Noti from '../modal/noti';
+import Noti from '../tasks/modal/noti';
 import { UserButton } from '@clerk/nextjs';
 import Image from 'next/image';
 
@@ -54,7 +54,7 @@ const Topnav = () => {
                                 <CgProfile className='m-2 h-6 w-6'/>
                             </Link>                            */}
                             <Noti/> 
-                            <button className='rounded-full hover:bg-green-200'>
+                            <button className='rounded-full'>
                                 <Link href="" >
                                     <HiUserGroup className='m-3 h-7 w-7'/>
                                 </Link>
@@ -74,21 +74,13 @@ const Topnav = () => {
                                 {isMenuOpen ? <MdKeyboardDoubleArrowRight style={{color:'green'}} className='m-2 h-7 w-7'/> : <MdKeyboardDoubleArrowLeft style={{color:'green'}} className='m-2 h-6 w-6' />}
                             </button>
                         </div>
-                    </div>
-                    
+                    </div>   
             </div>
-
             <div className={`lg:block ${isSideOpen ? 'block' : 'hidden'}`}>
                 <SideNavBar/>
             </div>
-
-            
-            
         </nav>
-
-
-    </>
-        
+    </>     
   )
 }
 

@@ -3,7 +3,7 @@ import React from 'react'
 import { IoMdAddCircle } from 'react-icons/io';
 import Category from '../listing/category';
 import Priority from '../listing/priority';
-import DatePickers from '../dateCalendar/datepickers';
+import DatePickers from '../../dateCalendar/datepickers';
 
 const AddNonRecur = () => {
     const [showModal, setShowModal] = React.useState(false);
