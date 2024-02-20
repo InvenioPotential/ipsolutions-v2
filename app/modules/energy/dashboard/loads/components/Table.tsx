@@ -1,10 +1,11 @@
 // TableInterface.ts
 interface Table {
-    id: number;
-    companyName: string;
-    loads: string;
+  id: number;
+  companyName: string;
+  supplier: string;
+  csvFile: File | null;
+  tariff: string;
 
-  }
-  
-  export default Table;
-  
+}
+
+export default Table;

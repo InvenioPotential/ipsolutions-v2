@@ -1,16 +1,10 @@
-
-import React, { useState } from 'react';
+'use client'
+import React from 'react';
 import { HiEye, HiPencilAlt } from 'react-icons/hi';
 import { BiSolidTrash } from 'react-icons/bi';
 import Modal from './Modal';
-
-
-
-interface CompanyData {
-  id: number;
-  companyName: string;
-  voltage: string;
-}
+import Link from 'next/link';
+import CompanyData  from './VoltageData'; 
 
 interface CompanyListProps {
   data: CompanyData[];
@@ -20,45 +14,70 @@ interface CompanyListProps {
 }
 
 const CompanyList: React.FC<CompanyListProps> = ({ data, onView, onEdit, onDelete }) => {
+  const [selectedCompanyId, setSelectedCompanyId] = React.useState<number | null>(null);
+  const [selectedLoads, setSelectedLoads] = React.useState<number[]>([]);
+
+  /*const handleDoubleClick = (id: number) => {
+    setSelectedCompanyId(id);
+  };*/
+
+  const toggleLoadSelection = (id: number) => {
+    setSelectedLoads((prevSelectedLoads) =>
+      prevSelectedLoads.includes(id)
+        ? prevSelectedLoads.filter((loadId) => loadId !== id)
+        : [...prevSelectedLoads, id]
+    );
+  };
+
+  const handleGenerateClick = () => {
+    // Handle generating chart for selected loads here
+  };
+
   return (
-    <div className='p-5'>
-      <div className='m-5'>
-      <Modal/>
-      </div>
-      
-      <table className="company-list-table">
-      <thead>
-        <tr>
-          <th>C L I E N T</th>
-          <th>V O L T A G E</th>
-          <th>A C T I O N</th>
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((company) => (
-          <tr key={company.id}>
-            <td>{company.companyName}</td>
-            <td>{company.voltage}</td>
-            <td>
-              <button onClick={() => onView(company.id)}>
-                <HiEye />
-              </button>
-              <button onClick={() => onEdit(company.id)}>
-                <HiPencilAlt />
-              </button>
-              <button onClick={() => onDelete(company.id)}>
-                <BiSolidTrash />
-              </button>
-            </td>
+    <div className="p-5">
+      <table className="company-list-table rounded-md">
+        <thead className="bg-gradient-to-r from-gray-200 to-green-500">
+          <tr>
+            <th>CLIENT</th>
+            <th>VOLTAGE</th>
+            <th>TARIFF</th>
+            <th>ACTION</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {data.map((company) => (
+            <tr key={company.id} onDoubleClick={() =>/* handleDoubleClick*/(company.id)}>
+              {selectedCompanyId !== null && (
+                <td>
+                  <input
+                    type="checkbox"
+                    checked={selectedLoads.includes(company.id)}
+                    onChange={() => toggleLoadSelection(company.id)}
+                  />
+                </td>
+              )}
+              <td>{company.companyName}</td>
+              <td>{company.voltage}</td>
+              <td>{company.tariff}</td>
+              <td>
+                <Link href="/modules/energy/dashboard/voltage/View">
+                  <button type="button">
+                    <HiEye />
+                  </button>
+                </Link>
+                <button onClick={() => onEdit(company.id)}>
+                  <HiPencilAlt />
+                </button>
+                <button onClick={() => onDelete(company.id)}>
+                  <BiSolidTrash />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
-    
   );
 };
-
-
 
 export default CompanyList;

@@ -3,9 +3,10 @@ import { createPopper } from "@popperjs/core";
 
 interface DropdownProps {
   color: string;
+  onSelectDataType: (dataType: string) => void; // Add onSelectDataType prop
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ color }) => {
+const DropdownLog: React.FC<DropdownProps> = ({ color, onSelectDataType }) => {
   const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
   const [selectedSupplier, setSelectedSupplier] = useState("");
   const btnDropdownRef = useRef<HTMLButtonElement>(null);
@@ -28,8 +29,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
     setDropdownPopoverShow(false);
   };
 
-  const handleSupplierClick = (supplier: string) => {
-    setSelectedSupplier(supplier);
+  const handleSupplierClick = (tariff: string) => {
+    setSelectedSupplier(tariff);
+    onSelectDataType(tariff); // Pass selected data type to parent component
     closeDropdownPopover();
   };
 
@@ -70,7 +72,7 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   : openDropdownPopover();
               }}
             >
-              {selectedSupplier === "" ? "SelectVoltage" : selectedSupplier}
+              {selectedSupplier === "" ? "Select\xa0Type\xa0Of\xa0Data" : selectedSupplier}
             </button>
             <div
               ref={popoverDropdownRef}
@@ -81,27 +83,26 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
               }
               style={{ minWidth: "12rem" }}
             >
-              <a
+              <a id="optionLog"
                 href="#pablo"
                 className={
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-black")
                 }
-                onClick={() => handleSupplierClick("LOW VOLTAGE")}
+                onClick={() => handleSupplierClick("LOGGING")}
               >
-                LOW VOLTAGE
+                LOGGING
               </a>
-              <a
+              <a id="optionNonLog"
                 href="#pablo"
                 className={
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-black")
                 }
-                onClick={() => handleSupplierClick("HIGH VOLTAGE")}
+                onClick={() => handleSupplierClick("NON-LOGGING")}
               >
-                HIGH VOLTAGE
+                NON-LOGGING
               </a>
-          
             </div>
           </div>
         </div>
@@ -110,6 +111,4 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
   );
 };
 
-export default function DropdownRender() {
-  return <Dropdown color="bg-white" />;
-}
+export default DropdownLog;

@@ -5,7 +5,7 @@ interface DropdownProps {
   color: string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ color }) => {
+const DropdownTariff: React.FC<DropdownProps> = ({ color }) => {
   const [dropdownPopoverShow, setDropdownPopoverShow] = useState(false);
   const [selectedSupplier, setSelectedSupplier] = useState("");
   const btnDropdownRef = useRef<HTMLButtonElement>(null);
@@ -70,7 +70,7 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   : openDropdownPopover();
               }}
             >
-              {selectedSupplier === "" ? "Select\xa0Type\xa0Of\xa0Loads" : selectedSupplier}
+              {selectedSupplier === "" ? "SelectTariff" : selectedSupplier}
             </button>
             <div
               ref={popoverDropdownRef}
@@ -87,9 +87,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-black")
                 }
-                onClick={() => handleSupplierClick("LIGHTING")}
+                onClick={() => handleSupplierClick("TARIFF A")}
               >
-                LIGHTING
+                TARIFF A
               </a>
               <a
                 href="#pablo"
@@ -97,9 +97,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-black")
                 }
-                onClick={() => handleSupplierClick("ESCALATOR")}
+                onClick={() => handleSupplierClick("TARIFF B")}
               >
-                ESCALATOR
+                TARIFF B
               </a>
               <a
                 href="#pablo"
@@ -107,9 +107,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("LIFT")}
+                onClick={() => handleSupplierClick("TARIFF C")}
               >
-                LIFT
+                TARIFF C
               </a>
               <a
                 href="#pablo"
@@ -117,9 +117,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("PUMP")}
+                onClick={() => handleSupplierClick("TARIFF C1 (OPTR)")}
               >
-                PUMP
+                TARIFF C1 (OPTR)
               </a>
               <a
                 href="#pablo"
@@ -127,9 +127,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("MECHANICAL VENTILATION")}
+                onClick={() => handleSupplierClick("TARIFF C2")}
               >
-                MECHANICAL VENTILATION
+                TARIFF C2
               </a>
               <a
                 href="#pablo"
@@ -137,9 +137,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("AIR CONDITIONING SPLIT UNIT")}
+                onClick={() => handleSupplierClick("TARIFF D")}
               >
-                AIR CONDITIONING SPLIT UNIT
+                TARIFF D
               </a>
               <a
                 href="#pablo"
@@ -147,9 +147,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("WATER-COOLED PACKAGE UNIT")}
+                onClick={() => handleSupplierClick("TARIFF Ds")}
               >
-                WATER-COOLED PACKAGE UNIT
+                TARIFF Ds
               </a>
               <a
                 href="#pablo"
@@ -157,9 +157,9 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("CONDENSER WATER PUMP")}
+                onClick={() => handleSupplierClick("TARIFF E1")}
               >
-                CONDENSER WATER PUMP
+                TARIFF E1
               </a>
               <a
                 href="#pablo"
@@ -167,19 +167,129 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("CHILLED WATER PUMP")}
+                onClick={() => handleSupplierClick("TARIFF E1s")}
               >
-                CHILLED WATER PUMP
+                TARIFF E1s
               </a>
-               <a
+              <a
                 href="#pablo"
                 className={
                   "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
                   (color === "white" ? " text-blueGray-700" : "text-blackk")
                 }
-                onClick={() => handleSupplierClick("AIR HANDLING UNIT")}
+                onClick={() => handleSupplierClick("TARIFF E2")}
               >
-                AIR HANDLING UNIT
+                TARIFF E2
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF E2s")}
+              >
+                TARIFF E2s
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF E3")}
+              >
+                TARIFF E3
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF E3s")}
+              >
+                TARIFF E3s
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF F")}
+              >
+                TARIFF F
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF F1")}
+              >
+                TARIFF F1
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF F2")}
+              >
+                TARIFF F2
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF G")}
+              >
+                TARIFF G
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF G1")}
+              >
+                TARIFF G1
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF H")}
+              >
+                TARIFF H
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF H1")}
+              >
+                TARIFF H1
+              </a>
+              <a
+                href="#pablo"
+                className={
+                  "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
+                  (color === "white" ? " text-blueGray-700" : "text-blackk")
+                }
+                onClick={() => handleSupplierClick("TARIFF H2")}
+              >
+                TARIFF H2
               </a>
             </div>
           </div>
@@ -190,5 +300,5 @@ const Dropdown: React.FC<DropdownProps> = ({ color }) => {
 };
 
 export default function DropdownRender() {
-  return <Dropdown color="bg-white" />;
+  return <DropdownTariff color="bg-white" />;
 }

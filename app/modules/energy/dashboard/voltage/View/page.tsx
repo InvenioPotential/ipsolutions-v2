@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Topnav from '@/components/topnav';
 import router from 'next/router';
+import Link from 'next/link';
 //import { useHistory } from 'react-router-dom';
 
 interface BillingProps {
@@ -45,13 +46,15 @@ const Billing: React.FC<BillingProps> = ({
           </h2>
           <h2 className="text-2xl font-semibold text-gray-800">Meter Number: {/* Add tarif here */}</h2>
           <h2 className="text-2xl font-semibold text-gray-800">Tariff: {/* Add tarif here */}</h2>
-          <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={handleGenerateClick}
-          
-        >
-          Generate
-        </button>
+          <h2> 
+            <Link href="/modules/energy/dashboard/voltage/tableView">
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Table
+              </button>
+              </Link>
+          </h2>
         </div>
       </div>
       <div className="overflow-x-auto">

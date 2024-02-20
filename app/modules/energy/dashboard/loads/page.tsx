@@ -1,42 +1,36 @@
-'use client';
+'use client'
 import React, { useState } from 'react';
 import CompanyList from './components/LoadsList';
-import Table from './components/Table';
 import CompanyData from './components/LoadsData';
-
-import { HiEye, HiPencilAlt } from 'react-icons/hi';
+import { HiEye } from 'react-icons/hi';
 import { BiSolidTrash } from 'react-icons/bi';
-
 import Topnav from '@/components/topnav';
-import SideNavBar from '@/components/sidenavbar';
 import Modal from './components/Modal';
-
-
-
 
 const generateId = (): number => {
   return Math.floor(Math.random() * 1000);
 };
 
-
 const Page: React.FC = () => {
   const [showSmallScreenPopup, setShowSmallScreenPopup] = useState(false);
   const [editCompanyId, setEditCompanyId] = useState<number | null>(null);
-  const [supplier] = useState<string[]>([]); // Assuming supplier is an array of string
-  const [tableData, setTableData] = useState<Table[]>([]);
+  const [tableData, setTableData] = useState<CompanyData[]>([]);
+  const [selectedLoads, setSelectedLoads] = useState<number[]>([]);
 
   const handleAddCompany = (newCompanyData: CompanyData) => {
-    const newCompany: Table = {
+    const newCompany: CompanyData = {
       id: generateId(),
       companyName: newCompanyData.companyName,
+      tariff: newCompanyData.tariff,
       loads: newCompanyData.loads,
+      csvFile: null,
     };
 
     setTableData([...tableData, newCompany]);
     setShowSmallScreenPopup(false);
   };
 
-  const handleEditCompany = (companyId: number) => {
+  const handleEditCompany = (companyId: number | null) => {
     setEditCompanyId(companyId);
     setShowSmallScreenPopup(true);
   };
@@ -44,7 +38,7 @@ const Page: React.FC = () => {
   const handleEditSubmit = (editedCompanyData: CompanyData) => {
     const updatedTableData = tableData.map((company) =>
       company.id === editCompanyId
-        ? { ...company, companyName: editedCompanyData.companyName, loads: editedCompanyData.loads }
+        ? { ...company, companyName: editedCompanyData.companyName, loads: editedCompanyData.loads, tariff: editedCompanyData.tariff }
         : company
     );
 
@@ -58,43 +52,55 @@ const Page: React.FC = () => {
     setTableData(updatedTableData);
   };
 
-  const [open, setOpen] = useState<boolean>(false);
+  const handleSaveChanges = (newCompanyData: CompanyData) => {
+    const newCompany: CompanyData = {
+      id: generateId(),
+      companyName: newCompanyData.companyName,
+      loads: newCompanyData.loads,
+      tariff: newCompanyData.tariff,
+      csvFile: null,
+    };
+
+    setTableData([...tableData, newCompany]);
+    setShowSmallScreenPopup(false);
+  };
+
+  const handleLoadSelectionChange = (loadId: number) => {
+    setSelectedLoads((prevSelectedLoads) =>
+      prevSelectedLoads.includes(loadId) ? prevSelectedLoads.filter((id) => id !== loadId) : [...prevSelectedLoads, loadId]
+    );
+  };
 
   return (
     <div>
       <Topnav/>
       <div className='m-3'>
-          <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
+        <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
+          <div className='flex justify-between'>
             <div className='border-b-1 mb-5'>
               <div className='text-2xl text-black font-bold'>
                 LOADS
               </div>
               <div className='text-xs text-gray-500 font-semibold'>
-              ANALYSIS OF LOADS SUCH AS LIGHTING AND PUMP
+                ANALYSIS OF LOADS
               </div>
             </div>
-            <div className="custom-gradient">
-              <CompanyList
-                data={tableData}
-                onView={(id) => console.log('View clicked for company with id:', id)}
-                onEdit={handleEditCompany}
-                onDelete={handleDeleteCompany}
-              />
-              {/* Add other components as needed */}
-            </div>
-
-
-            </div>
+            <Modal onSave={handleSaveChanges} onClose={() => {}} />
+          </div>
+          <div className="custom-gradient bg-gray-100 rounded-md h-screen flex flex-col relative">
+            <CompanyList
+              data={tableData}
+              onView={(id) => console.log('View clicked for company with id:', id)}
+              onEdit={handleEditCompany}
+              onDelete={handleDeleteCompany}
+              onDoubleClick={(loadId: number) => handleLoadSelectionChange(loadId)}
+              selectedLoads={selectedLoads}
+            />
+          </div>
         </div>
-
-      
-
-      
+      </div>
     </div>
-  
-
-      );  
+  );
 };
-
 
 export default Page;

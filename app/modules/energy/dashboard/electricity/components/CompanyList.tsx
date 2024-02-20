@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { HiEye, HiPencilAlt } from 'react-icons/hi';
 import { BiSolidTrash } from 'react-icons/bi';
 import Modal from './Modal';
+import Link from 'next/link';
+//import {useHistory} from 'react-router-dom';//
+
 
 interface CompanyData {
   id:number;
@@ -19,8 +22,10 @@ interface CompanyListProps {
 }
 
 
-const CompanyList: React.FC<CompanyListProps> = ({ data, onView, onEdit, onDelete }) => {
+
+const CompanyList: React.FC<CompanyListProps> = ({ data, onView, onEdit, onDelete}) => {
   const [selectedCompanyId, setSelectedCompanyId] = useState<number | null>(null);
+  //const history = useHistory();//
 
   const handleEditClick = (id: number) => {
     setSelectedCompanyId(id);
@@ -30,7 +35,10 @@ const CompanyList: React.FC<CompanyListProps> = ({ data, onView, onEdit, onDelet
   const handleDeleteClick = (id: number) => {
     onDelete(id);
   };
-
+  
+  function handleViewClick() {
+    //history.push("/View");
+  }
   
 
   return (
@@ -51,10 +59,12 @@ const CompanyList: React.FC<CompanyListProps> = ({ data, onView, onEdit, onDelet
               <td>{company.supplier}</td>
               <td>{company.tariff}</td>
               <td>
-                <button onClick={() => onView(company.id)}>
+                <Link href= "/modules/energy/dashboard/electricity/View">
+                <button type="button" onClick={handleViewClick} > 
                   <HiEye />
                 </button>
-                <button onClick={() => onEdit(company.id)}>
+                </Link>
+                <button onClick={() => onEdit(company.id)} >       
                   <HiPencilAlt />
                 </button>
                 <button onClick={() => onDelete(company.id)}>
@@ -80,4 +90,4 @@ const CompanyList: React.FC<CompanyListProps> = ({ data, onView, onEdit, onDelet
   );
 };
 
-export default CompanyList;
+export default  CompanyList;

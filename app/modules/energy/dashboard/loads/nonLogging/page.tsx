@@ -6,17 +6,25 @@ import Link from 'next/link';
 //import { useHistory } from 'react-router-dom';
 
 interface BillingProps {
-  voltageDate: string;
-  voltageTime: string;
-  energyUsage: number;
+  loadEquip: string;
+  loadDesc: string;
+  loadRated: number;
+  loadTotalRated: number;
+  loadFactor: number;
+  loadTimeFactor: number;
+  loadEnergy: number;
   
 }
 
 const Billing: React.FC<BillingProps> = ({
     
-  voltageDate,
-  voltageTime,
-  energyUsage,
+    loadEquip,
+    loadDesc,
+    loadRated,
+    loadTotalRated,
+    loadFactor,
+    loadTimeFactor,
+    loadEnergy
   
   
 }) => {
@@ -42,12 +50,12 @@ const Billing: React.FC<BillingProps> = ({
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center space-x-4">
           <h2 className="text-2xl font-semibold text-gray-800 mr-4">
-            Type: {/*Need to change to dropdown */}
+            Load: 
           </h2>
           <h2 className="text-2xl font-semibold text-gray-800">Meter Number: {/* Add tarif here */}</h2>
-          <h2 className="text-2xl font-semibold text-gray-800">Tariff: {/* Add tarif here */}</h2>
+          <h2 className="text-2xl font-semibold text-gray-800">Type: {/* Add tarif here */}</h2>
           <h2> 
-            <Link href="/modules/energy/dashboard/loads/tableView">
+            <Link href="/modules/energy/dashboard/loads/tableViewNon">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
               >
@@ -62,20 +70,36 @@ const Billing: React.FC<BillingProps> = ({
         <table className="w-full min-w-max text-left table-auto">
           <thead>
             <tr>
-              <th className="border-b p-2 sticky left-0 z-10 bg-white">Date</th>
-              <th className="border-b p-2 sticky left-0 z-10 bg-white">Time</th>
+              <th className="border-b p-2 sticky left-0 z-10 bg-white">Equipment</th>
+              <th className="border-b p-2 sticky left-0 z-10 bg-white">Description</th>
               <th className="border-b p-2 sticky left-0 z-10 bg-white">
-                Energy Usage (10 Minutes)
+                Rated Power (W)
               </th>
-              
+              <th className="border-b p-2 sticky left-0 z-10 bg-white">
+                Total Rated Power (kW)
+              </th>
+              <th className="border-b p-2 sticky left-0 z-10 bg-white">
+                Loading Factor
+              </th>
+              <th className="border-b p-2 sticky left-0 z-10 bg-white">
+                Time Usage Factor
+              </th>
+              <th className="border-b p-2 sticky left-0 z-10 bg-white">
+                Energy Daily (kWh)
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="border-b p-2">{voltageDate}</td>
-              <td className="border-b p-2">{voltageTime}</td>
-              <td className="border-b p-2">{energyUsage}kWh</td>
-              
+              <td className="border-b p-2">{loadEquip}</td>
+              <td className="border-b p-2">{loadDesc}</td>
+              <td className="border-b p-2">{loadRated}W</td>
+              <td className="border-b p-2">{loadTotalRated}kW</td>
+              <td className="border-b p-2">{loadFactor}</td>
+              <td className="border-b p-2">{loadTimeFactor}</td>
+              <td className="border-b p-2">{loadEnergy}kWh</td>
+    
+  
             </tr>
           </tbody>
         </table>

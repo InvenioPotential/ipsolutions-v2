@@ -2,7 +2,8 @@
 import React, { useState } from 'react';
 import Topnav from '@/components/topnav';
 import router from 'next/router';
-//import { useHistory } from 'react-router-dom';
+import Link from 'next/link';
+//import { useHistory } from 'react-router-dom';//
 
 interface BillingProps {
   billDate: string;
@@ -81,7 +82,6 @@ const Billing: React.FC<BillingProps> = ({
             // For example, you can use a modal or a dropdown menu
             // Once the user has made a selection, update the `selectedItems` state
             setSelectedItems(['Month', 'Bill Date', 'Bill Period (From)', 'Bill Period (To)', 'Energy Usage (Peak)', 'Usage Amount (Peak)', 'Energy Usage (Off-Peak)', 'Usage Amount (Off-Peak)', 'MD Usage', 'MD Amount', 'ICPT', 'CLC', 'PF', 'PF Penalty', 'KWTBB', 'Late Payment Charge', 'Adjustment/Discount', 'Due', 'Rounding', 'Total Due', 'Arrears', 'Total Bill', 'T1', 'T2', 'T3', 'SOHO', 'Retail', 'PDD Office', 'Common Area', 'Amount To Be Paid (CA)']);
-            router.push('/modules/electricity/Chart/page.tsx');
           }; 
   return (
     <div>
@@ -94,13 +94,15 @@ const Billing: React.FC<BillingProps> = ({
           </h2>
           <h2 className="text-2xl font-semibold text-gray-800">Meter Number: {/* Add tarif here */}</h2>
           <h2 className="text-2xl font-semibold text-gray-800">Tariff: {/* Add tarif here */}</h2>
-          <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-          onClick={handleGenerateClick}
-          
-        >
-          Generate
-        </button>
+          <h2> 
+            <Link href="/modules/energy/dashboard/electricity/Chart">
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Generate
+              </button>
+              </Link>
+          </h2>
         </div>
       </div>
       <div className="overflow-x-auto">

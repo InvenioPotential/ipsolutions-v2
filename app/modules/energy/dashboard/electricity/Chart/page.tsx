@@ -1,163 +1,110 @@
 'use client'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import { ResponsiveChartContainer } from '@mui/x-charts/ResponsiveChartContainer';
+import { LinePlot } from '@mui/x-charts/LineChart';
+import { BarPlot } from '@mui/x-charts/BarChart';
+import { ChartsXAxis } from '@mui/x-charts/ChartsXAxis';
+import { ChartsYAxis } from '@mui/x-charts/ChartsYAxis';
 import Topnav from '@/components/topnav';
-import React, { useState } from 'react';
-import dynamic from 'next/dynamic';
 
 
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  LineChart,
-  Line,
-  PieChart,
-  Pie,
-  Cell,
-  ComposedChart,
-  AreaChart,
-  Area,
-} from 'recharts';
-
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
-
-const data = [
-  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
-  { name: 'Page B', uv: 3000, pv: 1390, amt: 2210 },
-  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
-  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
-  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
-  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
-  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
-];
-
-const BarChartExample = () => {
-  const BarChartDynamic = dynamic(() => import('recharts').then((mod) => mod.BarChart), { ssr: false });
-  return (
-    <div>
-      <h2>Bar Chart Example</h2>
-      <div>
-        <BarChart
-          width={500}
-          height={300}
-          data={data}
-          margin={{
-            top: 5,
-            right: 30,
-            left: 20,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
-      </BarChart>
-         </div>
-      
-    </div>
-  );
+type SeriesType = {
+  type: 'line' | 'bar'; // Restricting type to 'line' or 'bar'
+  id: string;
+  yAxisKey: string;
+  data: number[];
+  color: string;
 };
 
-const LineChartExample = () => {
-  const LineChartDynamic = dynamic(() => import('recharts').then((mod) => mod.LineChart), { ssr: false });
-  return (
-    <div>
-      <h2>Line Chart Example</h2>
-      <LineChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-        <Line dataKey="uv" stroke="#82ca9d" />
-      </LineChart>
-    </div>
-  );
+// Define type for chart data
+type ChartData = {
+  [key: string]: {
+    xAxis: { scaleType: 'band'; data: string[]; id: string; label: string }[];
+    yAxis: { id: string }[];
+    series: SeriesType[]; // Use the defined SeriesType here
+  };
 };
 
-const BarLineChartExample = () => {
-  const ComposedChartDynamic = dynamic(() => import('recharts').then((mod) => mod.ComposedChart), { ssr: false });
-  return (
-    <div>
-      <h2>Bar and Line Chart Example</h2>
-      <ComposedChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="pv" barSize={20} fill="#8884d8" />
-        <Line dataKey="uv" stroke="#82ca9d" />
-      </ComposedChart>
-    </div>
-  );
-};
-// Pie Chart Example
-const PieChartExample = () => {
-  const PieChartDynamic = dynamic(() => import('recharts').then((mod) => mod.PieChart), { ssr: false });
-  return (
-    <div>
-      <h2>Pie Chart Example</h2>
-      <PieChart width={400} height={400}>
-        <Pie
-          data={data}
-          cx={200}
-          cy={200}
-          outerRadius={80}
-          fill="#8884d8"
-          dataKey="uv"
-          label
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Legend />
-      </PieChart>
-    </div>
-  );
-};
-const Charts = () => {
+
+// Year component
+export default function Year({ year }: { year: string }) {
+  const [selectedGraph, setSelectedGraph] = React.useState('energyVsMaximumDemand');
+
+  const handleChangeGraph = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedGraph(event.target.value);
+  };
+
+  // Define chart data
+  const chartData: ChartData = {
+    energyVsMaximumDemand: {
+      xAxis: [{ scaleType: 'band', data: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'], id: 'month', label: 'Month' }],
+      yAxis: [{ id: 'maximumDemand' }, { id: 'monthly' }],
+      series: [{ type: 'line', id: 'md01', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2021', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'blue' },
+      { type: 'line', id: 'md02', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2022', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'green' },
+      { type: 'line', id: 'md03', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2023', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'yellow' },
+      { type: 'line', id: 'md04', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2024', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'purple' }],
+    },
+    energyVsRM: {
+      xAxis: [{ scaleType: 'band', data: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'], id: 'month', label: 'Month' }],
+      yAxis: [{ id: 'money' }, { id: 'monthly' }],
+      series: [{ type: 'line', id: 'md01', yAxisKey: 'money', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2021', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'blue' },
+      { type: 'line', id: 'md02', yAxisKey: 'money', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2022', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'green' },
+      { type: 'line', id: 'md03', yAxisKey: 'money', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2023', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'yellow' },
+      { type: 'line', id: 'md04', yAxisKey: 'money', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
+      { type: 'bar', id: '2024', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'purple' }],
+    },
+  };
+
   return (
     <div>
       <Topnav/>
       <div>
-        <BarChartExample />
-        <LineChartExample />
-        <BarLineChartExample />
-        <PieChartExample />
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
+        <Typography variant="h6">{year}</Typography>
+        <select value={selectedGraph} onChange={handleChangeGraph} style={{ marginTop: '10px' }}>
+          <option value="energyVsMaximumDemand">Energy VS Maximum Demand</option>
+          <option value="energyVsRM">Energy VS RM</option>
+        </select>
+        <ResponsiveChartContainer {...chartData[selectedGraph]} height={400} margin={{ top: 20, bottom: 50, left: 70, right: 70 }} sx={{ width: '100%', maxWidth: '600px', '@media (max-width: 600px)': { maxWidth: '100%' } }}>
+          <ChartsXAxis axisId="month" label="Month" labelFontSize={18} />
+          <ChartsYAxis axisId="monthly" label="Energy (kWh)" labelFontSize={14} />
+          {selectedGraph === 'energyVsMaximumDemand' && 
+            <ChartsYAxis axisId="maximumDemand" position="right" label="Maximum Demand" labelFontSize={14} sx={{ marginRight: '20px', marginTop: '20px' }}/>}
+          {selectedGraph === 'energyVsRM' && 
+            <ChartsYAxis axisId="money" position="right" label="Usage Amount (RM)" labelFontSize={14} sx={{ marginRight: '20px', marginTop: '20px' }}/>}
+          <BarPlot />
+          <LinePlot />
+        </ResponsiveChartContainer>
+      </Box>
       </div>
+      
     </div>
   );
-};
+}
 
-export default Charts;
+// Function to generate year components dynamically
+function generateYearComponents() {
+  const years: string[] = ['2020', '2021', '2022', '2023', '2024'];
+  return years.map(year => <Year key={year} year={year} />);
+}
+
+// export default function AxisWithComposition() {
+//   const yearComponents = generateYearComponents();
+
+//   return (
+//     <Box sx={{ width: '100%', maxWidth: 600, margin: '0 auto', textAlign: 'center' }}>
+//       <Topnav/>
+//       {yearComponents}
+//     </Box>
+//   );
+// }
 

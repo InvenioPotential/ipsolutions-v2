@@ -375,13 +375,12 @@
   box-sizing: border-box; /* Include padding in the width */
 }
 
-/*background and button*/
-
-/* .custom-gradient {
-  background: linear-gradient(to bottom, #3EBF42, #87CEEB);
-  border-radius: 12px;
-} */
-
+.barEn {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+}
 
 
 

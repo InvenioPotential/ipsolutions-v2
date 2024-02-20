@@ -75,7 +75,7 @@ export default function Modal({ onSave, onClose }: ModalProps) {
                         onClick={() => setShowDeleteConfirmation(true)}
                         className="bg-red-500 text-white active:bg-red-600 font-bold  text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                         type="button"
-                        disabled={isFormIncomplete}
+                        
                       >
                         <BiSolidTrash />
                       </button>
@@ -155,7 +155,7 @@ export default function Modal({ onSave, onClose }: ModalProps) {
                     className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                     type="button"
                     onClick={handleSaveChanges}
-                    disabled={isFormIncomplete}
+                    
                   >
                     Save Changes
                   </button>
