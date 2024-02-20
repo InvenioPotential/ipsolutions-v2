@@ -52,7 +52,7 @@ const TaskRecur = () => {
                   <AddNonRecur/>
                   </div>
                   <div className='overflow-auto mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
-                  <table   className='container table-auto max-w-screen bg-green-300 rounded-md p-4'>
+                  <table   className='container table-auto max-w-screen bg-gradient-to-r from-green-300 via-blue-100 to-gray-200 rounded-md p-4'>
                             <thead className='text-black '>
                                 <tr className='*:p-4 justify-between'>
                                     <th>TASK</th>

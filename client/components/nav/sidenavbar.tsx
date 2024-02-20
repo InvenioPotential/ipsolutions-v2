@@ -8,6 +8,7 @@ import { RiCommunityFill, RiMoneyDollarBoxFill } from 'react-icons/ri';
 import { SiGoogleforms } from 'react-icons/si';
 import { IoIosArrowDown } from 'react-icons/io';
 import Image from 'next/image';
+import { IoStatsChart } from 'react-icons/io5';
 
 const SideNavBar = () => {
       // open mini task list
@@ -80,7 +81,15 @@ const SideNavBar = () => {
                 </ul>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" className="items-center flex hover:text-gray-300">
+                <IoStatsChart className='w-4 h-4 m2'/>
+                <div className='ml-2 text-center'>
+                  STATISTICS
+                </div>
+                </Link>
+            </li>
+            <li className="m-3 mt-5">
+              <Link href="" className="items-center flex hover:text-gray-300">
                 <GrHostMaintenance className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   MAINTENANCE
@@ -88,7 +97,7 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" className="items-center flex hover:text-gray-300">
                 <RiCommunityFill className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   COMMUNITY
@@ -96,7 +105,7 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" className="items-center flex hover:text-gray-300">
                 <FaTools className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   OPERATIONS
@@ -104,7 +113,7 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" className="items-center flex hover:text-gray-300">
                 <RiMoneyDollarBoxFill className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   FINANCE
@@ -112,7 +121,7 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" className="items-center flex hover:text-gray-300">
                 <SiGoogleforms className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   DIGITAL FORMS
@@ -120,7 +129,7 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" className="items-center flex hover:text-gray-300">
                 <MdDisabledByDefault className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   DEFECT
@@ -128,7 +137,7 @@ const SideNavBar = () => {
                 </Link>
             </li>
             <li className="m-3 mt-5">
-              <Link href="/" className="items-center flex hover:text-gray-300">
+              <Link href="" className="items-center flex hover:text-gray-300">
                 <FaCartPlus className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   PROCUREMENT
@@ -155,7 +164,7 @@ const SideNavBar = () => {
               
                 <ul className={` ${isEnergyOpen ? 'justify-between' : 'ml-5 hidden'}`} >
                     <li className='text-xs m-3 mt-5' >
-                      <Link href="/" className="items-center flex hover:text-gray-300">
+                      <Link href="" className="items-center flex hover:text-gray-300">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           SPADE
@@ -163,7 +172,7 @@ const SideNavBar = () => {
                       </Link>
                     </li>
                     <li className='text-xs m-3 mt-3' >
-                      <Link href="/" className="items-center flex hover:text-gray-300">
+                      <Link href="" className="items-center flex hover:text-gray-300">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           ELECTRICITY
@@ -171,7 +180,7 @@ const SideNavBar = () => {
                       </Link>
                     </li>
                     <li className='text-xs m-3 mt-3' >
-                      <Link href="/" className="items-center flex hover:text-gray-300">
+                      <Link href="" className="items-center flex hover:text-gray-300">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           VOLTAGE
@@ -179,7 +188,7 @@ const SideNavBar = () => {
                       </Link>
                     </li>
                     <li className='text-xs m-3 mt-3' >
-                      <Link href="/" className="items-center flex hover:text-gray-300">
+                      <Link href="" className="items-center flex hover:text-gray-300">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           LOADS

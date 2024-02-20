@@ -1,11 +1,11 @@
 // Import necessary modules and dependencies
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
 
 export async function POST(req: Request, res: NextApiResponse) {
     try {
         const body = await req.json();
-        console.log(body);
+        //console.log(body);
 
         const { title, notes, duedate, priority } = body;
         // Create a new Todo using Prisma
@@ -58,3 +58,30 @@ export async function DELETE(req: Request, res: NextApiResponse) {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 }
+
+// export default async function PUT(req: Request, res: NextApiResponse) {
+//     try {
+//         const body = await req.json();
+//         const { id, title, notes, duedate, priority } = body;
+
+//         // Update the existing Todo using Prisma
+//         const updatedTodo = await prisma.notes.update({
+//             where: {
+//                 id: parseInt(id, 10),
+//             },
+//             data: {
+//                 title,
+//                 notes,
+//                 duedate,
+//                 priority,
+//             },
+//         });
+
+//         // Send a success response with the updated Todo
+//         res.status(200).json(updatedTodo);
+//     } catch (error) {
+//         console.error('Error updating todo item:', error);
+//         // Send an error response
+//         res.status(500).json({ error: 'Internal Server Error' });
+//     }
+// }

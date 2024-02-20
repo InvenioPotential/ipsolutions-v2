@@ -23,7 +23,7 @@ const EditNonRecur = () => {
         {/*content*/}
         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
             {/*header*/}
-            <div className="flex justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+            <div className="flex text-left justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                 <div>
                     <p className="text-2xl text-black font-bold">
                         EDIT TASK

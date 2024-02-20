@@ -69,8 +69,8 @@ const TaskReport = () => {
                   
                   </div>
 
-                  <div className='overflow-auto mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
-                  <div>Preview Generated Report</div>
+                  <div className='overflow-auto text-gray-200 mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
+                  <div>Preview Generated Report Here.</div>
                   </div>
                   </div>
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>

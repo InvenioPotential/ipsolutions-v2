@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { IoMdAddCircle } from 'react-icons/io';
-import { MdDelete } from 'react-icons/md';
+import EditTodo from './editTodo';
 
 
 interface item {
@@ -131,6 +131,7 @@ export const NoteList: React.FC = () => {
                                                                 onChange={(e) => setInput4(e.currentTarget.value)}
                                                                 className='p-2 m-2 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
                                                             >
+                                                                <option value='None'>None</option>
                                                                 <option value='High'>High</option>
                                                                 <option value='Medium'>Medium</option>
                                                                 <option value='Low'>Low</option>
@@ -179,15 +180,10 @@ export const NoteList: React.FC = () => {
                         >
                             <div className='font-bold uppercase flex justify-between'>
                                 <div>{todo.title}</div>
-                                <div>
-                                    <button 
-                                    type="button" 
-                                    className='p-1 hover:bg-red-200 rounded-full'
-                                    // onClick={()=>handleDelete(todo.id)}
-                                    >
-                                    
-                                    <MdDelete/></button> 
-                                </div>     
+                                <div className='flex'>
+                                 <EditTodo/> 
+                                </div>
+                                
                             </div>
                             <div className='*:text-sm'>
                                 <div className='font-semibold'>Notes - {todo.notes}</div>

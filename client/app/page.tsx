@@ -25,17 +25,17 @@ export default function Home() {
               className="animate-pulse"
             />
           </div>
-          <div className="pt-10 justify-center items-center">
-            <Link href="/sign-in">
-            <button className="text-sm bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-7 rounded-lg">
-              SIGN-IN
-            </button>
-            </Link>
-            <Link href="/sign-up">
-            <button className="text-sm bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-7 rounded-lg">
-              SIGN-UP
-            </button>
-            </Link>
+          <div className="pt-10 *:m-5 justify-center items-center">
+              <Link href="/sign-in">
+              <button className="text-sm bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-7 rounded-lg">
+                SIGN-IN
+              </button>
+              </Link> 
+              <Link href="/sign-up">
+              <button className="text-sm bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-7 rounded-lg">
+                SIGN-UP
+              </button>
+              </Link>        
         </div>
         <div className="pt-10  flex justify-center items-center">
             <p className="font-semibold text-sm text-gray-500">DON&apos;T HAVE AN ACCOUNT? CONTACT US.</p>

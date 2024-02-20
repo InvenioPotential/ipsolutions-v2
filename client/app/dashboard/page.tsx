@@ -1,6 +1,6 @@
 
 import MiniCalendar from '@/components/dateCalendar/miniCalendar';
-import NoteList from '@/components/notes/noteList';
+import NoteList from '@/components/notes/todoList';
 import { currentUser } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
