@@ -7,7 +7,7 @@ import { LinePlot } from '@mui/x-charts/LineChart';
 import { BarPlot } from '@mui/x-charts/BarChart';
 import { ChartsXAxis } from '@mui/x-charts/ChartsXAxis';
 import { ChartsYAxis } from '@mui/x-charts/ChartsYAxis';
-import Topnav from '@/components/topnav';
+// import Topnav from '@/components/topnav';
 
 
 type SeriesType = {
@@ -44,11 +44,9 @@ export default function Year({ year }: { year: string }) {
       series: [{ type: 'line', id: 'md01', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
       { type: 'bar', id: '2021', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'blue' },
       { type: 'line', id: 'md02', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
-      { type: 'bar', id: '2022', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'green' },
-      { type: 'line', id: 'md03', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
-      { type: 'bar', id: '2023', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'yellow' },
-      { type: 'line', id: 'md04', yAxisKey: 'maximumDemand', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
-      { type: 'bar', id: '2024', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'purple' }],
+      { type: 'bar', id: '2022', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'green' }
+     
+],
     },
     energyVsRM: {
       xAxis: [{ scaleType: 'band', data: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'], id: 'month', label: 'Month' }],
@@ -57,16 +55,14 @@ export default function Year({ year }: { year: string }) {
       { type: 'bar', id: '2021', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'blue' },
       { type: 'line', id: 'md02', yAxisKey: 'money', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
       { type: 'bar', id: '2022', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'green' },
-      { type: 'line', id: 'md03', yAxisKey: 'money', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
-      { type: 'bar', id: '2023', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'yellow' },
-      { type: 'line', id: 'md04', yAxisKey: 'money', data: [425, 426, 459, 460, 466, 481, 485, 488, 495, 497, 498, 500,], color: 'red' }, 
-      { type: 'bar', id: '2024', yAxisKey: 'monthly', data: [2073, 2540, 2578, 3178, 3623, 3670, 3716, 3780, 4455, 4619, 4955, 4957], color:'purple' }],
+
+     ],
     },
   };
 
   return (
     <div>
-      <Topnav/>
+      {/* <Topnav/> */}
       <div>
       <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '20px' }}>
         <Typography variant="h6">{year}</Typography>
@@ -91,20 +87,4 @@ export default function Year({ year }: { year: string }) {
   );
 }
 
-// Function to generate year components dynamically
-function generateYearComponents() {
-  const years: string[] = ['2020', '2021', '2022', '2023', '2024'];
-  return years.map(year => <Year key={year} year={year} />);
-}
-
-// export default function AxisWithComposition() {
-//   const yearComponents = generateYearComponents();
-
-//   return (
-//     <Box sx={{ width: '100%', maxWidth: 600, margin: '0 auto', textAlign: 'center' }}>
-//       <Topnav/>
-//       {yearComponents}
-//     </Box>
-//   );
-// }
 

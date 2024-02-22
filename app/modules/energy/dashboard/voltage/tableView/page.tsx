@@ -1,4 +1,5 @@
-'use client'
+// BarsDataset.tsx
+'use client';
 import * as React from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
 import styled from "@emotion/styled"
@@ -66,64 +67,64 @@ const TotalBox = styled.div`
   margin-top: 20px;
 `;
 
+// Exporting the total energy value
+export const TotalEnergy: React.FC = () => {
+    const totalEnergy = dataset.length; // change this formula
+    return (
+        <TotalBox>
+            Total Energy: {totalEnergy.toFixed(2)} kWh
+        </TotalBox>
+    );
+};
+
 export default function BarsDataset() {
     const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     const averageEnergy = 2000 / dataset.length; //calculate average
-    const totalEnergy = dataset.length;// change this formula
-
-  return (
-    <div>
+    return (
         <div>
             <Topnav/>
-        <div>
-        <Center>
-            <ChartContainer>
-                <BarChart 
-                dataset={dataset}
-                xAxis={[{ scaleType: 'band', dataKey: 'hour' }]} // X-axis represents 24 hours
-                series={[{ dataKey: 'value', label: 'Energy (kWh)', valueFormatter }]} // Y-axis represents energy in kWh
-                width={600} // Adjust width if needed
-                height={400} // Adjust height if needed
-                />
-            </ChartContainer>
-            <TableContainer>
-                <Table>
-                <thead>
-                    <tr>
-                    <Th>STATUS</Th>
-                    <Th>DAY</Th>
-                    <Th>DATE</Th>
-                    <Th>DAILY ENERGY</Th>
-                    <Th>NO. OF DAYS</Th>
-                    <Th>ANNUAL ENERGY</Th>
-                    </tr>
-                </thead>
-                <tbody>
-                        {daysOfWeek.map((day, index) => (
-                    <tr key={index}>
-                        <Td></Td> {/* Blank for STATUS */}
-                        <Td>{day}</Td> {/* Filled with days of the week */}
-                        <Td></Td> {/* Blank for DATE */}
-                        <Td>0 kWh</Td> {/* Blank for DAILY ENERGY with fixed unit */}
-                        <Td></Td> {/* Blank for NO. OF DAYS */}
-                        <Td>0 kWh</Td> {/* Blank for ANNUAL ENERGY with fixed unit */}
-                    </tr>
-                    ))}
-                </tbody>
-                </Table>
-                <AverageBox>
-                    Average Energy: {averageEnergy.toFixed(2)} kWh
-                </AverageBox>
-                <TotalBox>
-                    Total Energy: {totalEnergy.toFixed(2)} kWh
-                </TotalBox>
-            </TableContainer>
+            <Center>
+                <ChartContainer>
+                    <BarChart 
+                        dataset={dataset}
+                        xAxis={[{ scaleType: 'band', dataKey: 'hour' }]} // X-axis represents 24 hours
+                        series={[{ dataKey: 'value', label: 'Energy (kWh)', valueFormatter }]} // Y-axis represents energy in kWh
+                        width={600} // Adjust width if needed
+                        height={400} // Adjust height if needed
+                    />
+                </ChartContainer>
+                <TableContainer>
+                    <Table>
+                        <thead>
+                            <tr>
+                                <Th>STATUS</Th>
+                                <Th>DAY</Th>
+                                <Th>DATE</Th>
+                                <Th>DAILY ENERGY</Th>
+                                <Th>NO. OF DAYS</Th>
+                                <Th>ANNUAL ENERGY</Th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {daysOfWeek.map((day, index) => (
+                                <tr key={index}>
+                                    <Td></Td> {/* Blank for STATUS */}
+                                    <Td>{day}</Td> {/* Filled with days of the week */}
+                                    <Td></Td> {/* Blank for DATE */}
+                                    <Td>0 kWh</Td> {/* Blank for DAILY ENERGY with fixed unit */}
+                                    <Td></Td> {/* Blank for NO. OF DAYS */}
+                                    <Td>0 kWh</Td> {/* Blank for ANNUAL ENERGY with fixed unit */}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </Table>
+                    <AverageBox>
+                        Average Energy: {averageEnergy.toFixed(2)} kWh
+                    </AverageBox>
+                    {/* Displaying the total energy value */}
+                    <TotalEnergy />
+                </TableContainer>
             </Center>
         </div>
-
-        </div>
-
-    </div>
-    
-  );
+    );
 }

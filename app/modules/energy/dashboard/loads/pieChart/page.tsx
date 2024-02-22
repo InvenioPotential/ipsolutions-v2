@@ -24,7 +24,8 @@ export default function PieChartLoads() {
     <div>
       <Topnav />
       <div>
-        <h2 style={{ textAlign: 'center', fontSize: '24px' }}>LOADS</h2>
+      <div>
+        <h2 style={{ textAlign: 'center', fontSize: '20px' }}>LOAD APPORTIONING</h2>
         <PieChart
           series={[
             {
@@ -39,6 +40,8 @@ export default function PieChartLoads() {
           legendSelected={selectedLegend}
         />
       </div>
+      </div>
+      
     </div>
   );
 }
