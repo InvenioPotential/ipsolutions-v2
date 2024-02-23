@@ -1,16 +1,17 @@
 "use client"
 import React, { useState } from 'react'
 import { FiActivity } from 'react-icons/fi'
-import { MdAutoGraph, MdUpcoming } from 'react-icons/md'
-import { FaEye, FaFile } from 'react-icons/fa';
-import SpadeGraph from '@/components/energy/spadeGraph';
+import { MdAutoGraph } from 'react-icons/md'
 import AddElectricity from '@/components/energy/modal/addElectricity';
+import EditElectricity from '@/components/energy/modal/editElectricity';
+import ElectricGraph from '@/components/energy/graph/electricGraph';
 
 const EnergyElectricity = () => {
   const [isGenerateOpen, setGenerateOpen] = useState(false);
   const toggleGenerate =() => {
       setGenerateOpen(!isGenerateOpen);
   };
+
 
   return (
     <div className='lg:pl-10 m-5 lg:pr-10 '>
@@ -22,16 +23,16 @@ const EnergyElectricity = () => {
             ENERGY MANAGEMENT
             </div>
         </div> 
-        <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
-            <div className='col-span-3 cursor-pointer items-center  justify-center text-center'>
+        <div className='p-5 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
+            <div className=' col-span-3 cursor-pointer items-center  justify-center text-center'>
               <div className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <AddElectricity/>
                   </div>
               </div>
             </div>
-            <div  className='col-span-3 cursor-pointer items-center  justify-center text-center'>
-              <div className='shadow hover:shadow-xl bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
+            <div  className='hover:shadow-xl col-span-3 cursor-pointer items-center  justify-center text-center'>
+              <div className='shadow bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                   <div className='flex justify-between items-center'>
                       <FiActivity className='m-1 h-5 w-5' />
@@ -66,9 +67,7 @@ const EnergyElectricity = () => {
                                             Generate
                                             <MdAutoGraph className='m-1'/>
                                         </button>
-                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-red-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
-                                            <FaEye className='m-1'/>
-                                        </button>
+                                        <EditElectricity/> 
                                     </td>
                                 </tr>
                                 <tr className='*:p-4 justify-between'>
@@ -79,9 +78,7 @@ const EnergyElectricity = () => {
                                             Generate
                                             <MdAutoGraph className='m-1'/>
                                         </button>
-                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-red-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
-                                            <FaEye className='m-1'/>
-                                        </button>
+                                        <EditElectricity/> 
                                     </td>
                                 </tr>
                                 <tr className='*:p-4 justify-between'>
@@ -92,22 +89,7 @@ const EnergyElectricity = () => {
                                             Generate
                                             <MdAutoGraph className='m-1'/>
                                         </button>
-                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-red-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
-                                            <FaEye className='m-1'/>
-                                        </button>
-                                    </td>
-                                </tr>
-                                <tr className='*:p-4 justify-between'>
-                                    <td>Client1 Sdn. Bhd</td>
-                                    <td>Electricity, Voltage, Loads</td>
-                                    <td className='*:m-1 flex justify-center text-gray-700'>
-                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
-                                            Generate
-                                            <MdAutoGraph className='m-1'/>
-                                        </button>
-                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-red-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
-                                            <FaEye className='m-1'/>
-                                        </button>
+                                        <EditElectricity/> 
                                     </td>
                                 </tr>
                             </tbody>
@@ -116,7 +98,7 @@ const EnergyElectricity = () => {
                 </div>
             </div>
             <div className={` ${isGenerateOpen ? 'm-1 grid  rounded-md col-span-6' : 'ml-5 hidden'}`}>
-                <SpadeGraph/>
+                <ElectricGraph/>
             </div>
         </div>
     </div>

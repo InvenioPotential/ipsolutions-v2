@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { FiActivity } from 'react-icons/fi'
 import { MdAutoGraph, MdUpcoming } from 'react-icons/md'
 
-import SpadeGraph from '@/components/energy/spadeGraph';
+import SpadeGraph from '@/components/energy/graph/spadeGraph';
 import { FaFile } from 'react-icons/fa';
 
 const EnergySpade = () => {
@@ -53,7 +53,7 @@ const EnergySpade = () => {
         <div className='m-3 mt-4 lg:grid md:grid sm:flex grid-cols-6 gap-4'>
             <div className='m-1 grid  rounded-md col-span-3'>
                 <div className='p-2 m-1'>
-                <div className='m-2  items-center'>
+                    <div className='m-2  items-center'>
                         <p className='text-md text-gray-600 font-bold'>OVERVIEW</p>
                         <p className='text-sm text-gray-400'>Overview list of uploaded files.</p>
                     </div>

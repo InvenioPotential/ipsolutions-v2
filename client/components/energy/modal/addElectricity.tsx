@@ -8,17 +8,15 @@ const AddElectricity = () => {
 
   return (
     <>
-        <div className='flex justify-center'>
-            <button onClick={() => setShowModal(true)} className='flex justify-between items-center'>
+        <div onClick={() => setShowModal(true)} className='flex justify-between items-center'>
             <MdUpcoming className='m-1 h-5 w-5' />
-            <div className='m-1 '>UPLOAD</div>
-            </button>   
+            <div className='m-1'>UPLOAD</div>
         </div>
        
         {showModal ? (
         <>
         <div
-            className="justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            className="m-5 justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
         >
             <div className="relative w-auto my-6 mx-auto max-w-3xl">
             {/*content*/}
@@ -37,10 +35,10 @@ const AddElectricity = () => {
                 <div className="relative p-6  flex-auto">
                 <form>
                 <div className='grid w-74 gap-5 grid-cols-2'>
-                    <div className='col-span-2 w-full items-center flex justify-between'>
+                    <div className='col-span-2  text-left'>
                         <p>CLIENT:</p>
                         <div className='w-auto'>
-                            <input  className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                            <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                         </div>
                     </div>
                     <div>
@@ -51,10 +49,17 @@ const AddElectricity = () => {
                         <p>TARIFF:</p>
                         <Tariff />
                     </div>
-                    <div className='col-span-2 w-full items-center flex justify-between'>
+                    <div className='col-span-2  text-left'>
+                        <p>UPLOAD FILE:</p>
+                        <div className='w-auto '>
+                            <input className="p-2 m-1 w-full flex-auto col-span-2 text-gray-900 bg-gray-100 placeholder-gray-500 rounded-md cursor-pointer  focus:outline-none" type="file"/>
+                        </div>
+                    </div>
+
+                    <div className='col-span-2 text-left'>
                         <p>REMARK:</p>
                         <div className='w-auto'>
-                            <input  className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                            <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                         </div>
                     </div>
 

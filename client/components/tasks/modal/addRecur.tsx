@@ -17,7 +17,7 @@ const AddRecur = () => {
             </button>
             {showModal ? (
             <>
-            <div className="justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="m-5 justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
                 {/*content*/}
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -77,22 +77,22 @@ const AddRecur = () => {
                             <div className='col-span-2 w-full items-center flex justify-between'>
                                 <DateRangePickers/>
                             </div>
-                            <div className='col-span-2 w-full items-center flex justify-between'>
+                            <div className='col-span-2  text-left'>
                                 <p>TASK:</p>
                                 <div className='w-auto'>
-                                   <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                                    <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                                 </div>
                             </div>
-                            <div className='col-span-2 w-full items-center flex justify-between'>
+                            <div className='col-span-2  text-left'>
                                 <p>REMARK:</p>
                                 <div className='w-auto'>
-                                   <input  className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                                    <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                                 </div>
                             </div>
-                            <div className='col-span-2 w-full items-center flex justify-between'>
+                            <div className='col-span-2  text-left'>
                                 <p>ASSIGN TASK TO:</p>
-                                <div>
-                                   <input className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100' placeholder='Search users...'></input> 
+                                <div className='w-auto'>
+                                    <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                                 </div>
                             </div>
 
