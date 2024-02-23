@@ -11,7 +11,7 @@ const SpadeGraph = () => {
             GENERATED SPADE GRAPHS
         </div>
         <div className='p-3 bg-gradient-to-r from-blue-300 via-purple-200 to-gray-300 font-semibold text-sm bg-white rounded-md'>
-            <div>CLIENT'S NAME:</div>
+            <div>CLIENT&apos;S NAME:</div>
             <div>FILES:</div>
         </div>
         <div className='pt-5 min-h-screen  overflow-auto'>

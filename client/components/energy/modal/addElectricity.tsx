@@ -25,9 +25,9 @@ const AddElectricity = () => {
                 <div className="flex text-left justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                     <div>
                         <p className="text-2xl text-black font-bold">
-                            ADD ELECTRICITY
+                            ADD ELECTRICITY BILL
                         </p>
-                        <p className='text-sm '>ELECTRICITY BILL DETAILS</p>
+                        <p className='text-sm '>ANALYSIS OF ELECTRICITY BILL</p>
                     </div>
                     
                 </div>
@@ -80,7 +80,7 @@ const AddElectricity = () => {
                     type="button"
                     onClick={() => setShowModal(false)}
                 >
-                    ADD TASK
+                    ADD BILL
                 </button>
                 </div>
             </div>

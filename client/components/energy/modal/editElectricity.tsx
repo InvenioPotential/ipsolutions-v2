@@ -1,6 +1,6 @@
 import Electricity from '@/components/energy/listing/electricity';
 import React from 'react'
-import { MdDelete, MdEdit, MdUpcoming } from 'react-icons/md';
+import { MdDelete, MdEdit } from 'react-icons/md';
 import Tariff from '../listing/tariff';
 import { FaEye } from 'react-icons/fa';
 
@@ -26,9 +26,9 @@ const EditElectricity = () => {
                 <div className="flex text-left justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                     <div>
                         <p className="text-2xl text-black font-bold">
-                            EDIT TASK
+                            EDIT ELECTRICITY BILL
                         </p>
-                        <p className='text-sm flex'>NON-RECURRING TASK</p>
+                        <p className='text-sm '>ANALYSIS OF ELECTRICITY BILL</p>
                     </div>
                     <div>
                         <button className='m-1 p-2 hover:bg-gray-200 rounded-full'><MdEdit/></button>
@@ -130,7 +130,7 @@ const EditElectricity = () => {
                     type="button"
                     onClick={() => setShowModal(false)}
                 >
-                    ADD TASK
+                    UPDATE BILL
                 </button>
                 </div>
             </div>
