@@ -54,14 +54,16 @@ const EnergyElectricity = () => {
                             <thead className=' bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
                                 <tr className='*:p-4 justify-between'>
                                     <th>CLIENT NAME</th>
-                                    <th>ITEM FILES</th>
+                                    <th>SUPPLIER</th>
+                                    <th>TARIFF</th>
                                     <th>ACTION</th>
                                 </tr>
                             </thead>
                             <tbody className=''>
                                 <tr className='*:p-4 justify-between'>
                                     <td>Client1 Sdn. Bhd</td>
-                                    <td>Electricity, Voltage, Loads</td>
+                                    <td>Supplier1</td>
+                                    <td>Tariff A</td>
                                     <td className='*:m-1 flex justify-center text-gray-700'>
                                         <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
                                             Generate
@@ -72,7 +74,8 @@ const EnergyElectricity = () => {
                                 </tr>
                                 <tr className='*:p-4 justify-between'>
                                     <td>Client1 Sdn. Bhd</td>
-                                    <td>Electricity, Voltage, Loads</td>
+                                    <td>Supplier1</td>
+                                    <td>Tariff A</td>
                                     <td className='*:m-1 flex justify-center text-gray-700'>
                                         <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
                                             Generate
@@ -83,7 +86,20 @@ const EnergyElectricity = () => {
                                 </tr>
                                 <tr className='*:p-4 justify-between'>
                                     <td>Client1 Sdn. Bhd</td>
-                                    <td>Electricity, Voltage, Loads</td>
+                                    <td>Supplier1</td>
+                                    <td>Tariff A</td>
+                                    <td className='*:m-1 flex justify-center text-gray-700'>
+                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
+                                            Generate
+                                            <MdAutoGraph className='m-1'/>
+                                        </button>
+                                        <EditElectricity/> 
+                                    </td>
+                                </tr>
+                                <tr className='*:p-4 justify-between'>
+                                    <td>Client1 Sdn. Bhd</td>
+                                    <td>Supplier1</td>
+                                    <td>Tariff A</td>
                                     <td className='*:m-1 flex justify-center text-gray-700'>
                                         <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
                                             Generate

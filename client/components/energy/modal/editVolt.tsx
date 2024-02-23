@@ -1,10 +1,10 @@
-import Electricity from '@/components/energy/listing/electricity';
 import React from 'react'
-import { MdDelete, MdEdit } from 'react-icons/md';
 import Tariff from '../listing/tariff';
+import Voltage from '../listing/voltage';
 import { FaEye } from 'react-icons/fa';
+import { MdDelete, MdEdit } from 'react-icons/md';
 
-const EditElectricity = () => {
+const EditVolt = () => {
     const [showModal, setShowModal] = React.useState(false);
     const [showDel, setShowDel] = React.useState(false);
 
@@ -13,7 +13,6 @@ const EditElectricity = () => {
         <button onClick={() => setShowModal(true)} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-red-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
             <FaEye className='m-1'/>
         </button>
-       
         {showModal ? (
         <>
         <div
@@ -26,9 +25,9 @@ const EditElectricity = () => {
                 <div className="flex text-left justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                     <div>
                         <p className="text-2xl text-black font-bold">
-                            EDIT ELECTRICITY BILL
+                            EDIT VOLTAGE BILL
                         </p>
-                        <p className='text-sm '>ANALYSIS OF ELECTRICITY BILL</p>
+                        <p className='text-sm '>ANALYSIS OF LOW@HIGH VOLTAGE</p>
                     </div>
                     <div>
                         <button className='m-1 p-2 hover:bg-gray-200 rounded-full'><MdEdit/></button>
@@ -49,7 +48,7 @@ const EditElectricity = () => {
                                             {/*body*/}
                                             <div className="relative p-6 flex-auto">
                                             <p className="my-2 font-bold text-blueGray-500 text-lg leading-relaxed">
-                                                DELETE BILL?
+                                                DELETE THIS?
                                             </p>
                                             <div className="my-2 text-sm text-blueGray-500 leading-relaxed">
                                                 YOU WON&apos;T BE ABLE TO UNDO THIS ACTION.
@@ -92,8 +91,8 @@ const EditElectricity = () => {
                         </div>
                     </div>
                     <div>
-                        <p>SUPPLIER:</p>
-                        <Electricity />
+                        <p>VOLTAGE:</p>
+                        <Voltage />
                     </div>
                     <div>
                         <p>TARIFF:</p>
@@ -105,7 +104,6 @@ const EditElectricity = () => {
                             <input className="p-2 m-1 w-full flex-auto col-span-2 text-gray-900 bg-gray-100 placeholder-gray-500 rounded-md cursor-pointer  focus:outline-none" type="file"/>
                         </div>
                     </div>
-
                     <div className='col-span-2 text-left'>
                         <p>REMARK:</p>
                         <div className='w-auto'>
@@ -130,7 +128,7 @@ const EditElectricity = () => {
                     type="button"
                     onClick={() => setShowModal(false)}
                 >
-                    UPDATE BILL
+                    UPDATE VOLTAGE
                 </button>
                 </div>
             </div>
@@ -143,4 +141,4 @@ const EditElectricity = () => {
   )
 }
 
-export default EditElectricity
+export default EditVolt

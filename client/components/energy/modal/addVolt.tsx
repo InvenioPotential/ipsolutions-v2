@@ -2,8 +2,9 @@ import Electricity from '@/components/energy/listing/electricity';
 import React from 'react'
 import { MdUpcoming } from 'react-icons/md';
 import Tariff from '../listing/tariff';
+import Voltage from '../listing/voltage';
 
-const AddElectricity = () => {
+const AddVolt = () => {
     const [showModal, setShowModal] = React.useState(false);
 
   return (
@@ -25,9 +26,9 @@ const AddElectricity = () => {
                 <div className="flex text-left justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                     <div>
                         <p className="text-2xl text-black font-bold">
-                            ADD ELECTRICITY BILL
+                            ADD VOLTAGE BILL
                         </p>
-                        <p className='text-sm '>ANALYSIS OF ELECTRICITY BILL</p>
+                        <p className='text-sm '>ANALYSIS OF LOW@HIGH VOLTAGE</p>
                     </div>
                     
                 </div>
@@ -42,8 +43,8 @@ const AddElectricity = () => {
                         </div>
                     </div>
                     <div>
-                        <p>SUPPLIER:</p>
-                        <Electricity />
+                        <p>VOLTAGE:</p>
+                        <Voltage />
                     </div>
                     <div>
                         <p>TARIFF:</p>
@@ -80,7 +81,7 @@ const AddElectricity = () => {
                     type="button"
                     onClick={() => setShowModal(false)}
                 >
-                    ADD BILL
+                    ADD VOLTAGE
                 </button>
                 </div>
             </div>
@@ -93,4 +94,4 @@ const AddElectricity = () => {
   )
 }
 
-export default AddElectricity
+export default AddVolt
