@@ -1,6 +1,6 @@
 import Category from '@/components/tasks/listing/category';
 import React from 'react'
-import { IoMdAdd } from 'react-icons/io';
+import { IoMdAddCircle } from 'react-icons/io';
 import Priority from '../listing/priority';
 import DateRangePickers from '../../dateCalendar/dateRangePickers';
 
@@ -10,14 +10,11 @@ const AddRecur = () => {
 
   return (
             <>
-            <div >
-                <button type="button"
-                        onClick={() => setShowModal(true)} 
-                        className='flex p-2 rounded-md border hover:bg-green-200 justify-center text-center '>
-                    <div className='p-1 text-black'>ADD</div>
-                    <div className='p-2'><IoMdAdd/></div>
-                </button>
-            </div>
+            <button type="button"
+                    onClick={() => setShowModal(true)} 
+                    className='p-2 rounded-md'>
+                <IoMdAddCircle className='w-7 h-7'/>
+            </button>
             {showModal ? (
             <>
             <div className="justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
@@ -25,12 +22,12 @@ const AddRecur = () => {
                 {/*content*/}
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                     {/*header*/}
-                    <div className="flex justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
+                    <div className="flex text-left justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                         <div>
-                            <p className="text-2xl text-black font-bold">
+                            <p className="text-2xl  text-black font-bold">
                                 ADD TASK
                             </p>
-                            <p className='text-sm flex'>RECURRING TASK</p>
+                            <p className='text-sm'>RECURRING TASK</p>
                         </div>
                     </div>
                     {/*body*/}
@@ -43,10 +40,6 @@ const AddRecur = () => {
                             </div>
                             <div>
                                 <p>SUB-CATEGORY:</p>
-                                <Category />
-                            </div>
-                            <div>
-                                <p>TYPE:</p>
                                 <Category />
                             </div>
                             <div>

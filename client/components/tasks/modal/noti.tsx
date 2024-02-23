@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image';
 import React from 'react'
-import { CgBell } from 'react-icons/cg';
+import { MdNotificationImportant, MdNotifications } from 'react-icons/md';
 
 const Noti = () => {
   const [showNoti, setShowNoti] = React.useState(false);
@@ -13,7 +13,7 @@ return (
   <div>
     <>
       <button onClick={toggleNoti} type="button" className='relative rounded-full '>
-        {showNoti ? <CgBell onClick={() => setShowNoti(true)}  style={{color:'green'}}  className='m-3 h-7 w-7'/> : <CgBell className='m-3 h-7 w-7' />}
+        {showNoti ? <MdNotifications onClick={() => setShowNoti(true)}  style={{color:'green'}}  className='m-3 h-7 w-7'/> : <MdNotificationImportant className='m-3 h-7 w-7' />}
         {/* <CgBell className='m-2 h-6 w-6'/>  */}
         <div className='animate-pulse -top-0.5 start-0.5 absolute block w-3 h-3 bg-red-500 border-2 border-white rounded-full dark:border-gray-900'></div>
       </button>  

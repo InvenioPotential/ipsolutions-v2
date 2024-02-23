@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Topnav from '@/components/nav/topnav'
+import SideNavBar from '@/components/nav/sidenavbar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,19 +25,22 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className="{inter.className} bg-gray-100 font-sans">
-          <main>
-          {userId && (
-          <>
-            <Topnav/>
-          </>
-          )}
-            <div className='lg:flex md:block sm:block items-start justify-center h-screen'>
-              <div>{children}</div>
+          <main className=' h-screen overflow-auto'>
+              {userId && (
+                <>
+                  <Topnav/>
+                </>
+              )}
+            <div className='lg:flex md:block sm:block items-start justify-center'>
+              <div>{children}
+              <div className=' pt-5 text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
+                POWERED BY INVENIO POTENTIAL SDN BHD 2024
+              </div> 
+              </div>
+              
             </div>
           </main>
         </body>
-        {/* <footer className='pt-5 text-center items-center justify-center text-xs text-gray-400 font-bold m-3'>
-          POWERED BY INVENIO POTENTIAL SDN BHD 2024</footer>  */}
       </html>
     </ClerkProvider>
   )

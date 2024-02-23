@@ -31,43 +31,43 @@ const EnergyDashboard = () => {
             </div>
             </div>
             <div  className='cursor-pointer items-center  justify-center text-center'>
-            <div className='shadow hover:shadow-xl bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
-                <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
-                <div className='flex justify-between items-center'>
-                    <FiActivity className='m-1 h-5 w-5' />
-                    <div className='m-1'>ELECTRICITY</div>
+                <div className='shadow hover:shadow-xl bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
+                    <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
+                    <div className='flex justify-between items-center'>
+                        <FiActivity className='m-1 h-5 w-5' />
+                        <div className='m-1'>ELECTRICITY</div>
+                    </div>
+                    </div>
+                    <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
+                    3
+                    </div>
                 </div>
                 </div>
-                <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
-                3
-                </div>
-            </div>
-            </div>
-            <div className=' cursor-pointer items-center  justify-center text-center'>
-            <div  className='shadow hover:shadow-xl bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
-                <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
-                <div className='flex justify-between items-center'>
-                    <MdAssignmentLate className='m-1 h-5 w-5' />
-                    <div className='m-1'>VOLTAGE</div>
-                </div>
-                </div>
-                <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
-                3
-                </div>
-            </div>
-            </div>
-            <div className=' cursor-pointer items-center  justify-center text-center'>
-            <div className='shadow hover:shadow-xl bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
-                <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
-                <div className='flex justify-between items-center'>
-                    <IoCheckmarkCircle className='m-1 h-5 w-5' />
-                    <div className='m-1'>LOADS</div>
+                <div className=' cursor-pointer items-center  justify-center text-center'>
+                <div  className='shadow hover:shadow-xl bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
+                    <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
+                    <div className='flex justify-between items-center'>
+                        <MdAssignmentLate className='m-1 h-5 w-5' />
+                        <div className='m-1'>VOLTAGE</div>
+                    </div>
+                    </div>
+                    <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
+                    3
+                    </div>
                 </div>
                 </div>
-                <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
-                3
+                <div className=' cursor-pointer items-center  justify-center text-center'>
+                <div className='shadow hover:shadow-xl bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
+                    <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
+                    <div className='flex justify-between items-center'>
+                        <IoCheckmarkCircle className='m-1 h-5 w-5' />
+                        <div className='m-1'>LOADS</div>
+                    </div>
+                    </div>
+                    <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
+                    3
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         

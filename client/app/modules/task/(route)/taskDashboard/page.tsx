@@ -43,7 +43,7 @@ return (
                 TASK MANAGEMENT
               </div>
             </div> 
-            <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-2 sm:grid-rows-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4'>
+            <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-2 sm:grid-rows-2 gap-4'>
               <div className=' cursor-pointer items-center  justify-center text-center'>
                 <div onClick={toggleUpcoming} className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>

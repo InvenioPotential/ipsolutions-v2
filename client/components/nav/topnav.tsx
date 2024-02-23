@@ -76,7 +76,7 @@ const Topnav = () => {
                         </div>
                     </div>   
             </div>
-            <div className={`lg:block ${isSideOpen ? 'block' : 'hidden'}`}>
+            <div className={`lg:block ${isSideOpen ? 'fixed' : 'hidden'}`}>
                 <SideNavBar/>
             </div>
         </nav>

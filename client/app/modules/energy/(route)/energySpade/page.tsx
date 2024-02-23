@@ -1,13 +1,20 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import { FiActivity } from 'react-icons/fi'
-import { MdUpcoming } from 'react-icons/md'
-import { BarChart } from '@mui/x-charts/BarChart';
+import { MdAutoGraph, MdUpcoming } from 'react-icons/md'
+
+import SpadeGraph from '@/components/energy/spadeGraph';
+import { FaFile } from 'react-icons/fa';
 
 const EnergySpade = () => {
+    const [isGenerateOpen, setGenerateOpen] = useState(false);
+    const toggleGenerate =() => {
+        setGenerateOpen(!isGenerateOpen);
+    };
+
   return (
-    <div className='lg:pl-10 m-5 lg:pr-10'>
-        <div className=' mb-5'>
+    <div className='lg:pl-10 m-5 lg:pr-10 '>
+        <div className='mb-5'>
             <div className='text-2xl text-black font-bold'>
             SPADE
             </div>
@@ -15,8 +22,8 @@ const EnergySpade = () => {
             ENERGY MANAGEMENT
             </div>
         </div> 
-        <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-2 sm:grid-rows-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4'>
-            <div className='col-span-2 cursor-pointer items-center  justify-center text-center'>
+        <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
+            <div className='col-span-3 cursor-pointer items-center  justify-center text-center'>
               <div className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                   <div className='flex justify-between items-center'>
@@ -29,7 +36,7 @@ const EnergySpade = () => {
                   </div> */}
               </div>
             </div>
-            <div  className='col-span-2 cursor-pointer items-center  justify-center text-center'>
+            <div  className='col-span-3 cursor-pointer items-center  justify-center text-center'>
               <div className='shadow hover:shadow-xl bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                   <div className='flex justify-between items-center'>
@@ -43,106 +50,132 @@ const EnergySpade = () => {
               </div>
             </div>
         </div>
-        <div className='m-3 mt-4 lg:grid md:grid sm:flex grid-cols-4 grid-rows-1 gap-4'>
-            <div className='m-1 grid  rounded-md col-span-2'>
+        <div className='m-3 mt-4 lg:grid md:grid sm:flex grid-cols-6 gap-4'>
+            <div className='m-1 grid  rounded-md col-span-3'>
                 <div className='p-2 m-1'>
-                    <div className='m-2 text-md text-gray-600 font-bold items-center justify-between flex'>
-                        OVERVIEW
+                <div className='m-2  items-center'>
+                        <p className='text-md text-gray-600 font-bold'>OVERVIEW</p>
+                        <p className='text-sm text-gray-400'>Overview list of uploaded files.</p>
                     </div>
-                    <div className='pt-5 overflow-auto'>
-                        <ul className='grid lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1  mt-1 overflow-auto'>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
+                    <div className='mt-5 rounded-lg h-60  overflow-auto'>
+                        <ul className='*:bg-white text-gray-600 grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1  mt-1 overflow-auto'>
+                        <li className='m-2 p-3 rounded-md overflow-auto'>
+                                <div className='flex'>
+                                    <div><FaFile className='m-4 mt-2'/></div>
+                                    <div className='text-left'>
+                                        <div className='font-semibold text-md'>Category: Electricity</div>
+                                        <div className='text-xs font-semibold'>File: electricitybill.csv</div> 
+                                        <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div> 
+                                    </div>
+                                </div>
                             </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
+                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                                <div className='flex'>
+                                    <div><FaFile className='m-4 mt-2'/></div>
+                                    <div className='text-left'>
+                                        <div className='font-semibold text-md'>Category: Electricity</div>
+                                        <div className='text-xs font-semibold'>File: electricitybill.csv</div> 
+                                        <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div> 
+                                    </div>
+                                </div>
                             </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
+                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                                <div className='flex'>
+                                    <div><FaFile className='m-4 mt-2'/></div>
+                                    <div className='text-left'>
+                                        <div className='font-semibold text-md'>Category: Electricity</div>
+                                        <div className='text-xs font-semibold'>File: electricitybill.csv</div> 
+                                        <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div> 
+                                    </div>
+                                </div>
                             </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
+                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                                <div className='flex'>
+                                    <div><FaFile className='m-4 mt-2'/></div>
+                                    <div className='text-left'>
+                                        <div className='font-semibold text-md'>Category: Electricity</div>
+                                        <div className='text-xs font-semibold'>File: electricitybill.csv</div> 
+                                        <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div> 
+                                    </div>
+                                </div>
                             </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
+                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                                <div className='flex'>
+                                    <div><FaFile className='m-4 mt-2'/></div>
+                                    <div className='text-left'>
+                                        <div className='font-semibold text-md'>Category: Electricity</div>
+                                        <div className='text-xs font-semibold'>File: electricitybill.csv</div> 
+                                        <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div> 
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div className='m-1 grid  rounded-md col-span-2'>
+            <div className='m-1 grid text-gray-600 rounded-md col-span-3'>
                 <div className='p-2 m-1'>
-                    <div className='m-2 text-md text-gray-600 font-bold items-center justify-between flex'>
-                        GRAPHS
+                    <div className='m-2  items-center'>
+                        <p className='text-md  font-bold'>TABLE</p>
+                        <p className='text-sm text-gray-400'>Generate button will help you to generate graph for selected Client.</p>
                     </div>
-                    <div className='pt-5 overflow-auto'>
-                        {/* <ul className='grid lg:grid-cols-4 md:grid-cols-1 sm:grid-cols-1  mt-1 overflow-auto'>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                            <li className='m-2 p-2 border-2 rounded-md overflow-auto'>
-                                <div className='font-semibold text-md'>Category</div>
-                                <div className='text-xs font-semibold'>Title</div>
-                                <div className='mt-2 text-xs text-blue-500 hover:underline'>View Details</div>
-                            </li>
-                        </ul> */}
-                        <div>
-                          <BarChart
-                            xAxis={[{ scaleType: 'band', data: ['group A', 'group B', 'group C'] }]}
-                            series={[{ data: [4, 3, 5] }, { data: [1, 6, 3] }, { data: [2, 5, 6] }]}
-                            width={500}
-                            height={300}
-                          />
-                        </div>
+                    <div className='mt-5 rounded-lg h-60 w-full overflow-auto mx-auto text-md font-semibold m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
+                        <table  className='container table-auto bg-white p-4'>
+                            <thead className=' bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
+                                <tr className='*:p-4 justify-between'>
+                                    <th>CLIENT NAME</th>
+                                    <th>ITEM FILES</th>
+                                    <th>ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody className='h-60 overflow-auto'>
+                                <tr className='*:p-4 justify-between'>
+                                    <td>Client1 Sdn. Bhd</td>
+                                    <td>Electricity, Voltage, Loads</td>
+                                    <td className='flex justify-center text-gray-700'>
+                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
+                                            Generate
+                                            <MdAutoGraph className='m-1'/>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr className='*:p-4 justify-between'>
+                                    <td>Client1 Sdn. Bhd</td>
+                                    <td>Electricity, Voltage, Loads</td>
+                                    <td className='flex justify-center text-gray-700'>
+                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
+                                            Generate
+                                            <MdAutoGraph className='m-1'/>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr className='*:p-4 justify-between'>
+                                    <td>Client1 Sdn. Bhd</td>
+                                    <td>Electricity, Voltage, Loads</td>
+                                    <td className='flex justify-center text-gray-700'>
+                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
+                                            Generate
+                                            <MdAutoGraph className='m-1'/>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr className='*:p-4 justify-between'>
+                                    <td>Client1 Sdn. Bhd</td>
+                                    <td>Electricity, Voltage, Loads</td>
+                                    <td className='flex justify-center text-gray-700'>
+                                        <button onClick={toggleGenerate} className='p-2 flex text-center justify-between rounded-md bg-gradient-to-tr from-blue-200 to-gray-200 hover:bg-gradient-to-tr hover:from-green-200 hover:to-gray-200'>
+                                            Generate
+                                            <MdAutoGraph className='m-1'/>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
+            </div>
+            <div className={` ${isGenerateOpen ? 'm-1 grid  rounded-md col-span-6' : 'ml-5 hidden'}`}>
+                <SpadeGraph/>
             </div>
         </div>
     </div>

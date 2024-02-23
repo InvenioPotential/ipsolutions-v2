@@ -25,180 +25,180 @@ const SideNavBar = () => {
       };
 
   return (
-    <aside className="sticky my-auto bg-sky-950 h-screen text-white text-left float-left left-0">
-        <nav className='flex overflow-auto'>
-          <div className=''>
-            <ul className='text-sm font-semibold p-5 overflow-auto'>
-              <li className="m-3">
-                <Link href="/dashboard" className="items-center flex hover:text-gray-300">
-                  <MdDashboard className='w-4 h-4 m2'/>
-                  <div className='ml-2 text-center'>
-                    DASHBOARD
-                  </div>
-                  </Link>
-              </li>
-              <li className="m-3 mt-5">
-                <div className='justify-between flex'>
-                <Link href="/modules/task/taskDashboard" className="items-center flex hover:text-gray-300">
-                  <FaTasks className='w-4 h-4 m2'/>
-                  <div className='ml-2 flex text-center'>
-                    TASK MANAGEMENT
-                  </div>
-                  </Link>
-                  <button type='button' onClick={toggleTask} className='hover:text-gray-300'>
-                    <IoIosArrowDown  className='m-1'  /> 
-                  </button>
+
+    <aside className="sticky float-left h-screen left-0 w-64">
+      <div className='h-full my-auto bg-gray-200 overflow-auto text-white text-left '>
+        <ul className=' text-sm font-semibold p-5 text-gray-700 overflow-auto'>
+            <li className="m-3">
+              <Link href="/dashboard" className="items-center flex hover:text-gray-300">
+                <MdDashboard className='w-4 h-4 m2'/>
+                <div className='ml-2 text-center'>
+                  DASHBOARD
                 </div>
-                <div>
-                  <ul className={` ${isTaskOpen ? 'justify-between' : 'ml-5 hidden'}`} >
-                      <li className='text-xs m-3 mt-5' >
-                        <Link href="/modules/task/taskRecurring" className="items-center flex hover:text-gray-300">
-                          <GrSchedulePlay className='w-4 h-4 m2'/>
-                          <div className='ml-2 text-center'>
-                            RECURRING
-                          </div>
-                        </Link>
-                      </li>
-                      <li className='text-xs m-3 mt-3' >
-                        <Link href="/modules/task/taskNonRecur" className="items-center flex hover:text-gray-300">
-                          <GrSchedulePlay className='w-4 h-4 m2'/>
-                          <div className='ml-2 text-center'>
-                            NON-RECURRING
-                          </div>
-                        </Link>
-                      </li>
-                      <li className='text-xs m-3 mt-3' >
-                        <Link href="/modules/task/report" className="items-center flex hover:text-gray-300">
-                          <GrSchedulePlay className='w-4 h-4 m2'/>
-                          <div className='ml-2 text-center'>
-                            REPORT
-                          </div>
-                        </Link>
-                      </li>
-                  </ul>  
-                </div>
+                </Link>
             </li>
             <li className="m-3 mt-5">
-                <div className='justify-between flex'>
-                <Link href="/modules/energy/energyDashboard" className="items-center flex hover:text-gray-300">
-                  <Image className='w-4 h-4 m2'
-                    src="/images/energy.png"
-                    alt="IP solutions logo" 
-                    width={130}
-                    height={30}
-                  /> 
+              <div className='justify-between flex'>
+              <Link href="/modules/task/taskDashboard" className="items-center flex hover:text-gray-300">
+                <FaTasks className='w-4 h-4 m2'/>
                 <div className='ml-2 flex text-center'>
-                  ENERGY
-                </div>
-                </Link> 
-                  <button type='button' onClick={toggleEnergy} className='hover:text-gray-300'>
-                    <IoIosArrowDown  className='m-1'  /> 
-                  </button>
-                </div>
-                <div>
-                  <ul className={` ${isEnergyOpen ? 'justify-between' : 'ml-5 hidden'}`} >
-                      <li className='text-xs m-3 mt-5' >
-                        <Link href="/modules/energy/energySpade" className="items-center flex hover:text-gray-300">
-                          <GrSchedulePlay className='w-4 h-4 m2'/>
-                          <div className='ml-2 text-center'>
-                            SPADE
-                          </div>
-                        </Link>
-                      </li>
-                      <li className='text-xs m-3 mt-3' >
-                        <Link href="/modules/energy/energyElectricity" className="items-center flex hover:text-gray-300">
-                          <GrSchedulePlay className='w-4 h-4 m2'/>
-                          <div className='ml-2 text-center'>
-                            ELECTRICITY
-                          </div>
-                        </Link>
-                      </li>
-                      <li className='text-xs m-3 mt-3' >
-                        <Link href="/modules/energy/energyVoltage" className="items-center flex hover:text-gray-300">
-                          <GrSchedulePlay className='w-4 h-4 m2'/>
-                          <div className='ml-2 text-center'>
-                            VOLTAGE
-                          </div>
-                        </Link>
-                      </li>
-                      <li className='text-xs m-3 mt-3' >
-                        <Link href="/modules/energy/energyLoads" className="items-center flex hover:text-gray-300">
-                          <GrSchedulePlay className='w-4 h-4 m2'/>
-                          <div className='ml-2 text-center'>
-                            LOADS
-                          </div>
-                        </Link>
-                      </li>
-                  </ul>  
-                </div>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <IoStatsChart className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  STATISTICS
+                  TASK MANAGEMENT
                 </div>
                 </Link>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <GrHostMaintenance className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  MAINTENANCE
-                </div>
-                </Link>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <RiCommunityFill className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  COMMUNITY
-                </div>
-                </Link>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <FaTools className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  OPERATIONS
-                </div>
-                </Link>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <RiMoneyDollarBoxFill className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  FINANCE
-                </div>
-                </Link>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <SiGoogleforms className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  DIGITAL FORMS
-                </div>
-                </Link>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <MdDisabledByDefault className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  DEFECT
-                </div>
-                </Link>
-            </li>
-            <li className="m-3 mt-5">
-              <Link href="" className="items-center flex hover:text-gray-300">
-                <FaCartPlus className='w-4 h-4 m2'/>
-                <div className='ml-2 text-center'>
-                  PROCUREMENT
-                </div>
-                </Link>
-            </li>
-          </ul>
-        </div>
-      </nav> 
+                <button type='button' onClick={toggleTask} className='hover:text-gray-300'>
+                  <IoIosArrowDown  className='m-1'  /> 
+                </button>
+              </div>
+              <div>
+                <ul className={` ${isTaskOpen ? 'justify-between' : 'ml-5 hidden'}`} >
+                    <li className='text-xs m-3 mt-5' >
+                      <Link href="/modules/task/taskRecurring" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          RECURRING
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/modules/task/taskNonRecur" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          NON-RECURRING
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/modules/task/report" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          REPORT
+                        </div>
+                      </Link>
+                    </li>
+                </ul>  
+              </div>
+          </li>
+          <li className="m-3 mt-5">
+              <div className='justify-between flex'>
+              <Link href="/modules/energy/energyDashboard" className="items-center flex hover:text-gray-300">
+                <Image className='w-4 h-4 m2'
+                  src="/images/energy.png"
+                  alt="IP solutions logo" 
+                  width={130}
+                  height={30}
+                /> 
+              <div className='ml-2 flex text-center'>
+                ENERGY
+              </div>
+              </Link> 
+                <button type='button' onClick={toggleEnergy} className='hover:text-gray-300'>
+                  <IoIosArrowDown  className='m-1'  /> 
+                </button>
+              </div>
+              <div>
+                <ul className={` ${isEnergyOpen ? 'justify-between' : 'ml-5 hidden'}`} >
+                    <li className='text-xs m-3 mt-5' >
+                      <Link href="/modules/energy/energySpade" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          SPADE
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/modules/energy/energyElectricity" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          ELECTRICITY
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/modules/energy/energyVoltage" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          VOLTAGE
+                        </div>
+                      </Link>
+                    </li>
+                    <li className='text-xs m-3 mt-3' >
+                      <Link href="/modules/energy/energyLoads" className="items-center flex hover:text-gray-300">
+                        <GrSchedulePlay className='w-4 h-4 m2'/>
+                        <div className='ml-2 text-center'>
+                          LOADS
+                        </div>
+                      </Link>
+                    </li>
+                </ul>  
+              </div>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <IoStatsChart className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                STATISTICS
+              </div>
+              </Link>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <GrHostMaintenance className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                MAINTENANCE
+              </div>
+              </Link>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <RiCommunityFill className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                COMMUNITY
+              </div>
+              </Link>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <FaTools className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                OPERATIONS
+              </div>
+              </Link>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <RiMoneyDollarBoxFill className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                FINANCE
+              </div>
+              </Link>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <SiGoogleforms className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                DIGITAL FORMS
+              </div>
+              </Link>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <MdDisabledByDefault className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                DEFECT
+              </div>
+              </Link>
+          </li>
+          <li className="m-3 mt-5">
+            <Link href="" className="items-center flex hover:text-gray-300">
+              <FaCartPlus className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                PROCUREMENT
+              </div>
+              </Link>
+          </li>
+        </ul> 
+      </div>   
+      
   </aside>
   )
 }

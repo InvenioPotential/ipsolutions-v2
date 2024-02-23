@@ -1,20 +1,20 @@
-"use client"
+import Electricity from '@/components/energy/listing/electricity';
 import React from 'react'
-import { IoMdAddCircle } from 'react-icons/io';
-import Category from '../listing/category';
-import Priority from '../listing/priority';
-import DatePickers from '../../dateCalendar/datepickers';
+import { MdUpcoming } from 'react-icons/md';
+import Tariff from '../listing/tariff';
 
-const AddNonRecur = () => {
+const AddElectricity = () => {
     const [showModal, setShowModal] = React.useState(false);
 
   return (
     <>
-        <button type="button"
-                onClick={() => setShowModal(true)} 
-                className='p-2 rounded-md'>
-            <IoMdAddCircle className='w-7 h-7'/>
-        </button>
+        <div className='flex justify-center'>
+            <button onClick={() => setShowModal(true)} className='flex justify-between items-center'>
+            <MdUpcoming className='m-1 h-5 w-5' />
+            <div className='m-1 '>UPLOAD</div>
+            </button>   
+        </div>
+       
         {showModal ? (
         <>
         <div
@@ -27,9 +27,9 @@ const AddNonRecur = () => {
                 <div className="flex text-left justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                     <div>
                         <p className="text-2xl text-black font-bold">
-                            ADD TASK
+                            ADD ELECTRICITY
                         </p>
-                        <p className='text-sm '>NON-RECURRING TASK</p>
+                        <p className='text-sm '>ELECTRICITY BILL DETAILS</p>
                     </div>
                     
                 </div>
@@ -37,51 +37,24 @@ const AddNonRecur = () => {
                 <div className="relative p-6  flex-auto">
                 <form>
                 <div className='grid w-74 gap-5 grid-cols-2'>
+                    <div className='col-span-2 w-full items-center flex justify-between'>
+                        <p>CLIENT:</p>
+                        <div className='w-auto'>
+                            <input  className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                        </div>
+                    </div>
                     <div>
                         <p>CATEGORY:</p>
-                        <Category />
+                        <Electricity />
                     </div>
                     <div>
-                        <p>SUB-CATEGORY:</p>
-                        <Category />
-                    </div>
-                    <div>
-                        <p>SITE:</p>
-                        <Category />
-                    </div>
-                    <div>
-                        <p>TASK TYPE:</p>
-                        <Category />
-                    </div>
-                    <div>
-                        <p>STAGE:</p>
-                        <Category />
-                    </div>
-                    <div>
-                        <p>PRIORITY:</p>
-                        <Priority />
-                    </div>
-                    <div className='col-span-2 w-full items-center flex justify-between'>
-                        <p>DUE DATE:</p>
-                        <div className='w-auto'>
-                        <DatePickers/></div>
-                    </div>
-                    <div className='col-span-2 w-full items-center flex justify-between'>
-                        <p>TASK:</p>
-                        <div className='w-auto'>
-                            <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'/> 
-                        </div>
+                        <p>TARIFF:</p>
+                        <Tariff />
                     </div>
                     <div className='col-span-2 w-full items-center flex justify-between'>
                         <p>REMARK:</p>
                         <div className='w-auto'>
                             <input  className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
-                        </div>
-                    </div>
-                    <div className='col-span-2 w-full items-center flex justify-between'>
-                        <p>ASSIGN TASK TO:</p>
-                        <div>
-                            <input className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100' placeholder='Search users...'></input> 
                         </div>
                     </div>
 
@@ -112,8 +85,7 @@ const AddNonRecur = () => {
         </>
     ) : null}
     </>
-
   )
 }
 
-export default AddNonRecur
+export default AddElectricity

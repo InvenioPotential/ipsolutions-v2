@@ -82,7 +82,7 @@
 /* scrollbar light-mode */
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 /* Track */
@@ -92,13 +92,13 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #b5b5b5;
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #838383;
 }
 
 /* scrollbar dark-mode */
@@ -281,10 +281,5 @@
 }
 
 /* ENERGY MODULE */
-.barEn {
-  display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 300px;
-}
+
 
