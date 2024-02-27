@@ -31,9 +31,6 @@ const EnergySpade = () => {
                       <div className='m-1 '>UPLOAD</div>
                   </div>
                   </div>
-                  {/* <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
-                  3
-                  </div> */}
               </div>
             </div>
             <div  className='col-span-3 cursor-pointer items-center  justify-center text-center'>
@@ -44,14 +41,11 @@ const EnergySpade = () => {
                       <div className='m-1'>GRAPHS</div>
                   </div>
                   </div>
-                  {/* <div className='pl-6 pr-6 pb-2 text-right items-right justify-end font-bold text-lg'>
-                  3
-                  </div> */}
               </div>
             </div>
         </div>
         <div className='m-3 mt-4 lg:grid md:grid sm:flex grid-cols-6 gap-4'>
-            <div className='m-1 grid  rounded-md col-span-3'>
+            <div className='m-1 grid  rounded-md col-span-6'>
                 <div className='p-2 m-1'>
                     <div className='m-2  items-center'>
                         <p className='text-md text-gray-600 font-bold'>OVERVIEW</p>
@@ -113,8 +107,8 @@ const EnergySpade = () => {
                     </div>
                 </div>
             </div>
-            <div className='m-1 grid text-gray-600 rounded-md col-span-3'>
-                <div className='p-2 m-1'>
+            <div className='m-1 grid text-gray-600 rounded-md col-span-6'>
+                <div className='p-2 m-1 overflow-auto'>
                     <div className='m-2  items-center'>
                         <p className='text-md  font-bold'>TABLE</p>
                         <p className='text-sm text-gray-400'>Generate button will help you to generate graph for selected Client.</p>

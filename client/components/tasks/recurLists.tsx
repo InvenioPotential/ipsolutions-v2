@@ -14,7 +14,7 @@ const RecurLists = () => {
                             <h5>SUNDAY</h5>
                         </div>
                     </div>
-                    <div className='P-2 hover:animate-bounce'>
+                    <div className='P-2'>
                         <EditRecur/>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const RecurLists = () => {
                             <h5>SUNDAY</h5>
                         </div>
                     </div>
-                    <div className='P-2 hover:animate-bounce'>
+                    <div className='P-2'>
                         <EditRecur/>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const RecurLists = () => {
                             <h5>SUNDAY</h5>
                         </div>
                     </div>
-                    <div className='P-2 hover:animate-bounce'>
+                    <div className='P-2'>
                         <EditRecur/>
                     </div>
                 </div>

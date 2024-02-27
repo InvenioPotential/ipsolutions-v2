@@ -43,11 +43,11 @@ const AddRecur = () => {
                                 <Category />
                             </div>
                             <div>
-                                <p>SITE:</p>
+                                <p>TYPE:</p>
                                 <Category />
                             </div>
                             <div>
-                                <p>STAGE:</p>
+                                <p>SITE:</p>
                                 <Category />
                             </div>
                             <div>
@@ -55,8 +55,19 @@ const AddRecur = () => {
                                 <Priority />
                             </div>
                             <div className='col-span-2'>
+                                <p>STATUS:</p>
+                                <div className='*:p-2 *:m-2 *:bg-gray-200 *:rounded-lg  flex justify-center overflow-auto'>
+                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200' >
+                                        ON-GOING
+                                    </button >
+                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200'>
+                                        COMPLETED
+                                    </button>
+                                </div>
+                            </div>
+                            <div className='col-span-2'>
                                 <p>RECURRING:</p>
-                                <div className='*:p-2 *:m-2 *:bg-gray-200 *:rounded-lg  flex justify-between overflow-auto'>
+                                <div className='*:p-2 *:m-2 *:bg-gray-200 *:rounded-lg  flex justify-center overflow-auto'>
                                     <button type='button' className='hover:bg-green-100 focus:bg-green-200' >
                                         ONCE
                                     </button >
@@ -77,22 +88,22 @@ const AddRecur = () => {
                             <div className='col-span-2 w-full items-center flex justify-between'>
                                 <DateRangePickers/>
                             </div>
-                            <div className='col-span-2  text-left'>
+                            <div className='col-span-2 w-full items-center flex justify-between'>
                                 <p>TASK:</p>
                                 <div className='w-auto'>
-                                    <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                                   <input  className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                                 </div>
                             </div>
-                            <div className='col-span-2  text-left'>
+                            <div className='col-span-2 w-full items-center flex justify-between'>
                                 <p>REMARK:</p>
                                 <div className='w-auto'>
-                                    <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                                   <input  className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
                                 </div>
                             </div>
-                            <div className='col-span-2  text-left'>
+                            <div className='col-span-2 w-full items-center flex justify-between'>
                                 <p>ASSIGN TASK TO:</p>
-                                <div className='w-auto'>
-                                    <input  className='p-2 m-1 w-full flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'  placeholder='Description...'></input> 
+                                <div>
+                                   <input className='p-2 m-1 w-max flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100' placeholder='Search users...'></input> 
                                 </div>
                             </div>
 

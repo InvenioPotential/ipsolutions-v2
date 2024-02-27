@@ -6,6 +6,7 @@ import EditElectricity from '@/components/energy/modal/editElectricity';
 import AddLoads from '@/components/energy/modal/addLoads';
 import LoadsGraph from '@/components/energy/graph/loadsGraph';
 import EditLoads from '@/components/energy/modal/editLoads';
+import { FaRobot } from 'react-icons/fa';
 
 const EnergyLoads = () => {
   const [isGenerateOpen, setGenerateOpen] = useState(false);
@@ -25,19 +26,29 @@ const EnergyLoads = () => {
             </div>
         </div> 
         <div className='p-5 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
-            <div className=' col-span-3 cursor-pointer items-center  justify-center text-center'>
+            <div className=' col-span-2 cursor-pointer items-center  justify-center text-center'>
               <div className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <AddLoads/>
                   </div>
               </div>
             </div>
-            <div  className='hover:shadow-xl col-span-3 cursor-pointer items-center  justify-center text-center'>
-              <div className='shadow bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
+            <div  className='hover:shadow-xl col-span-2 cursor-pointer items-center  justify-center text-center'>
+              <div className='shadow bg-gradient-to-r from-sky-100 to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                   <div className='flex justify-between items-center'>
                       <FiActivity className='m-1 h-5 w-5' />
                       <div className='m-1'>GRAPHS</div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+            <div  className='hover:shadow-xl col-span-2 cursor-pointer items-center  justify-center text-center'>
+              <div className='shadow bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
+                  <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
+                  <div className='flex justify-between items-center'>
+                      <FaRobot className='m-1 h-5 w-5' />
+                      <div className='m-1'>AI</div>
                   </div>
                   </div>
               </div>

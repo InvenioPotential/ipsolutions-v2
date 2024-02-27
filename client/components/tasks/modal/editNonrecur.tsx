@@ -94,10 +94,6 @@ const EditNonRecur = () => {
                         <Category />
                     </div>
                     <div>
-                        <p>TYPE:</p>
-                        <Category />
-                    </div>
-                    <div>
                         <p>SITE:</p>
                         <Category />
                     </div>
@@ -106,18 +102,22 @@ const EditNonRecur = () => {
                         <Category />
                     </div>
                     <div>
-                        <p>DUE:</p>
-                        <Category />
-                    </div><div>
-                        <p>STAGE:</p>
-                        <Category />
-                    </div>
-                    <div>
                         <p>PRIORITY:</p>
                         <Category />
                     </div>
+                    <div className='col-span-2'>
+                        <p>STATUS:</p>
+                        <div className='*:p-2 *:m-2 *:bg-gray-200 *:rounded-lg  flex justify-center overflow-auto'>
+                            <button type='button' className='hover:bg-green-100 focus:bg-green-200' >
+                                ON-GOING
+                            </button >
+                            <button type='button' className='hover:bg-green-100 focus:bg-green-200'>
+                                COMPLETED
+                            </button>
+                        </div>
+                    </div>
                     <div className='col-span-2 w-full items-center flex justify-between'>
-                        <p>DATE:</p>
+                        <p>DUE DATE:</p>
                         <div className='w-auto'>
                            <DatePickers/></div>
                     </div>

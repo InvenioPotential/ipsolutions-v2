@@ -52,7 +52,7 @@ const TaskReport = () => {
                     </div>
                   </div>
                   <div className=''>
-                    <h6 className='text-gray-900 '>STAGE: </h6>
+                    <h6 className='text-gray-900 '>STATUS: </h6>
                     <div>
                       <select className='rounded-md'>
                         <option>All</option>

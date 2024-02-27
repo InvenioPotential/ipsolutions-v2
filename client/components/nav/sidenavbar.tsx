@@ -25,50 +25,49 @@ const SideNavBar = () => {
       };
 
   return (
-
-    <aside className="sticky float-left h-screen left-0 w-64">
-      <div className='h-full my-auto bg-gray-200 overflow-auto text-white text-left '>
-        <ul className=' text-sm font-semibold p-5 text-gray-700 overflow-auto'>
-            <li className="m-3">
-              <Link href="/dashboard" className="items-center flex hover:text-gray-300">
+    <aside className="relative float-left left-0 w-64">
+      <div className='h-screen my-auto bg-gray-200 rounded-md overflow-auto text-white text-left '>
+        <ul className=' text-sm font-semibold p-2 text-gray-700 overflow-auto'>
+            <li className="m-1" >
+              <Link href="/dashboard" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
                 <MdDashboard className='w-4 h-4 m2'/>
                 <div className='ml-2 text-center'>
                   DASHBOARD
                 </div>
                 </Link>
             </li>
-            <li className="m-3 mt-5">
-              <div className='justify-between flex'>
-              <Link href="/modules/task/taskDashboard" className="items-center flex hover:text-gray-300">
-                <FaTasks className='w-4 h-4 m2'/>
-                <div className='ml-2 flex text-center'>
-                  TASK MANAGEMENT
-                </div>
-                </Link>
-                <button type='button' onClick={toggleTask} className='hover:text-gray-300'>
-                  <IoIosArrowDown  className='m-1'  /> 
+            <li className="m-1 focus:bg-gray-100">
+              <div className="items-center ">
+                <Link href="/modules/task/taskDashboard" onClick={toggleTask} type='button' className="justify-between items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
+                  <div className='flex text-center'>
+                    <FaTasks className='w-4 h-4 m2'/>
+                    <div className='ml-2'>TASK MANAGEMENT</div>
+                  </div>
+                <button type='button' className='hover:text-gray-500'>
+                  <IoIosArrowDown  className='m-1' /> 
                 </button>
+                </Link>
               </div>
               <div>
                 <ul className={` ${isTaskOpen ? 'justify-between' : 'ml-5 hidden'}`} >
-                    <li className='text-xs m-3 mt-5' >
-                      <Link href="/modules/task/taskRecurring" className="items-center flex hover:text-gray-300">
+                    <li className='text-xs ml-2' >
+                      <Link href="/modules/task/taskRecurring" type='button' className="items-center rounded-md focus:bg-green-300 p-2 hover:bg-gray-100 flex focus:text-black">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           RECURRING
                         </div>
                       </Link>
                     </li>
-                    <li className='text-xs m-3 mt-3' >
-                      <Link href="/modules/task/taskNonRecur" className="items-center flex hover:text-gray-300">
+                    <li className='text-xs ml-2' >
+                      <Link href="/modules/task/taskNonRecur" type='button' className="items-center rounded-md focus:bg-green-300 p-2 hover:bg-gray-100 flex focus:text-black">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           NON-RECURRING
                         </div>
                       </Link>
                     </li>
-                    <li className='text-xs m-3 mt-3' >
-                      <Link href="/modules/task/report" className="items-center flex hover:text-gray-300">
+                    <li className='text-xs ml-2' >
+                      <Link href="/modules/task/report" type='button' className="items-center rounded-md focus:bg-green-300 p-2 hover:bg-gray-100 flex focus:text-black">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           REPORT
@@ -78,51 +77,53 @@ const SideNavBar = () => {
                 </ul>  
               </div>
           </li>
-          <li className="m-3 mt-5">
-              <div className='justify-between flex'>
-              <Link href="/modules/energy/energyDashboard" className="items-center flex hover:text-gray-300">
-                <Image className='w-4 h-4 m2'
-                  src="/images/energy.png"
-                  alt="IP solutions logo" 
-                  width={130}
-                  height={30}
-                /> 
-              <div className='ml-2 flex text-center'>
-                ENERGY
-              </div>
-              </Link> 
-                <button type='button' onClick={toggleEnergy} className='hover:text-gray-300'>
+          <li className="m-1">
+              <div className='iyems-center'>
+              <Link href="/modules/energy/energyDashboard" onClick={toggleEnergy} type='button' className="justify-between items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
+                <div className='flex text-center'>
+                  <Image className='w-4 h-4 m2'
+                    src="/images/energy.png"
+                    alt="IP solutions logo" 
+                    width={130}
+                    height={30}
+                  /> 
+                  <div className='ml-2 flex'>
+                    ENERGY
+                  </div>
+                </div>
+                <button type='button' className='hover:text-gray-300'>
                   <IoIosArrowDown  className='m-1'  /> 
                 </button>
+              </Link> 
               </div>
               <div>
                 <ul className={` ${isEnergyOpen ? 'justify-between' : 'ml-5 hidden'}`} >
-                    <li className='text-xs m-3 mt-5' >
-                      <Link href="/modules/energy/energySpade" className="items-center flex hover:text-gray-300">
+                    <li className='text-xs ml-2' >
+                      <Link href="/modules/energy/energySpade" type='button' className="items-center rounded-md focus:bg-green-300 p-2 hover:bg-gray-100 flex focus:text-black">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           SPADE
                         </div>
                       </Link>
                     </li>
-                    <li className='text-xs m-3 mt-3' >
-                      <Link href="/modules/energy/energyElectricity" className="items-center flex hover:text-gray-300">
+                    <li className='text-xs ml-2' >
+                      <Link href="/modules/energy/energyElectricity" type='button' className="items-center rounded-md focus:bg-green-300 p-2 hover:bg-gray-100 flex focus:text-black">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           ELECTRICITY
                         </div>
                       </Link>
                     </li>
-                    <li className='text-xs m-3 mt-3' >
-                      <Link href="/modules/energy/energyVoltage" className="items-center flex hover:text-gray-300">
+                    <li className='text-xs ml-2' >
+                      <Link href="/modules/energy/energyVoltage" type='button' className="items-center rounded-md focus:bg-green-300 p-2 hover:bg-gray-100 flex focus:text-black">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           VOLTAGE
                         </div>
                       </Link>
                     </li>
-                    <li className='text-xs m-3 mt-3' >
-                      <Link href="/modules/energy/energyLoads" className="items-center flex hover:text-gray-300">
+                    <li className='text-xs ml-2' >
+                      <Link href="/modules/energy/energyLoads" type='button' className="items-center rounded-md focus:bg-green-300 p-2 hover:bg-gray-100 flex focus:text-black">
                         <GrSchedulePlay className='w-4 h-4 m2'/>
                         <div className='ml-2 text-center'>
                           LOADS
@@ -132,64 +133,64 @@ const SideNavBar = () => {
                 </ul>  
               </div>
           </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
-              <IoStatsChart className='w-4 h-4 m2'/>
-              <div className='ml-2 text-center'>
-                STATISTICS
-              </div>
-              </Link>
-          </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
-              <GrHostMaintenance className='w-4 h-4 m2'/>
-              <div className='ml-2 text-center'>
-                MAINTENANCE
-              </div>
-              </Link>
-          </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
-              <RiCommunityFill className='w-4 h-4 m2'/>
-              <div className='ml-2 text-center'>
-                COMMUNITY
-              </div>
-              </Link>
-          </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
-              <FaTools className='w-4 h-4 m2'/>
-              <div className='ml-2 text-center'>
-                OPERATIONS
-              </div>
-              </Link>
-          </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
-              <RiMoneyDollarBoxFill className='w-4 h-4 m2'/>
-              <div className='ml-2 text-center'>
-                FINANCE
-              </div>
-              </Link>
-          </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
               <SiGoogleforms className='w-4 h-4 m2'/>
               <div className='ml-2 text-center'>
                 DIGITAL FORMS
               </div>
               </Link>
           </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
+              <IoStatsChart className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                STATISTICS
+              </div>
+              </Link>
+          </li>
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
+              <GrHostMaintenance className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                MAINTENANCE
+              </div>
+              </Link>
+          </li>
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
+              <RiCommunityFill className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                COMMUNITY
+              </div>
+              </Link>
+          </li>
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
+              <FaTools className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                OPERATIONS
+              </div>
+              </Link>
+          </li>
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
+              <RiMoneyDollarBoxFill className='w-4 h-4 m2'/>
+              <div className='ml-2 text-center'>
+                FINANCE
+              </div>
+              </Link>
+          </li>
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
               <MdDisabledByDefault className='w-4 h-4 m2'/>
               <div className='ml-2 text-center'>
                 DEFECT
               </div>
               </Link>
           </li>
-          <li className="m-3 mt-5">
-            <Link href="" className="items-center flex hover:text-gray-300">
+          <li className="m-1">
+            <Link href="" type='button' className="items-center rounded-md focus:bg-green-300 p-3 hover:bg-gray-100 flex focus:text-black">
               <FaCartPlus className='w-4 h-4 m2'/>
               <div className='ml-2 text-center'>
                 PROCUREMENT
@@ -204,3 +205,4 @@ const SideNavBar = () => {
 }
 
 export default SideNavBar;
+

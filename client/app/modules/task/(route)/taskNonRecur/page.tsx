@@ -38,7 +38,7 @@ const TaskRecur = () => {
                     </div>
                   </div>
                   <div className=''>
-                    <h6 className='text-gray-900 '>STAGE: </h6>
+                    <h6 className='text-gray-900 '>STATUS: </h6>
                     <div>
                       <select className='rounded-md'>
                         <option>All</option>
@@ -59,7 +59,7 @@ const TaskRecur = () => {
                                 <th>SUB-CATEGORY</th>
                                 <th>TYPE</th>
                                 <th>DUE</th>
-                                <th>STAGE</th>
+                                <th>STATUS</th>
                                 <th>EDIT</th>
                             </tr>
                         </thead>

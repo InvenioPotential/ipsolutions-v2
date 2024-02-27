@@ -28,7 +28,7 @@ const Dashboard = async () => {
               </div>
             </div>
             <div className=' min-h-screen rounded-md p-3  text-gray-500'>
-              <div className='bg-gradient-to-r from-green-200 via-sky-200 to-purple-200 mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
+              <div className='mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
                 <div className=' overflow-auto grid grid-rows-2 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
                   <div className='grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
                     <ul className=" overflow-auto grid grid-rows-4 lg:grid-cols-2 gap-2 md:grid-cols-1 sm:grid-cols-1">
@@ -55,6 +55,15 @@ const Dashboard = async () => {
                           <div className='block m-2 p-1 hover:text-green-500'>
                             <div className='text-gray-700 text-sm font-bold'>ENERGY</div>
                             <div className='text-xs sm:flex-shrink-0'>Energy reports and etc.</div>  
+                          </div>
+                        </Link>
+                      </li>
+                      <li className='border rounded-md p-1 bg-white'>
+                        <Link href='' className='flex w-auto h-24 items-center'>
+                          <div className='justify-center items-center m-2 p-1'><SiGoogleforms className='flex w-7 h-7'/></div>
+                          <div className='block m-2 p-1'>
+                            <div className='text-gray-700 text-sm font-bold'>DIGITAL FORMS</div>
+                            <div className='text-xs sm:flex-shrink-0'>Digital Forms reports and etc.</div>  
                           </div>
                         </Link>
                       </li>
@@ -100,15 +109,6 @@ const Dashboard = async () => {
                           <div className='block m-2 p-1'>
                             <div className='text-gray-700 text-sm font-bold'>FINANCE</div>
                             <div className='text-xs sm:flex-shrink-0'>Finance reports and etc.</div>  
-                          </div>
-                        </Link>
-                      </li>
-                      <li className='border rounded-md p-1 bg-white'>
-                        <Link href='' className='flex w-auto h-24 items-center'>
-                          <div className='justify-center items-center m-2 p-1'><SiGoogleforms className='flex w-7 h-7'/></div>
-                          <div className='block m-2 p-1'>
-                            <div className='text-gray-700 text-sm font-bold'>DIGITAL FORMS</div>
-                            <div className='text-xs sm:flex-shrink-0'>Digital Forms reports and etc.</div>  
                           </div>
                         </Link>
                       </li>

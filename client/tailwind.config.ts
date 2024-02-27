@@ -9,6 +9,11 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
 	],
+  variants: {
+    extends: {
+      scale: ["group-hover"]
+    },
+  },
   prefix: "",
   theme: {
     container: {
