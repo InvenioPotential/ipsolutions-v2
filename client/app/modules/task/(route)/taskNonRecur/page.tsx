@@ -8,7 +8,6 @@ import AssignTask from '@/components/tasks/assignTask'
 
 const TaskRecur = () => {
   return (
-    <div className='m-3'>
       <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
         <div className='border-b-1 mb-5 flex justify-between'>
           <div className=''>
@@ -56,7 +55,6 @@ const TaskRecur = () => {
                             <tr className='*:p-4 justify-between'>
                                 <th>TASK</th>
                                 <th>CATEGORY</th>
-                                <th>SUB-CATEGORY</th>
                                 <th>TYPE</th>
                                 <th>DUE</th>
                                 <th>STATUS</th>
@@ -67,7 +65,6 @@ const TaskRecur = () => {
                             <tr className='*:p-4 justify-between'>
                                 <td>Analysis and Requirements</td>
                                 <td>Web-based solutions</td>
-                                <td>IP Solutions</td>
                                 <td>Planning/Design</td>
                                 <td>10/01/2024</td>
                                 <td>Completed</td>
@@ -87,7 +84,6 @@ const TaskRecur = () => {
           </div>
         </div>
       </div>
-    </div>
   )
 }
 

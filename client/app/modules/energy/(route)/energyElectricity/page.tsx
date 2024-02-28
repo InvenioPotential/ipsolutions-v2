@@ -11,8 +11,6 @@ const EnergyElectricity = () => {
   const toggleGenerate =() => {
       setGenerateOpen(!isGenerateOpen);
   };
-
-
   return (
     <div className='lg:pl-10 m-5 lg:pr-10 '>
         <div className='mb-5'>
@@ -49,8 +47,8 @@ const EnergyElectricity = () => {
                         <p className='text-md  font-bold'>TABLE</p>
                         <p className='text-sm text-gray-400'>Generate button will help you to generate graph for selected Client.</p>
                     </div>
-                    <div className='mt-5 h-60 overflow-auto rounded-lg w-full mx-auto text-md font-semibold m-2 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
-                        <table  className=' container table-auto bg-white p-4'>
+                    <div className='text-sm mt-5 h-60 overflow-auto rounded-lg w-full mx-auto font-semibold m-2 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
+                        <table  className='text-center container table-auto bg-white p-4'>
                             <thead className=' bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
                                 <tr className='*:p-4 justify-between'>
                                     <th>CLIENT NAME</th>

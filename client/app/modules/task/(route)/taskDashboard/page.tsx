@@ -31,9 +31,6 @@ const TaskManagement = () => {
   };
 
 return (
-    <div className=''>
-        {/* <Topnav /> */}
-        <div className='m-5'>
           <div className='lg:pl-10 lg:pr-10'>
             <div className=' mb-5'>
               <div className='text-2xl text-black font-bold'>
@@ -165,8 +162,6 @@ return (
                 </div>
             </div>
            </div>
-          </div>
-    </div>
 )}
 
 export default TaskManagement

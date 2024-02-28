@@ -52,8 +52,8 @@ const EnergySpade = () => {
                         <p className='text-sm text-gray-400'>Overview list of uploaded files.</p>
                     </div>
                     <div className='mt-5 rounded-lg h-60  overflow-auto'>
-                        <ul className='*:bg-white text-gray-600 grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1  mt-1 overflow-auto'>
-                        <li className='m-2 p-3 rounded-md overflow-auto'>
+                        <ul className='*:bg-white *:m-2 *:p-3 *:rounded-md *:overflow-auto text-gray-600 grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1  mt-1 overflow-auto'>
+                        <li className=''>
                                 <div className='flex'>
                                     <div><FaFile className='m-4 mt-2'/></div>
                                     <div className='text-left'>
@@ -63,7 +63,7 @@ const EnergySpade = () => {
                                     </div>
                                 </div>
                             </li>
-                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                            <li className=''>
                                 <div className='flex'>
                                     <div><FaFile className='m-4 mt-2'/></div>
                                     <div className='text-left'>
@@ -73,7 +73,7 @@ const EnergySpade = () => {
                                     </div>
                                 </div>
                             </li>
-                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                            <li className=''>
                                 <div className='flex'>
                                     <div><FaFile className='m-4 mt-2'/></div>
                                     <div className='text-left'>
@@ -83,7 +83,7 @@ const EnergySpade = () => {
                                     </div>
                                 </div>
                             </li>
-                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                            <li className=''>
                                 <div className='flex'>
                                     <div><FaFile className='m-4 mt-2'/></div>
                                     <div className='text-left'>
@@ -93,7 +93,7 @@ const EnergySpade = () => {
                                     </div>
                                 </div>
                             </li>
-                            <li className='m-2 p-3 rounded-md overflow-auto'>
+                            <li className=''>
                                 <div className='flex'>
                                     <div><FaFile className='m-4 mt-2'/></div>
                                     <div className='text-left'>
@@ -113,8 +113,8 @@ const EnergySpade = () => {
                         <p className='text-md  font-bold'>TABLE</p>
                         <p className='text-sm text-gray-400'>Generate button will help you to generate graph for selected Client.</p>
                     </div>
-                    <div className='mt-5 rounded-lg h-60 w-full overflow-auto mx-auto text-md font-semibold m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
-                        <table  className='container table-auto bg-white p-4'>
+                    <div className='mt-5 rounded-lg h-60 w-full overflow-auto mx-auto text-sm font-semibold m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
+                        <table  className='container text-center table-auto bg-white p-4'>
                             <thead className=' bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
                                 <tr className='*:p-4 justify-between'>
                                     <th>CLIENT NAME</th>
