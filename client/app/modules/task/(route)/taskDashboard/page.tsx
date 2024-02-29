@@ -31,7 +31,7 @@ const TaskManagement = () => {
   };
 
 return (
-          <div className='lg:pl-10 lg:pr-10'>
+          <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
             <div className=' mb-5'>
               <div className='text-2xl text-black font-bold'>
                 DASHBOARD
