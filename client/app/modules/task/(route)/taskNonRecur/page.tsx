@@ -1,12 +1,16 @@
-"use client"
 import React from 'react'
 import AddNonRecur from '@/components/tasks/modal/addNonRecur'
 import EditNonRecur from '@/components/tasks/modal/editNonrecur'
 import MiniCalendar from '@/components/dateCalendar/miniCalendar'
 import AssignTask from '@/components/tasks/assignTask'
+import { Suspense } from "react";
+import Loading from "@/components/loading";
+import { item } from "@/components/types";
+import { getTasks } from "@/app/utils/taskData/page";
 
-
-const TaskRecur = () => {
+async function TaskNonRecur() {
+  const tasks: item[] = await getTasks();
+  console.log(tasks)
   return (
       <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
         <div className='border-b-1 mb-5 flex justify-between'>
@@ -61,16 +65,21 @@ const TaskRecur = () => {
                                 <th>EDIT</th>
                             </tr>
                         </thead>
-                        <tbody className='bg-gray-100 overflow-auto'>
-                            <tr className='*:p-4 justify-between'>
-                                <td>Analysis and Requirements</td>
-                                <td>Web-based solutions</td>
-                                <td>Planning/Design</td>
-                                <td>10/01/2024</td>
-                                <td>Completed</td>
-                                <td><EditNonRecur/></td>
-                            </tr>
-                        </tbody>
+                        {" "}
+                        <Suspense fallback={<Loading />}>
+                          <tbody className='bg-gray-100 overflow-auto'>
+                            {tasks?.map((task, index) => (
+                              <tr key={index} className='*:p-4 justify-between'>
+                                  <td>{task.task}</td>{" "}
+                                  <td>{task.category}</td>{" "}
+                                  <td>{task.type}</td>{" "}
+                                  <td>{new Date(task.duedate).toLocaleDateString()}</td>{" "}
+                                  <td>{task.stage}</td>{" "}
+                                  <td><EditNonRecur/></td>
+                              </tr>
+                            ))}
+                          </tbody>{" "}
+                        </Suspense>
                       </table>
                   </div>
                 </div>              
@@ -88,4 +97,4 @@ const TaskRecur = () => {
 }
 
 
-export default TaskRecur
+export default TaskNonRecur

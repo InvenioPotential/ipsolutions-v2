@@ -17,32 +17,30 @@ model User {
 }
 
 model nonReccurTask {
-  id String @id @default(uuid())
-  //using uuid in string instead of auto increment , uuid generate random and unique id  , its more secure
-
+  id           String    @id @default(uuid())
+  category  String?
+  subcategory String?
+  type  String?
+  site String?
+  stage String?
+  priority String?
+  task         String?   @db.VarChar(255)
+  remark       String?   @db.VarChar(255)
+  assignTaskTo String?   @db.VarChar(255)
   duedate      DateTime?
-  task         String?         @db.VarChar(255)
-  remark       String?         @db.VarChar(255)
-  assignTaskTo String?         @db.VarChar(255)
-  option       customization[]
-  //user User[] -> this is for join table 
-  //kalau one to one , buang [] . thats mean one user with that id will have one nonreccurtask
-  //@@uniqe([type,site]) , this mean type and site cant have same two times , only can same type different site only  or sebaliknya (sama macam pakai disticnt)
-}
-
-model customization {
-  id       Int      @id @default(autoincrement())
-  variable String
-  option   String[]
-
-  nonReccurTask   nonReccurTask? @relation(fields: [nonReccurTaskId], references: [id])
-  nonReccurTaskId String?
 }
 
 model notes {
   id       Int    @id @default(autoincrement())
   title    String
   notes    String
-  duedate  String
   priority String
+  duedate  String
+}
+
+model customization {
+  id         Int     @id @default(autoincrement())
+  variables  String  @db.VarChar(255)
+  department String? @db.VarChar(255)
+  options    String
 }

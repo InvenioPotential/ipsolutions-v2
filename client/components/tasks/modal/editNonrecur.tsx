@@ -1,12 +1,12 @@
+"use client"
 import React from 'react'
 import { MdDelete, MdEdit } from 'react-icons/md';
 import Category from '../listing/category';
-import DatePickers from '../../dateCalendar/datepickers';
+import DatePickers from '@/components/dateCalendar/datepickers';
 
 const EditNonRecur = () => {
     const [showModal, setShowModal] = React.useState(false);
     const [showDel, setShowDel] = React.useState(false);
-
   return (
     <>
     <button type="button"
@@ -119,7 +119,7 @@ const EditNonRecur = () => {
                     <div className='col-span-2 w-full items-center flex justify-between'>
                         <p>DUE DATE:</p>
                         <div className='w-auto'>
-                           <DatePickers/></div>
+                           {/* <DatePickers setDateInput={handleDateInput}/>*/}</div> 
                     </div>
                     <div className='col-span-2 w-full items-center flex justify-between'>
                         <p>TASK:</p>
