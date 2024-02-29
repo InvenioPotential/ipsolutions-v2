@@ -23,7 +23,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.16",
     "@mui/x-charts": "^6.19.4",
     "@mui/x-date-pickers": "^6.19.4",
-    "@prisma/client": "^5.9.1",
+    "@prisma/client": "^5.10.2",
     "amqplib": "^0.10.3",
     "autoprefixer": "^10.4.17",
     "axios": "^1.6.7",

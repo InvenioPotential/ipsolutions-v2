@@ -8,7 +8,7 @@ export async function POST(req: Request, res: NextApiResponse) {
         const body = await req.json();
         console.log(body);
 
-        const {  
+        const {
             setCat,
             setSub,
             setType,
@@ -18,13 +18,13 @@ export async function POST(req: Request, res: NextApiResponse) {
             dateInput,
             taskInput,
             remarkInput,
-            assignInput, 
+            assignInput,
         } = body;
         // Create a new Todo using Prisma
         const newNonReccurTask = await prisma.nonReccurTask.create({
             data: {
                 category : setCat,
-                subcategory : setSub, 
+                subcategory : setSub,
                 type : setType,
                 site : setSite,
                 stage : stageInput,
@@ -32,7 +32,7 @@ export async function POST(req: Request, res: NextApiResponse) {
                 duedate : dateInput,
                 task : taskInput,
                 remark :remarkInput,
-                assignTaskTo : assignInput, 
+                assignTaskTo : assignInput,
             }
         });
         return new Response(JSON.stringify(newNonReccurTask), { status: 200 })
@@ -47,12 +47,12 @@ export async function GET(req: Request, res: NextApiResponse) {
     try {
         // Fetch non-recurring tasks from the database
         const nonReccurTask = await prisma.nonReccurTask.findMany();
-    
+
         // Return the fetched tasks as a JSON response
         return new Response(JSON.stringify(nonReccurTask), { status: 200 })
-      } catch (error) {
+    } catch (error) {
         console.error('Error fetching non-recurring tasks:', error);
         // Return an error response if there's an error
         res.status(500).json({ error: 'Internal Server Error' });
-      }
     }
+}
