@@ -15,7 +15,7 @@ import {Open_Sans} from 'next/font/google'
 const openSans = Open_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'IP SOLUTIONS',
+  title: 'IP Solutions Ver.0.1.0',
   description: 'Powered by Invenio PTL 2024',
   icons: '/images/ipsolutionslogo.png'
 }

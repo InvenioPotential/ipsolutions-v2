@@ -17,7 +17,7 @@ const AddRecur = () => {
             </button>
             {showModal ? (
             <>
-            <div className="m-5 justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+            <div className="p-3 justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
                 <div className="relative w-auto my-6 mx-auto max-w-3xl">
                 {/*content*/}
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
@@ -52,15 +52,15 @@ const AddRecur = () => {
                             </div>
                             <div>
                                 <p>PRIORITY:</p>
-                                <Priority />
+                                {/*<Priority />*/}
                             </div>
                             <div className='col-span-2'>
                                 <p>STATUS:</p>
                                 <div className='*:p-2 *:m-2 *:bg-gray-200 *:rounded-lg  flex justify-center overflow-auto'>
-                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200' >
+                                    <button id="status" type='button' className='hover:bg-green-100 focus:bg-green-200' >
                                         ON-GOING
                                     </button >
-                                    <button type='button' className='hover:bg-green-100 focus:bg-green-200'>
+                                    <button id="status"  type='button' className='hover:bg-green-100 focus:bg-green-200'>
                                         COMPLETED
                                     </button>
                                 </div>
