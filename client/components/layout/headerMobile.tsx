@@ -70,7 +70,7 @@ const HeaderMobile = () => {
                      href={item.path}
                      onClick={() => toggleOpen()}
                      className={`flex w-full text-lg ${
-                      item.path === pathname ? "font-bold" : ""
+                      item.path === pathname ? "font-bold text-green-500" : ""
                      }`} >
 
                       {item.title}
@@ -180,7 +180,7 @@ const MenuItemWithSubMenu: React.FC<MenuItemWithSubMenuProps> = ({
           className='flex w-full text-lg'
           onClick={() => setSubMenuOpen(!subMenuOpen)}>
             <div className='flex flex-row justify-between w-full items-left'>
-              <span className={`${pathname.includes(item.path) ? "font-bold" : ""}`}>
+              <span className={`${pathname.includes(item.path) ? "font-bold text-green-500" : ""}`}>
                 {item.title}
               </span>
               <div className={`${subMenuOpen && "rotate-180"}`}>
@@ -198,7 +198,7 @@ const MenuItemWithSubMenu: React.FC<MenuItemWithSubMenuProps> = ({
                   <Link href={subItem.path}
                   onClick={()=>toggleOpen()}
                   className={`${
-                    subItem.path === pathname ? "font-bold" : ""
+                    subItem.path === pathname ? "font-bold text-green-500" : ""
                   }`}>
                     {subItem.title}
                   </Link>
