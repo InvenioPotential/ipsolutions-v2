@@ -1,7 +1,6 @@
 import Category from '@/components/tasks/listing/category';
 import React from 'react'
 import { IoMdAddCircle } from 'react-icons/io';
-import Priority from '../listing/priority';
 import DateRangePickers from '../../dateCalendar/dateRangePickers';
 
 

@@ -1,9 +1,9 @@
-import { NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
+import {NextResponse} from "next/server";
 
 
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request, res: NextResponse) {
     try {
         const body = await req.json();
         console.log(body);
@@ -13,7 +13,7 @@ export async function POST(req: Request, res: NextApiResponse) {
             setSub,
             setType,
             setSite,
-            stageInput,
+            statusInput,
             priorityInput,
             dateInput,
             taskInput,
@@ -27,7 +27,7 @@ export async function POST(req: Request, res: NextApiResponse) {
                 subcategory : setSub,
                 type : setType,
                 site : setSite,
-                stage : stageInput,
+                stage : statusInput,
                 priority : priorityInput,
                 duedate : dateInput,
                 task : taskInput,
@@ -38,11 +38,11 @@ export async function POST(req: Request, res: NextApiResponse) {
         return new Response(JSON.stringify(newNonReccurTask), { status: 200 })
     } catch (error) {
         console.error("Error creating new task:", error);
-        res.status(500).json({ error: 'Internal Server Error' });
+        return new Response('Internal Server Error', { status: 500 });
     }
 }
 
-export async function GET(req: Request, res: NextApiResponse) {
+export async function GET(req: Request, res: NextResponse) {
 
     try {
         // Fetch non-recurring tasks from the database
@@ -53,6 +53,6 @@ export async function GET(req: Request, res: NextApiResponse) {
     } catch (error) {
         console.error('Error fetching non-recurring tasks:', error);
         // Return an error response if there's an error
-        res.status(500).json({ error: 'Internal Server Error' });
+        return new Response('Internal Server Error', { status: 500 });
     }
 }

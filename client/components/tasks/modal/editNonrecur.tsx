@@ -4,10 +4,13 @@ import { MdDelete, MdEdit } from 'react-icons/md';
 import Category from '../listing/category';
 import DatePickers from '@/components/dateCalendar/datepickers';
 
-const EditNonRecur = () => {
+const EditNonRecur = (taskId : any) => {
     const [showModal, setShowModal] = React.useState(false);
     const [showDel, setShowDel] = React.useState(false);
-  return (
+
+    // const [taskData, setTaskData] = useState(); // State to store task details
+
+    return (
     <>
     <button type="button"
             onClick={() => setShowModal(true)} 

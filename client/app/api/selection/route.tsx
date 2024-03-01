@@ -1,8 +1,9 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
+import {NextResponse} from "next/server";
 
 
-export async function GET(req: Request, res: NextApiResponse) {
+export async function GET(req: Request, res: NextResponse) {
     try {
 
         const groupSelection = await prisma.customization.findMany({
