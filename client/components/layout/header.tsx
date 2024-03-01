@@ -6,6 +6,7 @@ import { useSelectedLayoutSegment } from 'next/navigation';
 import React from 'react'
 import { UserButton } from '@clerk/clerk-react';
 import Image from 'next/image';
+import {Icon} from "@iconify/react";
 
 const Header = () => {
   const scrolled = useScroll(5);
@@ -35,7 +36,8 @@ const Header = () => {
 
         <div className=' md:block'>
           <div className='h-8 w-8 rounded-full bg-zinc-300 flex items-center justify-center text-center'>
-            <span className='font-semibold text-sm'><UserButton afterSignOutUrl='/'/> </span>
+            <span><Icon icon="lucide:bell-ring" className='w-7 h-7'></Icon></span>
+            <span className='font-semibold text-sm shadow-xl rounded-full'><UserButton afterSignOutUrl='/'/> </span>
           </div>
         </div>
       </div>

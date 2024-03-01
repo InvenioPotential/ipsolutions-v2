@@ -4,6 +4,7 @@ import AddRecur from '@/components/tasks/modal/addRecur'
 import MiniCalendar from '@/components/dateCalendar/miniCalendar'
 import RecurLists from '@/components/tasks/recurLists'
 import AssignTask from '@/components/tasks/assignTask'
+import SchedulerRecur from "@/components/dateCalendar/scheduler";
 
 const TaskRecur = () => {
   return (
@@ -48,7 +49,9 @@ const TaskRecur = () => {
                       </div>         
                       <AddRecur/>
                     </div>
-                    <RecurLists/>
+                    {/*<RecurLists/>*/}
+                    <SchedulerRecur />
+
                   </div>               
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <AssignTask/>
