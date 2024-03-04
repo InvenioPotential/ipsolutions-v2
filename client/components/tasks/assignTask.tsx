@@ -6,7 +6,7 @@ const AssignTask = () => {
     <div className='overflow-auto p-2 m-1'>
         <div className='p-1 text-sm border-b-2 font-bold items-center justify-between flex'>
         TASK ASSIGNED
-        <FaPlus />
+        {/*<FaPlus />*/}
         </div>
         <div className='p-1 m-2 overflow-auto'>
             <ul className='mt-1 text-sm'>

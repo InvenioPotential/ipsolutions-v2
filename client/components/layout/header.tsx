@@ -34,9 +34,11 @@ const Header = () => {
           </Link>
         </div>
 
-        <div className=' md:block'>
-          <div className='h-8 w-8 rounded-full bg-zinc-300 flex items-center justify-center text-center'>
-            <span><Icon icon="lucide:bell-ring" className='w-7 h-7'></Icon></span>
+        <div className='*:m-2 flex'>
+          <div className='flex items-center justify-center text-center'>
+            <span><Icon icon="lucide:bell-ring" className='w-6 h-6'></Icon></span>
+          </div>
+          <div className='h-9 w-9 rounded-full bg-zinc-300 flex items-center justify-center text-center'>
             <span className='font-semibold text-sm shadow-xl rounded-full'><UserButton afterSignOutUrl='/'/> </span>
           </div>
         </div>

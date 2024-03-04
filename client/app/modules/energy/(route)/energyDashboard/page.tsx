@@ -17,9 +17,9 @@ const EnergyDashboard = () => {
             ENERGY MANAGEMENT
             </div>
         </div> 
-        <div className=' m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-2 sm:grid-rows-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4'>
+        <div className='p-5 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-2 sm:grid-rows-2 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-4'>
             <Link href={'/modules/energy/energySpade'} className=' cursor-pointer items-center  justify-center text-center'>
-            <div className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
+            <div className='shadow hover:shadow-lg bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                 <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                 <div className='flex justify-between items-center'>
                     <MdUpcoming className='m-1 h-5 w-5' />
@@ -32,7 +32,7 @@ const EnergyDashboard = () => {
             </div>
             </Link>
             <div  className='cursor-pointer items-center  justify-center text-center'>
-                <div className='shadow hover:shadow-xl bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
+                <div className='shadow hover:shadow-lg bg-gradient-to-r from-sky-100  to-gray-200 rounded-lg justify-between p-3 '>
                     <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                         <FiActivity className='m-1 h-5 w-5' />
@@ -45,7 +45,7 @@ const EnergyDashboard = () => {
                 </div>
                 </div>
                 <div className=' cursor-pointer items-center  justify-center text-center'>
-                <div  className='shadow hover:shadow-xl bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
+                <div  className='shadow hover:shadow-lg bg-gradient-to-r from-red-100  to-gray-200 rounded-lg justify-between p-3 '>
                     <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                         <MdAssignmentLate className='m-1 h-5 w-5' />
@@ -58,7 +58,7 @@ const EnergyDashboard = () => {
                 </div>
                 </div>
                 <div className=' cursor-pointer items-center  justify-center text-center'>
-                <div className='shadow hover:shadow-xl bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
+                <div className='shadow hover:shadow-lg bg-gradient-to-r from-green-100  to-gray-200 rounded-lg justify-between p-3 '>
                     <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
                     <div className='flex justify-between items-center'>
                         <IoCheckmarkCircle className='m-1 h-5 w-5' />

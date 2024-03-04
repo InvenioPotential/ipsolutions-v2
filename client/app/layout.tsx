@@ -9,8 +9,6 @@ import MarginWidthWrapper from '@/components/layout/marginWidthWrapper'
 import PageWrapper from '@/components/layout/pageWrapper'
 import {Open_Sans} from 'next/font/google'
 
-{/* <link rel="manifest" href="/manifest.json"/> */}
-
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 

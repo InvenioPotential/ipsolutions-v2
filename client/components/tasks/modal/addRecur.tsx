@@ -1,6 +1,5 @@
 import Category from '@/components/tasks/listing/category';
 import React from 'react'
-import { IoMdAddCircle } from 'react-icons/io';
 import Priority from '../listing/priority';
 import {Icon} from "@iconify/react";
 import DateRangePickers from '../../dateCalendar/dateRangePickers';
@@ -13,14 +12,14 @@ const AddRecur = () => {
             <>
                 <button type="button"
                         onClick={() => setShowModal(true)}
-                        className='p-2  '>
-                    <Icon icon="lucide:bell-ring" className='w-7 h-7 bg-opacity-0 shadow rounded-full'></Icon>
-                    {/*<IoMdAddCircle className='w-7 h-7 rounded-full shadow'/>*/}
+                        className='p-2 rounded-md'>
+                    <Icon icon="lucide:plus-circle" className='w-7 h-7 bg-opacity-0 shadow rounded-full'></Icon>
                 </button>
                 {showModal ? (
                     <>
-                    <div className="p-3 justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
-                <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                        <div
+                            className="p-3 justify-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                            <div className="relative w-auto my-6 mx-auto max-w-3xl">
                 {/*content*/}
                 <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                     {/*header*/}

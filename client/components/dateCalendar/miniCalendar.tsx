@@ -6,7 +6,7 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 
 export default function MiniCalendar() {
   return (
-    <div className='overflow-auto flex'>
+    <div className=' overflow-auto flex'>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar />
       </LocalizationProvider>  

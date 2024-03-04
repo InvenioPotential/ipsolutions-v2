@@ -7,6 +7,7 @@ import dayjs, { Dayjs } from "dayjs";
 import DatePickers from "@/components/dateCalendar/datepickers";
 import { getSelections } from "@/app/utils/taskData/page";
 import { Selection } from "@/components/types";
+import {Icon} from "@iconify/react";
 
 const AddNonRecur = () => {
     const [showModal, setShowModal] = React.useState(false);
@@ -108,7 +109,7 @@ const AddNonRecur = () => {
         <button type="button"
                 onClick={() => setShowModal(true)} 
                 className='p-2 rounded-md'>
-            <IoMdAddCircle className='w-7 h-7'/>
+            <Icon icon="lucide:plus-circle" className='w-7 h-7 bg-opacity-0 shadow rounded-full'></Icon>
         </button>
         {showModal ? (
         <>
