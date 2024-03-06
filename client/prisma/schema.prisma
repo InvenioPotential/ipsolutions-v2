@@ -18,16 +18,17 @@ model User {
 
 model nonReccurTask {
   id           String    @id @default(uuid())
-  category  String?
-  subcategory String?
-  type  String?
-  site String?
-  stage String?
-  priority String?
+  category     String?
+  subcategory  String?
+  type         String?
+  site         String?
+  stage        String?
+  priority     String?
   task         String?   @db.VarChar(255)
   remark       String?   @db.VarChar(255)
   assignTaskTo String?   @db.VarChar(255)
   duedate      DateTime?
+  taskOwner    String?
 }
 
 model notes {
@@ -43,4 +44,21 @@ model customization {
   variables  String  @db.VarChar(255)
   department String? @db.VarChar(255)
   options    String
+}
+
+model reccurTask {
+  id           String    @id @default(uuid())
+  category     String?
+  subcategory  String?
+  type         String?
+  site         String?
+  stage        String?
+  priority     String?
+  task         String?   @db.VarChar(255)
+  remark       String?   @db.VarChar(255)
+  assignTaskTo String?   @db.VarChar(255)
+  reccur       String?
+  startDate    DateTime?
+  EndDate      DateTime?
+  taskOwner    String?
 }

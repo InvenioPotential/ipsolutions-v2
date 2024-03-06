@@ -1,16 +1,15 @@
+"use client"
 import React from "react";
 import AddNonRecur from "@/components/tasks/modal/addNonRecur";
 import EditNonRecur from "@/components/tasks/modal/editNonrecur";
 import MiniCalendar from "@/components/dateCalendar/miniCalendar";
 import AssignTask from "@/components/tasks/assignTask";
 import { Suspense } from "react";
-import  {Loading }  from "@/components/loading";
-
 import  {TableLoading }  from "@/components/loading";
-import { item } from "@/components/types";
-import { NonReccurData } from "@/app/utils/taskData/page";
+import { NonReccurData } from "@/components/tasks/nonRecurLists";
 
 async function TaskNonRecur() {
+
   return (
     <div className="lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10">
       <div className="border-b-1 mb-5 flex justify-between">
@@ -52,6 +51,7 @@ async function TaskNonRecur() {
                 <AddNonRecur />
               </div>
               <div className="overflow-auto mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2">
+
                 <Suspense fallback={ <TableLoading /> }>
                   <NonReccurData />
                 </Suspense>

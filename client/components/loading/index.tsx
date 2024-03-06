@@ -3,7 +3,14 @@ import Skeleton from "react-loading-skeleton";
 import '@/app/globals.css'
 
 export function Loading() {
-    return <Skeleton/>;
+    return (
+        <>
+        <Skeleton height={250} />
+        <br/>
+        <Skeleton height={250} />
+
+        </>
+)
 }
 
 export function TableLoading() {
@@ -11,7 +18,7 @@ export function TableLoading() {
         <>
             <Skeleton height={60}/>
             <br/>
-            <Skeleton height={50} count={5}/>
+            <Skeleton height={50} count={7}/>
         </>
 
     );

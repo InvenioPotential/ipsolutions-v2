@@ -26,6 +26,7 @@ export const NoteList: React.FC = () => {
         fetchTodos();
     }, []);
 
+
     const fetchTodos = async () => {
         try {
             const response = await fetch('/api/todos'); // Fetch data from the API endpoint
@@ -179,7 +180,7 @@ export const NoteList: React.FC = () => {
                             <div className='font-bold uppercase flex justify-between'>
                                 <div>{todo.title}</div>
                                 <div className='flex'>
-                                 {/* <EditTodo/>  */}
+                                  <EditTodo/>
                                 </div>
                                 
                             </div>

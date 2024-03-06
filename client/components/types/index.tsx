@@ -11,6 +11,7 @@ export interface item {
   task: string;
   stage: string;
   columns: string;
+  EndDate : string;
 }
 export interface Selection {
   id: number;

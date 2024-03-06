@@ -1,11 +1,24 @@
-"use client"
+// "use client"
 import React from 'react'
 import AddRecur from '@/components/tasks/modal/addRecur'
 import MiniCalendar from '@/components/dateCalendar/miniCalendar'
-import RecurLists from '@/components/tasks/recurLists'
+import ReccurData from "@/components/tasks/recurLists";
 import AssignTask from '@/components/tasks/assignTask'
+import { Suspense } from "react";
+import  {Loading }  from "@/components/loading";
+import Search from "@/components/search/";
 
-const TaskRecur = () => {
+
+const TaskRecur = async ({ searchParams, }: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) => {
+  const query = searchParams?.query || "";
+  const currentPage = Number(searchParams?.page) || 1;
+
+  // const totalPages = await getContactPages(query);
   return (
           <div className='lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10'>
             <div className='border-b-1 mb-5 flex justify-between'>
@@ -47,8 +60,16 @@ const TaskRecur = () => {
                         </div>
                       </div>         
                       <AddRecur/>
+
+
+                    </div><Search />
+                    <div className='overflow-auto h-screen'>
+                      <ul className=' text-left mx-auto rounded-md text-md font-semibold p-3 m-2 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
+                        <Suspense  key={query + currentPage} fallback={<Loading/>}>
+                        <ReccurData query={query}  currentPage={currentPage}/>
+                        </Suspense>
+                      </ul>
                     </div>
-                    <RecurLists/>
                   </div>               
                   <div className='p-2 grid rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                     <AssignTask/>
