@@ -1,7 +1,6 @@
 import { prisma } from '@/lib/prisma';
 import {NextResponse} from "next/server";
-import { currentUser } from '@clerk/nextjs';
-import {getUser}  from "@/app/utils/userData/page"
+import {getUser} from "@/app/utils/userData/page";
 
 
 
@@ -10,6 +9,7 @@ export async function POST(req: Request, res: NextResponse) {
     console.log(user)
     try {
         const body = await req.json();
+        console.log(body);
 
         const {
             setCat,
@@ -17,30 +17,34 @@ export async function POST(req: Request, res: NextResponse) {
             setType,
             setSite,
             statusInput,
+            recurInput,
             priorityInput,
-            dateInput,
+            startDateInput,
+            endDateInput,
             taskInput,
             remarkInput,
             assignInput,
-
         } = body;
-        // Create a new Todo using Prisma
-        const newNonReccurTask = await prisma.nonReccurTask.create({
+
+        const newReccurTask = await prisma.reccurTask.create({
             data: {
                 category : setCat,
                 subcategory : setSub,
                 type : setType,
                 site : setSite,
                 stage : statusInput,
+                reccur : recurInput,
                 priority : priorityInput,
-                duedate : dateInput,
+                startDate : startDateInput,
+                EndDate : endDateInput,
                 task : taskInput,
                 remark :remarkInput,
                 assignTaskTo : assignInput,
                 taskOwner : user,
+
             }
         });
-        return new Response(JSON.stringify(newNonReccurTask), { status: 200 })
+        return new Response(JSON.stringify(newReccurTask), { status: 200 })
     } catch (error) {
         console.error("Error creating new task:", error);
         return new Response('Internal Server Error', { status: 500 });
@@ -51,21 +55,19 @@ export async function GET(req: Request, res: NextResponse) {
     const user = await getUser()
 
     try {
-
         // Fetch non-recurring tasks from the database
-        const nonRecurTask = await prisma.nonReccurTask.findMany({
-            where : {
-                taskOwner : user
+        const ReccurTask = await prisma.reccurTask.findMany({
+                where : {
+                    taskOwner : user
+                }
             }
-        });
+        );
 
         // Return the fetched tasks as a JSON response
-        return new Response(JSON.stringify(nonRecurTask), { status: 200 })
+        return new Response(JSON.stringify(ReccurTask), { status: 200 })
     } catch (error) {
         console.error('Error fetching non-recurring tasks:', error);
         // Return an error response if there's an error
         return new Response('Internal Server Error', { status: 500 });
     }
 }
-
-

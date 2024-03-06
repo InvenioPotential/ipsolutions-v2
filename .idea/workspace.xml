@@ -5,7 +5,43 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db4b003c-d17e-4a98-b9c7-2226dc894bed" name="Changes" comment="directory adjustment 3">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/Recur/[id]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/Recur/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/nonRecur/[id]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/selectionData/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/userData/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/search/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/tasks/nonRecurLists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/nonRecur/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/nonRecur/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/selection/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/selection/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/selection/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/selection/route.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskNonRecur/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskNonRecur/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskRecurring/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskRecurring/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/taskData/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/taskData/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/api/selection/route.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/api/selection/route.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dateCalendar/dateRangePickers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dateCalendar/dateRangePickers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dateCalendar/datepickers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dateCalendar/datepickers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/loading/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/loading/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/notes/todoList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/notes/todoList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/listing/priority.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/listing/priority.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/addNonRecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/addNonRecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/addRecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/addRecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/editNonrecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/editNonrecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/editRecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/editRecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/recurLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/recurLists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/types/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/types/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,13 +56,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="development" />
+        <entry key="$PROJECT_DIR$" value="taskManagement/recur_FE" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -45,7 +84,6 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "taskManagement/recur__FE",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/yadis/OneDrive/Desktop/Invenio Assist/IPAssist",
@@ -59,6 +97,21 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ipsolutions-v2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ipsolutions-v2" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SeleniumInternalSettingsState">
     <option name="lastUrl" value="http://localhost:3000/" />
   </component>
@@ -71,9 +124,6 @@
     }
   }
 }</component>
-  <component name="SpaceReviewProjectSettings">
-    <option name="selectedReviewProjectId" value="5DVvt1V451t" />
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -87,7 +137,8 @@
       <workItem from="1709692348397" duration="279000" />
       <workItem from="1709692660312" duration="242000" />
       <workItem from="1709692964399" duration="792000" />
-      <workItem from="1709696387441" duration="830000" />
+      <workItem from="1709696387441" duration="1671000" />
+      <workItem from="1709698094555" duration="41000" />
     </task>
     <task id="LOCAL-00001" summary="directory adjustment">
       <option name="closed" value="true" />

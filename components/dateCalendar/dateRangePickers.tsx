@@ -3,17 +3,23 @@ import React, { useState } from "react";
 import DatePickers from "./datepickers";
 import dayjs, { Dayjs } from "dayjs";
 
-const DateRangePickers = () => {
-  const [dateInput, setDateInput] = useState<Dayjs | null>(dayjs());
-
-  const handleDateInput = (date: any) => {
-    setDateInput(date);
+interface DateRangePickersProps {
+  defaultStart: Dayjs | null;
+  defaultEnd: Dayjs | null;
+  onStartChange: (newStartDate: Dayjs) => void;
+  onEndChange: (newEndDate: Dayjs) => void;
+}
+const DateRangePickers: React.FC<DateRangePickersProps> = ({ defaultStart, defaultEnd, onStartChange, onEndChange }) => {
+  const handleStartDateChange = (date: Dayjs | null) => {
+    if (date) {
+      onStartChange(date);
+    }
   };
 
-  const [dateInput2, setDateInput2] = useState<Dayjs | null>(dayjs());
-
-  const handleDateInput2 = (date: any) => {
-    setDateInput2(date);
+  const handleEndDateChange = (date: Dayjs | null) => {
+    if (date) {
+      onEndChange(date);
+    }
   };
   return (
     <div className="">
@@ -21,11 +27,11 @@ const DateRangePickers = () => {
       <div className="justify-between flex *:m-2">
         <div>
           <div>Start</div>
-          <DatePickers setDateInput={handleDateInput} />
+          <DatePickers defaultDate={defaultStart} setDateInput={handleStartDateChange} />
         </div>
         <div>
           <div>End</div>
-          <DatePickers setDateInput={handleDateInput2} />
+          <DatePickers defaultDate={defaultEnd}  setDateInput={handleEndDateChange} />
         </div>
       </div>
     </div>

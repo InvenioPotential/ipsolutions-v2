@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="IU-233.14475.28">
-    <data-source name="ipsolutionsv2" uuid="f198db85-35b7-4ef0-a2c6-95a7c4c95eeb">
+    <data-source name="ipsolutions-v2" uuid="3704bf9b-6bd0-4116-be06-915f4be10636">
       <database-info product="PostgreSQL" version="16.2" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.6.0" dbms="POSTGRES" exact-version="16.2" exact-driver-version="42.6">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
