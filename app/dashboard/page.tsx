@@ -29,10 +29,9 @@ const Dashboard = async () => {
           <div className=' overflow-auto grid grid-rows-2 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
             <div className='grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
               <ul className=" overflow-auto grid grid-rows-4 lg:grid-cols-2 gap-2 md:grid-cols-1 sm:grid-cols-1">
-                <li className='border rounded-md p-1 bg-white '>
+                <li className='hover:shadow border rounded-md p-1 bg-white '>
                   <Link href="/modules/task/taskDashboard" className='flex w-auto h-24 items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
-                      <div className='block m-2 p-1 hover:text-green-500 '>
                         <div className='text-gray-700 text-sm font-bold '>TASK MANAGEMENT</div>
                         <div className='text-xs'>Recurring, Non-recurring, Report and etc.</div>  
                     </div>
