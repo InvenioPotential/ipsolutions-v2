@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String
+  password String
+}
+
+model nonReccurTask {
+  id           String    @id @default(uuid())
+  category     String?
+  subcategory  String?
+  type         String?
+  site         String?
+  stage        String?
+  priority     String?
+  task         String?   @db.VarChar(255)
+  remark       String?   @db.VarChar(255)
+  assignTaskTo String?   @db.VarChar(255)
+  duedate      DateTime?
+  taskOwner    String?
+}
+
+model notes {
+  id       Int    @id @default(autoincrement())
+  title    String
+  notes    String
+  priority String
+  duedate  String
+}
+
+model customization {
+  id         Int     @id @default(autoincrement())
+  variables  String  @db.VarChar(255)
+  department String? @db.VarChar(255)
+  options    String
+}
+
+model reccurTask {
+  id           String    @id @default(uuid())
+  category     String?
+  subcategory  String?
+  type         String?
+  site         String?
+  stage        String?
+  priority     String?
+  task         String?   @db.VarChar(255)
+  remark       String?   @db.VarChar(255)
+  assignTaskTo String?   @db.VarChar(255)
+  reccur       String?
+  startDate    DateTime?
+  EndDate      DateTime?
+  taskOwner    String?
+}
