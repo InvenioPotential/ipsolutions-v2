@@ -259,7 +259,7 @@ const AddNonRecur = () => {
                                             <div className='col-span-2 w-full items-center flex justify-between'>
                                                 <p>DUE DATE:</p>
                                                 <div className='w-auto'>
-                                                    <DatePickers setDateInput={handleDateInput}/></div>
+                                                    <DatePickers defaultDate={dateInput} setDateInput={handleDateInput}/></div>
                                             </div>
                                             <div className='col-span-2 w-full items-center flex justify-between'>
                                             <p>TASK:</p>
