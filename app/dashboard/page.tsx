@@ -38,7 +38,7 @@ const Dashboard = async () => {
                     <div className="flex items-center"></div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='/modules/energy/energyDashboard' className='flex w-auto h-24 items-center'>
                     <div className='justify-center items-center m-2 p-1'>
                       {/* <Image className='flex w-7 h-7'
@@ -55,7 +55,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24 items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1'>
@@ -64,7 +64,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24  items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1 hover:text-green-500'>
@@ -73,7 +73,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24  items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1'>
@@ -82,7 +82,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24  items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1'>
@@ -91,7 +91,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24 items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1'>
@@ -100,7 +100,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24 items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1'>
@@ -109,7 +109,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24 items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1'>
@@ -118,7 +118,7 @@ const Dashboard = async () => {
                     </div>
                   </Link>
                 </li>
-                <li className='border rounded-md p-1 bg-white'>
+                <li className='hover:shadow border rounded-md p-1 bg-white'>
                   <Link href='' className='flex w-auto h-24 items-center'>
                     <div className='justify-center items-center m-2 p-1'></div>
                     <div className='block m-2 p-1'>
@@ -129,10 +129,10 @@ const Dashboard = async () => {
                 </li>
               </ul>
             </div>
-            <div className='p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
+            <div className='hover:shadow p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
               <NoteList/>
             </div>
-            <div className='flex overflow-auto p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
+            <div className='hover:shadow flex overflow-auto p-2 rounded-md grid-cols-subgrid lg:col-span-1 md:col-span-2 sm:col-span-2 row-span-1 bg-white'>
                 <MiniCalendar />
             </div>
           </div>
