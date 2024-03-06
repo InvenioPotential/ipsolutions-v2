@@ -31,7 +31,7 @@ const TaskRecur = async ({ searchParams, }: {
                 </div>
               </div>
             </div>
-            <div className='min-h-screen rounded-md p-3 text-gray-700'>
+            <div className='min-h-screen rounded-md text-gray-700'>
               <div className='mx-auto overflow-auto lg:h-auto rounded-md p-2 sm:m-1 md:m-1 m-5'>
                 <div className='grid grid-rows-1 lg:grid-cols-4 gap-4 md:grid-cols-1 sm:grid-cols-1'>
                   <div className='overflow-auto p-2 bg-white rounded-md grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
