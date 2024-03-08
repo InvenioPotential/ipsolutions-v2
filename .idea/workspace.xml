@@ -4,15 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4b003c-d17e-4a98-b9c7-2226dc894bed" name="Changes" comment="directory adjustment 3">
+    <list default="true" id="db4b003c-d17e-4a98-b9c7-2226dc894bed" name="Changes" comment="layoutUpdate">
+      <change afterPath="$PROJECT_DIR$/app/api/allTask/[status]/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/api/currentUser/route.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/utils/taskData/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/dateCalendar/dateFormat.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240310160710_synchronise_table/migration.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/prisma/migrations/20240310163149_edit_etoe/migration.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Recur/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Recur/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/Recur/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/Recur/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/allTask/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/allTask/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/nonRecur/[id]/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/nonRecur/[id]/route.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/api/nonRecur/route.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/api/nonRecur/route.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskDashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskDashboard/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskNonRecur/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskNonRecur/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskRecurring/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskRecurring/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dateCalendar/dateRangePickers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dateCalendar/dateRangePickers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/dateCalendar/datepickers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/dateCalendar/datepickers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/listing/nonRecurLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/listing/nonRecurLists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/listing/recurLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/listing/recurLists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/listing/taskList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/listing/taskList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/addNonRecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/addNonRecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/addRecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/addRecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/editNonrecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/editNonrecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/modal/editRecur.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/modal/editRecur.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/status/active/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/status/active/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/status/complete/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/status/complete/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/status/late/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/status/late/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/tasks/status/upcoming/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/status/upcoming/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/types/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/types/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,15 +82,21 @@
     "git-widget-placeholder": "taskManagement/cleanup__BEFE",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/yadis/OneDrive/Desktop/Invenio Assist/IPAssist",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/ipsolutionsv2/app/api/allTask/[status]",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "show.migrate.to.gradle.popup": "false",
     "ts.external.directory.path": "C:\\Users\\Administrator\\Desktop\\ipsolutionsv2\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
   <component name="ReactDesignerToolWindowState">
@@ -77,6 +107,16 @@
         <entry key="com.intellij.reactbuddy.storybook" value="false" />
       </map>
     </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\ipsolutionsv2\app\api\allTask\[status]" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\ipsolutionsv2\app\api\allTask\[slug]" />
+      <recent name="C:\Users\Administrator\Desktop\ipsolutionsv2\app\api\allTask" />
+      <recent name="C:\Users\Administrator\Desktop\ipsolutionsv2\components\tasks\listing" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
@@ -120,7 +160,13 @@
       <workItem from="1709692964399" duration="792000" />
       <workItem from="1709696387441" duration="1671000" />
       <workItem from="1709698094555" duration="41000" />
-      <workItem from="1709710621677" duration="1210000" />
+      <workItem from="1709710621677" duration="36243000" />
+      <workItem from="1709886315869" duration="615000" />
+      <workItem from="1709886946707" duration="2056000" />
+      <workItem from="1710053898903" duration="4638000" />
+      <workItem from="1710075314578" duration="11602000" />
+      <workItem from="1710087033275" duration="1323000" />
+      <workItem from="1710088375243" duration="31920000" />
     </task>
     <task id="LOCAL-00001" summary="directory adjustment">
       <option name="closed" value="true" />
@@ -138,7 +184,31 @@
       <option name="project" value="LOCAL" />
       <updated>1709696580947</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="layoutUpdate">
+      <option name="closed" value="true" />
+      <created>1709714786877</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709714786878</updated>
+    </task>
+    <task id="LOCAL-00004" summary="layoutUpdate">
+      <option name="closed" value="true" />
+      <created>1709714800446</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709714800446</updated>
+    </task>
+    <task id="LOCAL-00005" summary="layoutUpdate">
+      <option name="closed" value="true" />
+      <created>1709890001263</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709890001263</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +230,34 @@
     <MESSAGE value="directory adjustment" />
     <MESSAGE value="directory adjustment 3" />
     <MESSAGE value="add skeleton" />
-    <option name="LAST_COMMIT_MESSAGE" value="add skeleton" />
+    <MESSAGE value="layoutUpdate" />
+    <option name="LAST_COMMIT_MESSAGE" value="layoutUpdate" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/app/modules/task/(route)/taskRecurring/page.tsx</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/tasks/listing/taskList.tsx</url>
+          <line>41</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/tasks/listing/taskList.tsx</url>
+          <line>15</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/tasks/status/active/index.tsx</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

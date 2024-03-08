@@ -36,7 +36,7 @@ export async function POST(req: Request, res: NextResponse) {
                 reccur : recurInput,
                 priority : priorityInput,
                 startDate : startDateInput,
-                EndDate : endDateInput,
+                endDate : endDateInput,
                 task : taskInput,
                 remark :remarkInput,
                 assignTaskTo : assignInput,
@@ -57,9 +57,17 @@ export async function GET(req: Request, res: NextResponse) {
     try {
         // Fetch non-recurring tasks from the database
         const ReccurTask = await prisma.reccurTask.findMany({
-                where : {
-                    taskOwner : user
-                }
+            where: {
+                OR: [
+                    {
+                        taskOwner: user
+                    },
+                    {
+                        assignTaskTo: user
+                    }
+                ],
+
+            }
             }
         );
 

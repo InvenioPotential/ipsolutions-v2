@@ -2,7 +2,7 @@ export interface item {
   id: number;
   title: string;
   notes: string;
-  duedate: string;
+  startDate: string;
   priority: string;
   type: string;
   category: string;
@@ -11,7 +11,9 @@ export interface item {
   task: string;
   stage: string;
   columns: string;
-  EndDate : string;
+  endDate : string;
+  tasktype : string;
+  taskOwner : string;
 }
 export interface Selection {
   id: number;

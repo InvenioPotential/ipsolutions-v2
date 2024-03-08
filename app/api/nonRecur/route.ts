@@ -24,7 +24,7 @@ export async function POST(req: Request, res: NextResponse) {
             assignInput,
 
         } = body;
-        // Create a new Todo using Prisma
+
         const newNonReccurTask = await prisma.nonReccurTask.create({
             data: {
                 category : setCat,
@@ -33,7 +33,7 @@ export async function POST(req: Request, res: NextResponse) {
                 site : setSite,
                 stage : statusInput,
                 priority : priorityInput,
-                duedate : dateInput,
+                endDate : dateInput,
                 task : taskInput,
                 remark :remarkInput,
                 assignTaskTo : assignInput,
@@ -54,8 +54,16 @@ export async function GET(req: Request, res: NextResponse) {
 
         // Fetch non-recurring tasks from the database
         const nonRecurTask = await prisma.nonReccurTask.findMany({
-            where : {
-                taskOwner : user
+            where: {
+                OR: [
+                    {
+                        taskOwner: user
+                    },
+                    {
+                        assignTaskTo: user
+                    }
+                ],
+
             }
         });
 

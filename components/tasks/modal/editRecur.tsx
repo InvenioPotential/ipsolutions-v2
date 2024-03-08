@@ -1,6 +1,6 @@
 "use client"
 import React, {useEffect, useState} from 'react'
-import { MdDelete, MdEdit } from 'react-icons/md';
+import {MdDelete, MdEdit, MdVisibility} from 'react-icons/md';
 import DateRangePickers from '../../dateCalendar/dateRangePickers';
 import {Selection} from "@/components/types";
 import {getSelections} from "@/app/utils/selectionData/page";
@@ -24,10 +24,13 @@ const EditRecur = ({taskId} : {taskId : any}) => {
     const [remarkInput, setRemarkInput] = useState<string>(""); // Add remark input state
     const [assignInput, setAssignInput] = useState<string>(""); // Add assign input state
     const [statusInput, setStatusInput] = useState<string>("");
+    const [recurInput, setRecurInput] = useState<string>("");
     const [priorityInput, setPriorityInput] = useState("");
     const [startDateInput, setStartDate] = useState<Dayjs | null>(null);
     const [endDateInput, setEndDate] = useState<Dayjs | null>(null);
-    const [recurInput, setReccurInput] = useState<string>("");
+    const [currentUser, setCurrentUser] = useState<any>(null);
+    const [taskOwner, setTaskOwner] = useState<any>(null);
+
 
     const handleStartDateChange = (date: any) => {
         setStartDate(date);
@@ -39,8 +42,10 @@ const EditRecur = ({taskId} : {taskId : any}) => {
 
 
     useEffect(() => {
-        fetchSelection
+        fetchSelection()
         fetchTaskByID();
+        fetchCurrentUser();
+
     }, [taskId]);
 
     // console.log("id fethced :"+taskId);
@@ -63,9 +68,11 @@ console.log(data)
             setPriorityInput(data.priority)
             setAssignInput(data.assignTaskTo)
             setStatusInput(data.stage)
+            setRecurInput(data.reccur)
             setStartDate(dayjs(data.startDate))
-            setEndDate(dayjs(data.EndDate))
-            setReccurInput(data.reccur)
+            setEndDate(dayjs(data.endDate))
+            setTaskOwner(data.taskOwner)
+
         } catch (error) {
             console.error(error);
         }
@@ -168,12 +175,31 @@ console.log(data)
     const handleCategoryChange = (selectedOption: any) => {
         setSelectedCategory(selectedOption.value); // Set the selected category's variables
     };
+
+    const canEditTask = () => {
+        return currentUser === taskOwner;
+    };
+
+    const fetchCurrentUser = async () => {
+        try {
+            const response = await fetch('/api/currentUser');
+            if (!response.ok) {
+                throw new Error('Failed to fetch current user.');
+            }
+            const userData = await response.json();
+            setCurrentUser(userData.userData);
+
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
             <>
             <button type="button"
                     onClick={() => setShowModal(true)} 
                     className='p-2 rounded-full hover:bg-gray-200'>
-                <MdEdit className=''/>
+                {canEditTask() ? <MdEdit /> : <MdVisibility />}
             </button>
             {showModal ? (
             <>
@@ -184,17 +210,22 @@ console.log(data)
                     {/*header*/}
                     <div className="flex justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                         <div>
-                            <p className="text-2xl text-black font-bold">
-                                EDIT TASK
-                            </p>
+                            {canEditTask() ? (
+
+                                <p className="text-2xl text-black font-bold">
+                                    EDIT TASK
+                                </p> ) : (<p className="text-2xl text-black font-bold">
+                                VIEW TASK
+                            </p>)}
                             <p className='text-sm flex'>RECURRING TASK</p>
                         </div>
                         <div>
                             <>
+                                {canEditTask() ? (
                             <button type="button"
                                     onClick={() => setShowDel(true)}  
                                     className='m-1 p-2 hover:bg-red-200 rounded-full'>
-                                    <MdDelete/></button>
+                                    <MdDelete/></button> ) : null }
                                 {showDel ? (
                                     <>
                                         <div
@@ -266,6 +297,8 @@ console.log(data)
                                     }}
                                     value={setCat}
                                     placeholder={setCat || "Select Category"}
+                                    isDisabled={!canEditTask()}
+
                                 />
                             </div>
                             <div>
@@ -288,6 +321,8 @@ console.log(data)
                                     }}
                                     value={setSub}
                                     placeholder={setSub || "Select Sub Category"}
+                                    isDisabled={!canEditTask()}
+
                                 />
                             </div>
                             <div>
@@ -306,7 +341,9 @@ console.log(data)
                                         }
                                     }}
                                     value={setType}
-                                    placeholder={setType || "Select Type"}                        />
+                                    placeholder={setType || "Select Type"}
+                                    isDisabled={!canEditTask()}
+                                />
                             </div>
                             <div>
                                 <p>SITE:</p>
@@ -322,6 +359,8 @@ console.log(data)
                                     }}
                                     value={setSite}
                                     placeholder={setSite ||"Select Site"}
+                                    isDisabled={!canEditTask()}
+
                                 />
                             </div>
                             <div>
@@ -334,6 +373,8 @@ console.log(data)
                                     ]}
                                     value={priorityInput}
                                     placeholder={priorityInput || "Select Priority"}
+                                    isDisabled={!canEditTask()}
+
                                     onChange={(e) => {
                                         if (e) {
                                             setPriorityInput(e.label);
@@ -349,7 +390,9 @@ console.log(data)
                                             <input type='radio' id='status-ongoing' name='status'
                                                    value='On-going' className="hidden peer"
                                                    onChange={e => setStatusInput(e.target.value)}
-                                                   defaultChecked={statusInput === 'On-going'}/>
+                                                   defaultChecked={statusInput === 'On-going'}
+                                                   disabled={!canEditTask()}
+                                            />
 
                                             <label htmlFor='status-ongoing'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer peer-checked:bg-green-200 hover:bg-green-100'>
@@ -360,7 +403,9 @@ console.log(data)
                                             <input type='radio' id='status-completed' name='status'
                                                    value='Completed' className="hidden peer"
                                                    onChange={e => setStatusInput(e.target.value)}
-                                                   defaultChecked={statusInput === 'Completed'}/>
+                                                   defaultChecked={statusInput === 'Completed'}
+                                                   disabled={!canEditTask()}
+                                            />
                                             <label htmlFor='status-completed'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer peer-checked:bg-green-200 hover:bg-green-100'>
                                                 COMPLETED
@@ -379,8 +424,10 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-once' name='reccur'
                                                    value='Once' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
-                                                   defaultChecked={recurInput === 'Once'}/>
+                                                   onChange={e => setRecurInput(e.target.value)}
+                                                   defaultChecked={recurInput === 'Once'}
+                                                   disabled={!canEditTask()}
+                                            />
                                             <label htmlFor='reccur-once'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer hover:bg-green-100 peer-checked:bg-green-200 '>
                                                 ONCE
@@ -389,8 +436,10 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-daily' name='reccur'
                                                    value='Daily' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
-                                                   defaultChecked={recurInput === 'Daily'}/>
+                                                   onChange={e => setRecurInput(e.target.value)}
+                                                   defaultChecked={recurInput === 'Daily'}
+                                                   disabled={!canEditTask()}
+                                            />
 
                                             <label htmlFor='reccur-daily'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer hover:bg-green-100 peer-checked:bg-green-200 '>
@@ -400,8 +449,10 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-weekly' name='reccur'
                                                    value='Weekly' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
-                                                   defaultChecked={recurInput === 'Weekly'}/>
+                                                   onChange={e => setRecurInput(e.target.value)}
+                                                   defaultChecked={recurInput === 'Weekly'}
+                                                   disabled={!canEditTask()}
+                                            />
 
                                             <label htmlFor='reccur-weekly'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer hover:bg-green-100 peer-checked:bg-green-200 '>
@@ -411,8 +462,10 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-monthly' name='reccur'
                                                    value='Monthly' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
-                                                   defaultChecked={recurInput === 'Monthly'}/>
+                                                   onChange={e => setRecurInput(e.target.value)}
+                                                   defaultChecked={recurInput === 'Monthly'}
+                                                   disabled={!canEditTask()}
+                                            />
 
                                             <label htmlFor='reccur-monthly'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer hover:bg-green-100 peer-checked:bg-green-200 '>
@@ -422,8 +475,10 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-yearly' name='reccur'
                                                    value='Yearly' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
-                                                   defaultChecked={recurInput === 'Yearly'}/>
+                                                   onChange={e => setRecurInput(e.target.value)}
+                                                   defaultChecked={recurInput === 'Yearly'}
+                                                   disabled={!canEditTask()}
+                                            />
 
                                             <label htmlFor='reccur-yearly'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer hover:bg-green-100 peer-checked:bg-green-200 '>
@@ -435,7 +490,8 @@ console.log(data)
                             </div>
                             <div className='col-span-2 w-full items-center flex justify-between'>
                                 <DateRangePickers  defaultStart={startDateInput} defaultEnd={endDateInput} onStartChange={handleStartDateChange}
-                                                  onEndChange={handleEndDateChange}/>
+                                                  onEndChange={handleEndDateChange}
+                                canEdit={canEditTask()}/>
                             </div>
                             <div className='col-span-2 w-full items-center flex justify-between'>
                                 <p>TASK:</p>
@@ -448,6 +504,8 @@ console.log(data)
                                         onChange={(e) => {
                                             setTaskInput(e.target.value);
                                         }}
+                                        disabled={!canEditTask()}
+
                                     />
                                 </div>
                             </div>
@@ -462,6 +520,8 @@ console.log(data)
                                         onChange={(e) => {
                                             setRemarkInput(e.target.value);
                                         }}
+                                        disabled={!canEditTask()}
+
                                     />
                                 </div>
                             </div>
@@ -476,6 +536,8 @@ console.log(data)
                                         onChange={(e) => {
                                             setAssignInput(e.target.value);
                                         }}
+                                        disabled={!canEditTask()}
+
                                     />
                                 </div>
                             </div>
@@ -492,13 +554,15 @@ console.log(data)
                         >
                             Close
                         </button>
+
+                        {canEditTask() ? (
                         <button
                             className="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                             type="submit"
 
                         >
                             UPDATE AND SAVE
-                        </button>
+                        </button>) : null}
                     </div>
                         </form>
                     </div>

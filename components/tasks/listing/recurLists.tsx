@@ -1,17 +1,17 @@
 import React from 'react'
-import EditRecur from './modal/editRecur'
+import EditRecur from '../modal/editRecur'
 import {format} from "date-fns";
 import {prisma} from "@/lib/prisma";
 import {getUser} from "@/app/utils/userData/page";
 
 const ReccurData = async ({query, currentPage,}: { query: string; currentPage: number; }) => {
-    const tasks = await getTasks(query, currentPage)
+    const tasks = await getRecur(query, currentPage)
     // const duedate = task.EndDate.toLocaleString()
 
     return (
         <>
             {tasks?.map((task) => {
-                    const formattedDate = task.EndDate ? formatDate(task.EndDate) : null;
+                    const formattedDate = task.endDate ? formatDate(task.endDate) : null;
                     return (
 
                         <li key={task.id}
@@ -59,14 +59,18 @@ const ReccurData = async ({query, currentPage,}: { query: string; currentPage: n
 }
 export default ReccurData
 
-export async function getTasks(query: string, currentPage: number) {
+export async function getRecur(query: string, currentPage: number) {
     const user = await getUser()
 
     try {
         const tasks = await prisma.reccurTask.findMany({
                 where: {
-                    AND: { taskOwner: user },
+                    AND: {  OR: [
+                            { taskOwner: user },
+                            { assignTaskTo: user },
+                        ]},
                     OR: [
+
                         {
                             type: {
                                 contains: query,
@@ -131,6 +135,9 @@ export async function getTasks(query: string, currentPage: number) {
                 },
             }
         );
+
+        tasks.sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
+
         return tasks;
     } catch (error) {
         console.log("Error fetching data:", error);

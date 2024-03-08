@@ -2,7 +2,7 @@
 import React from 'react'
 import AddRecur from '@/components/tasks/modal/addRecur'
 import MiniCalendar from '@/components/dateCalendar/miniCalendar'
-import ReccurData from "@/components/tasks/recurLists";
+import ReccurData from "@/components/tasks/listing/recurLists";
 import AssignTask from '@/components/tasks/assignTask'
 import { Suspense } from "react";
 import  {Loading }  from "@/components/loading";
@@ -37,28 +37,27 @@ const TaskRecur = async ({ searchParams, }: {
                   <div className='overflow-auto p-2 bg-white rounded-md grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2'>
                     <div className='overflow-auto w-auto rounded-md text-md font-semibold p-3 m-2 text-center justify-between flex'>
                       <div className=''>
-                        <h6 className='text-gray-900'>SITE:</h6>
+                        <h6 className='text-gray-900'>STAGE:</h6>
                         <div>
                           <select className='rounded-md'>
                             <option value='all'>All</option>
-                            <option>HQ</option>
-                            <option>PCR</option>
-                            <option>SVC</option>
-                            <option>PR8</option>
+                            <option>COMPLETE</option>
+                            <option>ON-GOING</option>
+
                           </select>
                         </div>
                       </div>
                       <div className=''>
-                        <h6 className='text-gray-900 '>STATUS: </h6>
-                        <div>
-                          <select className='rounded-md'>
-                            <option>All</option>
-                            <option>On-going</option>
-                            <option>Completed</option>
-                            <option>Late</option>
-                          </select>
-                        </div>
-                      </div>         
+                        {/*<h6 className='text-gray-900 '>STATUS: </h6>*/}
+                        {/*<div>*/}
+                        {/*  <select className='rounded-md'>*/}
+                        {/*    <option>All</option>*/}
+                        {/*    <option>On-going</option>*/}
+                        {/*    <option>Completed</option>*/}
+                        {/*    <option>Late</option>*/}
+                        {/*  </select>*/}
+                        {/*</div>*/}
+                      </div>
                       <AddRecur/>
 
 

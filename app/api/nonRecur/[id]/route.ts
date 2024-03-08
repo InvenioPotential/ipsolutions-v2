@@ -1,7 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import {NextResponse} from "next/server";
 import {useRouter} from "next/router";
-// import {revalidatePath} from "next/cache";
+import {revalidatePath} from "next/cache";
 // import {redirect} from "next/navigation";
 
 
@@ -48,7 +48,7 @@ export async function PUT(req: Request, params: {params : any}) {
         if (setSite) updateData.site = setSite;
         if (statusInput) updateData.stage = statusInput;
         if (priorityInput) updateData.priority = priorityInput;
-        if (dateInput) updateData.duedate = dateInput;
+        if (dateInput) updateData.endDate = dateInput;
         if (taskInput) updateData.task = taskInput;
         if (remarkInput) updateData.remark = remarkInput;
         if (assignInput) updateData.assignTaskTo = assignInput;
@@ -61,9 +61,13 @@ export async function PUT(req: Request, params: {params : any}) {
 
 
 
+        revalidatePath("http://localhost:3000/modules/task/taskNonRecur");
+
+
+
         return new Response(JSON.stringify(updateTask), { status: 200 })
     } catch (error) {
-        console.error("Error creat  ing new task:", error);
+        console.error("Error creating new task:", error);
         return new Response('Internal Server Error', { status: 500 });
     }
 }
@@ -79,7 +83,9 @@ export async function GET( req :Request) {
     try {
         const tasks = await prisma.nonReccurTask.findUnique({
             where: {
-                id: taskId
+                id: taskId,
+
+
             },
 
         });

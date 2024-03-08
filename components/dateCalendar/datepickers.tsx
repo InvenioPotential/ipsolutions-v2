@@ -5,13 +5,13 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs, { Dayjs } from "dayjs";
 
 interface DatePickersProps {
-  defaultDate: Dayjs | null; // Add a prop for default date
-
+  defaultDate?: Dayjs | null; // Add a prop for default date
+  edit : boolean
   setDateInput: (value: Dayjs | null) => void;
 }
 
-const DatePickers: React.FC<DatePickersProps> = ({ defaultDate,setDateInput }) => {
-  const [value, setValue] = useState<Dayjs | null>(defaultDate);
+const DatePickers: React.FC<DatePickersProps> = ({ edit, defaultDate,setDateInput }) => {
+  const [value, setValue] = useState<Dayjs | null>(defaultDate || null);
 
 
   const handleDateChange = (newValue: any) => {
@@ -21,7 +21,7 @@ const DatePickers: React.FC<DatePickersProps> = ({ defaultDate,setDateInput }) =
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker   value={value} onChange={handleDateChange} />
+      <DatePicker  disabled={!edit} value={dayjs(value)} onChange={handleDateChange} />
     </LocalizationProvider>
   );
 };

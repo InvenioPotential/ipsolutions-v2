@@ -26,8 +26,11 @@ const AddRecur = () => {
     const [assignInput, setAssignInput] = useState<string>(""); // Add assign input state
     const [statusInput, setStatusInput] = useState<string>("");
     const [priorityInput, setPriorityInput] = useState("");
-    const [startDateInput, setStartDate] = useState<Date | null>(null);
-    const [endDateInput, setEndDate] = useState<Date | null>(null);
+
+    const currentDate = new Date();
+
+    const [startDateInput, setStartDate] = useState<Date | null>(currentDate);
+    const [endDateInput, setEndDate] = useState<Date | null>(currentDate);
     const [recurInput, setReccurInput] = useState<string>("");
 
     const handleStartDateChange = (date: any) => {
@@ -308,7 +311,7 @@ const AddRecur = () => {
                                     </div>
                                 </div>
                                 <div className='col-span-2 w-full items-center flex justify-between'>
-                                    <DateRangePickers onStartChange={handleStartDateChange} onEndChange={handleEndDateChange}/>
+                                    <DateRangePickers canEdit={true} onStartChange={handleStartDateChange} onEndChange={handleEndDateChange}/>
                                 </div>
                                 <div className='col-span-2 w-full items-center flex justify-between'>
                                     <p>TASK:</p>

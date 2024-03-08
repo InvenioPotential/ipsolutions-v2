@@ -1,14 +1,21 @@
-"use client"
-import React from "react";
+
+import React, {Suspense} from 'react'
 import AddNonRecur from "@/components/tasks/modal/addNonRecur";
 import EditNonRecur from "@/components/tasks/modal/editNonrecur";
 import MiniCalendar from "@/components/dateCalendar/miniCalendar";
 import AssignTask from "@/components/tasks/assignTask";
-import { Suspense } from "react";
 import  {TableLoading }  from "@/components/loading";
-import { NonReccurData } from "@/components/tasks/nonRecurLists";
+import  NonRecurData  from "@/components/tasks/listing/nonRecurLists";
+import Search from "@/components/search";
 
-async function TaskNonRecur() {
+const TaskNonRecur = async ({ searchParams, }: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) => {
+  const query = searchParams?.query || "";
+  const currentPage = Number(searchParams?.page) || 1;
 
   return (
     <div className="lg:pl-10 lg:pr-10 md:pl-5 sm:pl-5 md:pr-5 sm:pr-5 lg:m-5 md:m-10 sm:m-10">
@@ -26,34 +33,33 @@ async function TaskNonRecur() {
             <div className="overflow-auto p-2 bg-white rounded-md grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2 row-span-2">
               <div className="overflow-auto w-auto rounded-md text-md font-semibold p-3 m-2 text-center justify-between flex">
                 <div className="">
-                  <h6 className="text-gray-900">SITE:</h6>
+                  <h6 className="text-gray-900">STAGE:</h6>
                   <div>
                     <select className="rounded-md">
                       <option value="all">All</option>
-                      <option>HQ</option>
-                      <option>PCR</option>
-                      <option>SVC</option>
-                      <option>PR8</option>
+                      <option>ON-GOING</option>
+                      <option>COMPLETE</option>
+
                     </select>
                   </div>
                 </div>
                 <div className="">
-                  <h6 className="text-gray-900 ">STATUS: </h6>
-                  <div>
-                    <select className="rounded-md">
-                      <option>All</option>
-                      <option>On-going</option>
-                      <option>Completed</option>
-                      <option>Late</option>
-                    </select>
-                  </div>
+                  {/*<h6 className="text-gray-900 ">STATUS: </h6>*/}
+                  {/*<div>*/}
+                  {/*  <select className="rounded-md">*/}
+                  {/*    <option>All</option>*/}
+                  {/*    <option>On-going</option>*/}
+                  {/*    <option>Completed</option>*/}
+                  {/*    <option>Late</option>*/}
+                  {/*  </select>*/}
+                  {/*</div>*/}
                 </div>
                 <AddNonRecur />
               </div>
+            <Search />
               <div className="overflow-auto mx-auto rounded-md text-md font-semibold p-3 m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2">
-
-                <Suspense fallback={ <TableLoading /> }>
-                  <NonReccurData />
+                <Suspense key={query + currentPage}  fallback={ <TableLoading /> }>
+                  <NonRecurData query={query}  currentPage={currentPage} />
                 </Suspense>
               </div>
             </div>
