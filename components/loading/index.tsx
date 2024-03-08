@@ -8,9 +8,8 @@ export function Loading() {
         <Skeleton height={250} />
         <br/>
         <Skeleton height={250} />
-
         </>
-)
+    )
 }
 
 export function TableLoading() {
@@ -22,6 +21,14 @@ export function TableLoading() {
         </>
 
     );
+}
+
+export function overviewLoading(){
+    return(
+        <>
+
+        </>
+    )
 }
 
 

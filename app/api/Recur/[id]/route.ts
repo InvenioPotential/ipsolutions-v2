@@ -51,6 +51,7 @@ export async function PUT(req: Request, params: {params : any}) {
         if (setType) updateData.type = setType;
         if (setSite) updateData.site = setSite;
         if (statusInput) updateData.stage = statusInput;
+        if (recurInput) updateData.reccur = recurInput;
         if (priorityInput) updateData.priority = priorityInput;
         if (startDateInput) updateData.startDate = startDateInput;
         if (endDateInput) updateData.EndDate = endDateInput;

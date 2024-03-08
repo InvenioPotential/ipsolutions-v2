@@ -1,11 +1,11 @@
 import React from 'react'
-import EditRecur from './modal/editRecur'
+import EditRecur from '../modal/editRecur'
 import {format} from "date-fns";
 import {prisma} from "@/lib/prisma";
 import {getUser} from "@/app/utils/userData/page";
 
 const ReccurData = async ({query, currentPage,}: { query: string; currentPage: number; }) => {
-    const tasks = await getTasks(query, currentPage)
+    const tasks = await getRecur(query, currentPage)
     // const duedate = task.EndDate.toLocaleString()
 
     return (
@@ -59,7 +59,7 @@ const ReccurData = async ({query, currentPage,}: { query: string; currentPage: n
 }
 export default ReccurData
 
-export async function getTasks(query: string, currentPage: number) {
+export async function getRecur(query: string, currentPage: number) {
     const user = await getUser()
 
     try {

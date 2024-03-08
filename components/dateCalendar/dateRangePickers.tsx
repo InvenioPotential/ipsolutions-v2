@@ -4,8 +4,8 @@ import DatePickers from "./datepickers";
 import dayjs, { Dayjs } from "dayjs";
 
 interface DateRangePickersProps {
-  defaultStart: Dayjs | null;
-  defaultEnd: Dayjs | null;
+  defaultStart?: Dayjs | null;
+  defaultEnd?: Dayjs | null;
   onStartChange: (newStartDate: Dayjs) => void;
   onEndChange: (newEndDate: Dayjs) => void;
 }

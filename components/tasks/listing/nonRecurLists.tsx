@@ -2,13 +2,12 @@ import { item } from "@/components/types"
 import EditNonRecur from "@/components/tasks/modal/editNonrecur";
 import React from "react";
 import {format} from "date-fns";
-
-
+import {unstable_noStore as noStore} from "next/cache";
 
 
 export async function NonReccurData() {
     const tasks : item[] = await getTasks()
-
+    // noStore()
     return (
         <table className='container table-auto max-w-screen bg-gradient-to-r from-green-300 via-blue-100 to-gray-200 rounded-md p-4'>
 

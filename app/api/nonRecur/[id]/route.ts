@@ -1,6 +1,7 @@
 import { prisma } from '@/lib/prisma';
 import {NextResponse} from "next/server";
 import {useRouter} from "next/router";
+import {revalidatePath} from "next/cache";
 // import {revalidatePath} from "next/cache";
 // import {redirect} from "next/navigation";
 
@@ -59,6 +60,11 @@ export async function PUT(req: Request, params: {params : any}) {
             where: taskId
         });
 
+
+        // console.log("Before calling mutate function");
+        // mutate(`/api/nonRecur/${taskId}`);
+        // console.log("After calling mutate function");
+        // revalidatePath(`/`)
 
 
         return new Response(JSON.stringify(updateTask), { status: 200 })

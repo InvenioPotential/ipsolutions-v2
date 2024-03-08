@@ -17,26 +17,29 @@ model User {
 }
 
 model nonReccurTask {
-  id           String    @id @default(uuid())
+  id           String   @id @default(uuid())
   category     String?
   subcategory  String?
   type         String?
   site         String?
   stage        String?
   priority     String?
-  task         String?   @db.VarChar(255)
-  remark       String?   @db.VarChar(255)
-  assignTaskTo String?   @db.VarChar(255)
-  duedate      DateTime?
+  task         String?  @db.VarChar(255)
+  remark       String?  @db.VarChar(255)
+  assignTaskTo String?  @db.VarChar(255)
+  duedate      String?
   taskOwner    String?
+  tasktype     String   @default("Non-Recurring") // Add the tasktype column with a default value of "recur"
+  createdAt    DateTime @default(now())
 }
 
 model notes {
-  id       Int    @id @default(autoincrement())
-  title    String
-  notes    String
-  priority String
-  duedate  String
+  id        Int      @id @default(autoincrement())
+  title     String
+  notes     String
+  priority  String
+  duedate   String
+  createdAt DateTime @default(now())
 }
 
 model customization {
@@ -47,18 +50,21 @@ model customization {
 }
 
 model reccurTask {
-  id           String    @id @default(uuid())
+  id           String  @id @default(uuid())
   category     String?
   subcategory  String?
   type         String?
   site         String?
   stage        String?
   priority     String?
-  task         String?   @db.VarChar(255)
-  remark       String?   @db.VarChar(255)
-  assignTaskTo String?   @db.VarChar(255)
+  task         String? @db.VarChar(255)
+  remark       String? @db.VarChar(255)
+  assignTaskTo String? @db.VarChar(255)
   reccur       String?
-  startDate    DateTime?
-  EndDate      DateTime?
+  startDate    String?
+  EndDate      String?
   taskOwner    String?
+  tasktype     String  @default("Recurring") // Add the tasktype column with a default value of "recur"
+
+  createdAt DateTime @default(now())
 }

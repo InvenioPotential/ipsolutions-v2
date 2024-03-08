@@ -1,17 +1,15 @@
 "use client"
 import React, { useState, useEffect } from 'react'
 import { MdDelete, MdEdit } from 'react-icons/md';
-
-interface item {
-    id: number;
-    title: string;
-    notes: string;
-    duedate: string;
-    priority: string;
-
-}
+import {item} from '@/components/types'
 
 const EditTodo = () => {
+    const [showModal, setShowModal] = React.useState(false);
+    const [setTitle, setTitleInput] = useState<string>("");
+    const [setNotes, setNotesInput] = useState<string>("");
+    const [setDuedate, setDueInput] = useState<string>("");
+    const [setPriority, setPriorityInput] = useState<string>("");
+
     const [showDel, setShowDel] = React.useState(false);
     const handleDelete = async (id: number) => {
         try {
@@ -45,16 +43,17 @@ const EditTodo = () => {
             }
             const data = await response.json(); // Parse response body as JSON
             setTodos(data); // Update todos state with fetched data
+
+            setDueInput(data.duedate)
+            setNotesInput(data.notes)
+            setTitleInput(data.title)
+            setPriorityInput(data.priority)
+
         } catch (error) {
             console.error('Error fetching todos:', error);
         }
     };
 
-    const [showModal, setShowModal] = React.useState(false);
-    const [setTitle, setInput1] = useState<string>("");
-    const [setNotes, setInput2] = useState<string>("");
-    const [setDuedate, setInput3] = useState<string>("");
-    const [setPriority, setInput4] = useState<string>("");
 
     const handleUpdate = async (id: number) => {
         // e.preventDefault();
@@ -160,12 +159,12 @@ const EditTodo = () => {
                                                 <p>TITLE:</p>
                                                 <div className='mx-auto flex'>
                                                     <input
-
+                                                        value={setTitle}
                                                         required
                                                         type='title'
-                                                        onChange={(e) => setInput1(e.currentTarget.value)}
+                                                        onChange={(e) => setTitleInput(e.target.value)}
                                                         className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'
-                                                        placeholder={todo.title}>
+                                                        placeholder={setTitle}>
                                                     </input>
                                                 </div>
                                             </div>
@@ -173,8 +172,9 @@ const EditTodo = () => {
                                                 <p>NOTES:</p>
                                                 <div className='mx-auto flex'>
                                                     <input
+                                                        value={setNotes}
                                                         required
-                                                        onChange={(e) => setInput2(e.currentTarget.value)}
+                                                        onChange={(e) => setNotesInput(e.currentTarget.value)}
                                                         className='p-2 m-1 mx-auto flex-auto row-span-2  col-span-2 rounded-md bg-gray-100 placeholder-gray-500 placeholder-opacity-100'
                                                         placeholder={todo.notes}></input>
                                                 </div>
@@ -182,8 +182,9 @@ const EditTodo = () => {
                                             <div className='*:m-2 row-span-1'>
                                                 <p>DUE:</p>
                                                 <input
+                                                    value={setDuedate}
                                                     type="date"
-                                                    onChange={(e) => setInput3(e.currentTarget.value)}
+                                                    onChange={(e) => setDueInput(e.currentTarget.value)}
                                                     className='p-2 m-1 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
                                                 />
 
@@ -192,7 +193,8 @@ const EditTodo = () => {
                                                 <p>PRIORITY:</p>
                                                 <div className='mx-auto flex'>
                                                     <select
-                                                        onChange={(e) => setInput4(e.currentTarget.value)}
+                                                        value={setPriority}
+                                                        onChange={(e) => setPriorityInput(e.currentTarget.value)}
                                                         className='p-2 m-2 mx-auto flex-auto col-span-2 rounded-md bg-gray-100 placeholder-gray-300 placeholder-opacity-100'
                                                     >
                                                         <option value='High'>High</option>

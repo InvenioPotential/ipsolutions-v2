@@ -9,6 +9,7 @@ import {getSelections} from "@/app/utils/selectionData/page";
 import { item } from "@/components/types";
 import { useRouter ,usePathname} from 'next/navigation';
 import {revalidatePath} from "next/cache";
+import { mutate } from 'swr'; // Import mutate from SWR or other data-fetching library
 
 
 const EditNonRecur = ({taskId} : {taskId : any}) => {
@@ -33,7 +34,7 @@ const EditNonRecur = ({taskId} : {taskId : any}) => {
     const [assignInput, setAssignInput] = useState<string>(""); // Add assign input state
     const [statusInput, setStatusInput] = useState<string>("");
     const [priorityInput, setPriorityInput] = useState<string>("");
-    const [dateInput, setDateInput] = useState<Dayjs | null>(dayjs());
+    const [dateInput, setDateInput] = useState<Dayjs | null>(null);
 
     const handleDateInput = (date: any) => {
         setDateInput(date);
@@ -51,7 +52,7 @@ const EditNonRecur = ({taskId} : {taskId : any}) => {
             if (!response.ok) {
                 throw new Error("Failed to fetch task details.");
             }
-            const data=  await response.json(); // Type the data explicitly
+            const data =  await response.json(); // Type the data explicitly
             // setTask(data);
             setCatInput(data.category)
             setSubInput(data.subcategory)
@@ -123,8 +124,12 @@ const EditNonRecur = ({taskId} : {taskId : any}) => {
             alert("TASK HAS BEEN UPDATE !");
 
             // router.push(pathname)
-            location.reload()
-
+            // location.reload()
+            // mutate(`/api/nonRecur/${taskId}`)
+            console.log("Before calling mutate function");
+            mutate(`/api/nonRecur/${taskId}`);
+            console.log("After calling mutate function");
+            // redirect('/dashboard/invoices');
             setShowModal(false);
             // redirect("/modules/task/taskNonRecur");
         } catch (error) {
@@ -154,7 +159,9 @@ const EditNonRecur = ({taskId} : {taskId : any}) => {
             // alert("TASK HAS BEEN DELETED !");
             // router.push(pathname)
             // revalidatePath(pathname)
-            location.reload()
+            // location.reload()
+            mutate("")
+
 
             setShowModal(false);
             setShowDel(false)
@@ -376,7 +383,7 @@ const EditNonRecur = ({taskId} : {taskId : any}) => {
                     <div className='col-span-2 w-full items-center flex justify-between'>
                     <p>DUE DATE:</p>
                         <div className='w-auto'>
-                             <DatePickers endDate={dateInput}  setDateInput={handleDateInput} />
+                             <DatePickers defaultDate={dateInput} setDateInput={handleDateInput} />
                         </div>
                     </div>
                     <div className='col-span-2 w-full items-center flex justify-between'>

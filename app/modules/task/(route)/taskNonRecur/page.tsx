@@ -1,12 +1,11 @@
 "use client"
-import React from "react";
+import React, {Suspense, useEffect, useState} from 'react'
 import AddNonRecur from "@/components/tasks/modal/addNonRecur";
 import EditNonRecur from "@/components/tasks/modal/editNonrecur";
 import MiniCalendar from "@/components/dateCalendar/miniCalendar";
 import AssignTask from "@/components/tasks/assignTask";
-import { Suspense } from "react";
 import  {TableLoading }  from "@/components/loading";
-import { NonReccurData } from "@/components/tasks/nonRecurLists";
+import { NonReccurData } from "@/components/tasks/listing/nonRecurLists";
 
 async function TaskNonRecur() {
 

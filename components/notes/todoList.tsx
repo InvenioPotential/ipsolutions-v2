@@ -18,6 +18,8 @@ export const NoteList: React.FC = () => {
     const [setNotes, setInput2] = useState<string>("");
     const [setDuedate, setInput3] = useState<string>("");
     const [setPriority, setInput4] = useState<string>("");
+    const [showModal, setShowModal] = React.useState(false);
+
 
     const [todos, setTodos] = useState<item[]>([
     ]);
@@ -52,13 +54,13 @@ export const NoteList: React.FC = () => {
             });
 
             fetchTodos();
+            setShowModal(false);
 
         } catch (error) {
             console.error(error);
         }
     };
 
-    const [showModal, setShowModal] = React.useState(false);
 
     return (
         <div className='p-2 m-1'>

@@ -24,7 +24,7 @@ export async function POST(req: Request, res: NextResponse) {
             assignInput,
 
         } = body;
-        // Create a new Todo using Prisma
+
         const newNonReccurTask = await prisma.nonReccurTask.create({
             data: {
                 category : setCat,

@@ -2,7 +2,7 @@
 import React from 'react'
 import AddRecur from '@/components/tasks/modal/addRecur'
 import MiniCalendar from '@/components/dateCalendar/miniCalendar'
-import ReccurData from "@/components/tasks/recurLists";
+import ReccurData from "@/components/tasks/listing/recurLists";
 import AssignTask from '@/components/tasks/assignTask'
 import { Suspense } from "react";
 import  {Loading }  from "@/components/loading";

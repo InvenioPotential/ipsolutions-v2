@@ -24,10 +24,10 @@ const EditRecur = ({taskId} : {taskId : any}) => {
     const [remarkInput, setRemarkInput] = useState<string>(""); // Add remark input state
     const [assignInput, setAssignInput] = useState<string>(""); // Add assign input state
     const [statusInput, setStatusInput] = useState<string>("");
+    const [recurInput, setRecurInput] = useState<string>("");
     const [priorityInput, setPriorityInput] = useState("");
     const [startDateInput, setStartDate] = useState<Dayjs | null>(null);
     const [endDateInput, setEndDate] = useState<Dayjs | null>(null);
-    const [recurInput, setReccurInput] = useState<string>("");
 
     const handleStartDateChange = (date: any) => {
         setStartDate(date);
@@ -39,7 +39,7 @@ const EditRecur = ({taskId} : {taskId : any}) => {
 
 
     useEffect(() => {
-        fetchSelection
+        fetchSelection()
         fetchTaskByID();
     }, [taskId]);
 
@@ -63,9 +63,9 @@ console.log(data)
             setPriorityInput(data.priority)
             setAssignInput(data.assignTaskTo)
             setStatusInput(data.stage)
+            setRecurInput(data.reccur)
             setStartDate(dayjs(data.startDate))
             setEndDate(dayjs(data.EndDate))
-            setReccurInput(data.reccur)
         } catch (error) {
             console.error(error);
         }
@@ -168,6 +168,8 @@ console.log(data)
     const handleCategoryChange = (selectedOption: any) => {
         setSelectedCategory(selectedOption.value); // Set the selected category's variables
     };
+
+
     return (
             <>
             <button type="button"
@@ -379,7 +381,7 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-once' name='reccur'
                                                    value='Once' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
+                                                   onChange={e => setRecurInput(e.target.value)}
                                                    defaultChecked={recurInput === 'Once'}/>
                                             <label htmlFor='reccur-once'
                                                    className='rounded-lg p-2 bg-gray-200 cursor-pointer hover:bg-green-100 peer-checked:bg-green-200 '>
@@ -389,7 +391,7 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-daily' name='reccur'
                                                    value='Daily' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
+                                                   onChange={e => setRecurInput(e.target.value)}
                                                    defaultChecked={recurInput === 'Daily'}/>
 
                                             <label htmlFor='reccur-daily'
@@ -400,7 +402,7 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-weekly' name='reccur'
                                                    value='Weekly' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
+                                                   onChange={e => setRecurInput(e.target.value)}
                                                    defaultChecked={recurInput === 'Weekly'}/>
 
                                             <label htmlFor='reccur-weekly'
@@ -411,7 +413,7 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-monthly' name='reccur'
                                                    value='Monthly' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
+                                                   onChange={e => setRecurInput(e.target.value)}
                                                    defaultChecked={recurInput === 'Monthly'}/>
 
                                             <label htmlFor='reccur-monthly'
@@ -422,7 +424,7 @@ console.log(data)
                                         <li>
                                             <input type='radio' id='reccur-yearly' name='reccur'
                                                    value='Yearly' className="hidden peer"
-                                                   onChange={e => setReccurInput(e.target.value)}
+                                                   onChange={e => setRecurInput(e.target.value)}
                                                    defaultChecked={recurInput === 'Yearly'}/>
 
                                             <label htmlFor='reccur-yearly'
