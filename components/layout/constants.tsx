@@ -34,8 +34,13 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     },
     {
         title: "DIGITAL FORMS",
-        path: "",
+        path: "/modules/digital-form/formDashboard",
         icon: <Icon icon="lucide:files" width="16" height="16"/>,
+        submenu: true,
+        subMenuItems: [
+            {title: "Overview", path: "/modules/digital-form/formDashboard"},
+            {title: "Application Menu", path: "/modules/digital-form/menuForm"},
+        ]
     },
     {
         title: "MAINTENANCE",

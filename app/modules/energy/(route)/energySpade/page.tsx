@@ -22,7 +22,7 @@ const EnergySpade = () => {
             ENERGY MANAGEMENT
             </div>
         </div> 
-        <div className='m-3 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
+        <div className='h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
             <div className='col-span-3 cursor-pointer items-center  justify-center text-center'>
               <div className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
@@ -115,7 +115,7 @@ const EnergySpade = () => {
                     </div>
                     <div className='mt-5 rounded-lg h-60 w-full overflow-auto mx-auto text-sm font-semibold m-2 text-center grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
                         <table  className='container text-center table-auto bg-white p-4'>
-                            <thead className=' bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
+                            <thead className='sticky top-0 bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
                                 <tr className='*:p-4 justify-between'>
                                     <th>CLIENT NAME</th>
                                     <th>ITEM FILES</th>

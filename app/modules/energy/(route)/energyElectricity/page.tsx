@@ -21,7 +21,7 @@ const EnergyElectricity = () => {
             ENERGY MANAGEMENT
             </div>
         </div> 
-        <div className='p-5 h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
+        <div className='h-auto overflow-auto justify-center grid lg:grid-rows-1 md:grid-rows-1 sm:grid-rows-2 lg:grid-cols-6 md:grid-cols-3 sm:grid-cols-3 gap-4'>
             <div className=' col-span-3 cursor-pointer items-center  justify-center text-center'>
               <div className='shadow hover:shadow-xl bg-gradient-to-r from-yellow-100  to-gray-200 rounded-lg justify-between p-3 '>
                   <div className='items-center justify-center text-gray-600 pl-6 pr-6 pt-2 pb-2 font-semibold text-sm'>
@@ -49,7 +49,7 @@ const EnergyElectricity = () => {
                     </div>
                     <div className='text-sm mt-5 h-60 overflow-auto rounded-lg w-full mx-auto font-semibold m-2 grid-cols-subgrid lg:col-span-3 md:col-span-2 sm:col-span-2'>
                         <table  className='text-center container table-auto bg-white p-4'>
-                            <thead className=' bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
+                            <thead className='sticky top-0 bg-gradient-to-r rounded-md from-green-300 via-blue-100 to-gray-200'>
                                 <tr className='*:p-4 justify-between'>
                                     <th>CLIENT NAME</th>
                                     <th>SUPPLIER</th>

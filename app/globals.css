@@ -85,6 +85,10 @@
   width: 5px;
 }
 
+::-webkit-scrollbar:hover {
+  width: 7px;
+}
+
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -92,7 +96,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #b5b5b5;
+  background: #d0d0d0;
   border-radius: 5px;
 }
 
@@ -280,7 +284,7 @@
   background-color: #e6e6e6;
 }
 
-/* ENERGY MODULE */
+/* LOADING SKELETON */
 
 @keyframes react-loading-skeleton {
   50% {

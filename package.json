@@ -62,7 +62,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "json-server": "^1.0.0-alpha.23",
-    "prisma": "^5.9.1",
+    "prisma": "^5.10.2",
     "tailwindcss-animated": "^1.0.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
