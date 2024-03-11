@@ -4,26 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db4b003c-d17e-4a98-b9c7-2226dc894bed" name="Changes" comment="directory adjustment 3">
-      <change afterPath="$PROJECT_DIR$/app/modules/digital-form/(route)/formDashboard/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/modules/digital-form/(route)/menuForm/page.tsx" afterDir="false" />
+    <list default="true" id="db4b003c-d17e-4a98-b9c7-2226dc894bed" name="Changes" comment="digitalform_dashboard">
+      <change afterPath="$PROJECT_DIR$/app/modules/community/(route)/communityDashboard/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/modules/community/(route)/digital-form/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/digitalForm/appMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/digitalForm/formtables.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/energy/(route)/energyDashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/energy/(route)/energyDashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/energy/(route)/energyElectricity/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/energy/(route)/energyElectricity/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/energy/(route)/energyLoads/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/energy/(route)/energyLoads/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/energy/(route)/energySpade/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/energy/(route)/energySpade/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/energy/(route)/energyVoltage/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/energy/(route)/energyVoltage/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskDashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskDashboard/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskNonRecur/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskNonRecur/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/modules/task/(route)/taskRecurring/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/modules/task/(route)/taskRecurring/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/digital-form/(route)/formDashboard/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/modules/digital-form/(route)/menuForm/page.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/layout/constants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/constants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/tasks/nonRecurLists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tasks/nonRecurLists.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout/sideNav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/sideNav.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +84,11 @@
       </map>
     </option>
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\ipSolutions-v2\app\modules\community" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="ipsolutions-v2" />
@@ -136,7 +132,9 @@
       <workItem from="1709696387441" duration="1671000" />
       <workItem from="1709698094555" duration="41000" />
       <workItem from="1709774060715" duration="18511000" />
-      <workItem from="1709862918000" duration="9519000" />
+      <workItem from="1709862918000" duration="9558000" />
+      <workItem from="1710119598679" duration="652000" />
+      <workItem from="1710126873434" duration="14451000" />
     </task>
     <task id="LOCAL-00001" summary="directory adjustment">
       <option name="closed" value="true" />
@@ -154,7 +152,31 @@
       <option name="project" value="LOCAL" />
       <updated>1709696580947</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="digitalform_dashboard">
+      <option name="closed" value="true" />
+      <created>1709890304571</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709890304571</updated>
+    </task>
+    <task id="LOCAL-00004" summary="digitalform_dashboard">
+      <option name="closed" value="true" />
+      <created>1709890310461</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709890310461</updated>
+    </task>
+    <task id="LOCAL-00005" summary="digitalform_dashboard">
+      <option name="closed" value="true" />
+      <created>1709890318804</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709890318804</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,28 +198,17 @@
     <MESSAGE value="directory adjustment" />
     <MESSAGE value="directory adjustment 3" />
     <MESSAGE value="littleAdjustment" />
-    <option name="LAST_COMMIT_MESSAGE" value="littleAdjustment" />
+    <MESSAGE value="digitalform_dashboard" />
+    <option name="LAST_COMMIT_MESSAGE" value="digitalform_dashboard" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/modules/digital-form/(route)/formDashboard/page.tsx</url>
-          <line>15</line>
+          <url>file://$PROJECT_DIR$/app/modules/community/(route)/digital-form/page.tsx</url>
+          <line>1</line>
           <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/modules/digital-form/(route)/formDashboard/page.tsx</url>
-          <line>24</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/app/modules/digital-form/(route)/formDashboard/page.tsx</url>
-          <line>67</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

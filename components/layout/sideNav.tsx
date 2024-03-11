@@ -28,7 +28,7 @@ const SideNav = () => {
             /> </span>
         </Link>
 
-        <div className="flex flex-col space-y-2 overflow-auto md:px-6 ">
+        <div className="flex flex-col space-y-2 overflow-auto md:px-6 h-auto">
           {SIDENAV_ITEMS.map((item, idx) => {
             return <MenuItem key={idx} item={item} />;
           })}

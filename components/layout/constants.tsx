@@ -33,24 +33,24 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
         ]     
     },
     {
-        title: "DIGITAL FORMS",
-        path: "/modules/digital-form/formDashboard",
-        icon: <Icon icon="lucide:files" width="16" height="16"/>,
+        title: "COMMUNITY",
+        path: "/modules/community/communityDashboard",
+        icon: <Icon icon="lucide:users" width="16" height="16"/>,
         submenu: true,
         subMenuItems: [
-            {title: "Overview", path: "/modules/digital-form/formDashboard"},
-            {title: "Application Menu", path: "/modules/digital-form/menuForm"},
+            {title: "Overview", path: "/modules/community/communityDashboard"},
+            {title: "Digital Forms", path: "/modules/community/digital-form"},
+            // {title: "Notices", path: ""},
+            // {title: "Incident Report", path: ""},
+            // {title: "System Management", path: ""},
+            // {title: "Audit Trail", path: ""},
+            // {title: "Recycle", path: ""},
         ]
     },
     {
         title: "MAINTENANCE",
         path: "https://maintenance.ipsolutions4u.com",
         icon: <Icon icon="lucide:hammer" width="16" height="16"/>,
-    },
-    {
-        title: "COMMUNITY",
-        path: "https://community.ipsolutions4u.com",
-        icon: <Icon icon="lucide:users" width="16" height="16"/>,
     },
     {
         title: "OPERATIONS",
